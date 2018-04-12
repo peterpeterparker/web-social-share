@@ -7,13 +7,12 @@ import { Component, Prop } from '@stencil/core';
 })
 export class WebSocialShare {
 
-  @Prop() first: string;
-  @Prop() last: string;
+  @Prop() display: boolean;
 
   render() {
     return (
-      <div>
-        Hello, World! I'm {this.first} {this.last}
+      <div class={this.display ? 'web-social-share web-social-share-open' : 'web-social-share web-social-share-close'}>
+        Hello, World! I'm {this.display}
       </div>
     );
   }

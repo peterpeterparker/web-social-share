@@ -26,8 +26,7 @@ declare global {
 
 declare global {
   interface HTMLWebSocialShareElement extends HTMLStencilElement {
-    'first': string;
-    'last': string;
+    'display': boolean;
   }
   var HTMLWebSocialShareElement: {
     prototype: HTMLWebSocialShareElement;
@@ -46,8 +45,7 @@ declare global {
   }
   namespace JSXElements {
     export interface WebSocialShareAttributes extends HTMLAttributes {
-      'first'?: string;
-      'last'?: string;
+      'display'?: boolean;
     }
   }
 }

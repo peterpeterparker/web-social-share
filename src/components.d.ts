@@ -25,27 +25,27 @@ declare global {
 
 
 declare global {
-  interface HTMLMyComponentElement extends HTMLStencilElement {
+  interface HTMLWebSocialShareElement extends HTMLStencilElement {
     'first': string;
     'last': string;
   }
-  var HTMLMyComponentElement: {
-    prototype: HTMLMyComponentElement;
-    new (): HTMLMyComponentElement;
+  var HTMLWebSocialShareElement: {
+    prototype: HTMLWebSocialShareElement;
+    new (): HTMLWebSocialShareElement;
   };
   interface HTMLElementTagNameMap {
-    'my-component': HTMLMyComponentElement;
+    'web-social-share': HTMLWebSocialShareElement;
   }
   interface ElementTagNameMap {
-    'my-component': HTMLMyComponentElement;
+    'web-social-share': HTMLWebSocialShareElement;
   }
   namespace JSX {
     interface IntrinsicElements {
-      'my-component': JSXElements.MyComponentAttributes;
+      'web-social-share': JSXElements.WebSocialShareAttributes;
     }
   }
   namespace JSXElements {
-    export interface MyComponentAttributes extends HTMLAttributes {
+    export interface WebSocialShareAttributes extends HTMLAttributes {
       'first'?: string;
       'last'?: string;
     }

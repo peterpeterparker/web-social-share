@@ -1,13 +1,18 @@
 export interface WebSocialShareAttributes {
   socialSharePopupWidth?: number;
   socialSharePopupHeight?: number;
+
+  socialShareUrl?: string;
+}
+
+export interface WebSocialShareWithTextAttributes extends WebSocialShareAttributes{
+  socialShareText?: string;
 }
 
 export interface WebSocialShareFacebookAttributes extends WebSocialShareAttributes {
   socialShareType?: string;
   socialShareVia?: string;
   socialShareRedirectUri?: string;
-  socialShareUrl?: string;
   socialShareTo?: string;
   socialShareDisplay?: string;
   socialShareRef?: string;
@@ -18,9 +23,29 @@ export interface WebSocialShareFacebookAttributes extends WebSocialShareAttribut
   socialShareHashtags?: string;
 }
 
-export interface WebSocialShareTwiterAttributes extends WebSocialShareAttributes {
-  socialShareText?: string;
+export interface WebSocialShareTwiterAttributes extends WebSocialShareWithTextAttributes {
   socialShareVia?: string;
   socialShareHashtags?: string;
-  socialShareUrl?: string;
 }
+
+export interface WebSocialShareLinkedinAttributes extends WebSocialShareWithTextAttributes {
+  socialShareDescription?: string;
+  socialShareSource?: string;
+}
+
+export interface WebSocialSharePinterestAttributes extends WebSocialShareWithTextAttributes {
+  socialShareMedia?: string;
+}
+
+export interface WebSocialShareRedditAttributes extends WebSocialShareWithTextAttributes {
+  socialShareSubreddit?: string;
+}
+
+export interface WebSocialShareEmailAttributes {
+  socialShareTo?: string;
+  socialShareBody?: string;
+  socialShareSubject?: string;
+  socialShareCc?: string;
+  socialShareBcc?: string;
+}
+

@@ -1,4 +1,5 @@
-import { Component, Prop } from '@stencil/core';
+import {Component, Prop} from '@stencil/core';
+import {WebSocialShareInput} from '../../types/web-social-share/web-social-share-input';
 
 @Component({
   tag: 'web-social-share',
@@ -8,6 +9,11 @@ import { Component, Prop } from '@stencil/core';
 export class WebSocialShare {
 
   @Prop() display: boolean;
+  @Prop() share: WebSocialShareInput[];
+
+  componentWillUpdate() {
+    console.log(this.share);
+  }
 
   render() {
     return (

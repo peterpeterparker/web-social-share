@@ -23,10 +23,14 @@ declare global {
   interface HTMLAttributes {}
 }
 
+import {
+  WebSocialShareInput,
+} from './types/web-social-share/web-social-share-input';
 
 declare global {
   interface HTMLWebSocialShareElement extends HTMLStencilElement {
     'display': boolean;
+    'share': WebSocialShareInput[];
   }
   var HTMLWebSocialShareElement: {
     prototype: HTMLWebSocialShareElement;
@@ -46,6 +50,7 @@ declare global {
   namespace JSXElements {
     export interface WebSocialShareAttributes extends HTMLAttributes {
       'display'?: boolean;
+      'share'?: WebSocialShareInput[];
     }
   }
 }

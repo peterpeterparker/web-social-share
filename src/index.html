@@ -19,12 +19,35 @@
   <input id="hideWebSocialShare" value="Hide" onclick="display(false);"/>
 
   <script type="text/javascript">
+
+    // Show / hide
+
     function display(displayValue) {
       const elem = document.getElementsByTagName('web-social-share');
       if (elem && elem.length > 0) {
         elem[0].setAttribute('display', displayValue);
       }
     }
+
+    // Share options
+
+    const share = [
+      {
+        type: 'facebook',
+        url: 'http://mysite.com'
+      },
+      {
+        type: 'twitter',
+        url: 'http://mysite.com'
+      }
+    ];
+
+    document.addEventListener("DOMContentLoaded", function(event) {
+      const elem = document.getElementsByTagName('web-social-share');
+      if (elem && elem.length > 0) {
+        elem[0].share = share;
+      }
+    });
   </script>
 
 </body>

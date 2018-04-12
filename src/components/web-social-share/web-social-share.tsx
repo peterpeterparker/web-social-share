@@ -1,11 +1,11 @@
 import { Component, Prop } from '@stencil/core';
 
 @Component({
-  tag: 'my-component',
-  styleUrl: 'my-component.css',
+  tag: 'web-social-share',
+  styleUrl: 'web-social-share.scss',
   shadow: true
 })
-export class MyComponent {
+export class WebSocialShare {
 
   @Prop() first: string;
   @Prop() last: string;

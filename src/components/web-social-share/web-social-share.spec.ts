@@ -1,17 +1,17 @@
 import { flush, render } from '@stencil/core/testing';
-import { MyComponent } from './my-component';
+import { WebSocialShare } from './web-social-share';
 
-describe('my-component', () => {
+describe('web-social-share', () => {
   it('should build', () => {
-    expect(new MyComponent()).toBeTruthy();
+    expect(new WebSocialShare()).toBeTruthy();
   });
 
   describe('rendering', () => {
     let element;
     beforeEach(async () => {
       element = await render({
-        components: [MyComponent],
-        html: '<my-component></my-component>'
+        components: [WebSocialShare],
+        html: '<web-social-share></web-social-share>'
       });
     });
 
@@ -32,7 +32,7 @@ describe('my-component', () => {
     });
 
     it('should work with both a first and a last name', async () => {
-      element.first = 'Peter'
+      element.first = 'Peter';
       element.last = 'Parker';
       await flush(element);
       expect(element.textContent.trim()).toEqual('Hello, World! I\'m Peter Parker');

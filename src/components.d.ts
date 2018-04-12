@@ -28,6 +28,33 @@ import {
 } from './types/web-social-share/web-social-share-input';
 
 declare global {
+  interface HTMLWebSocialShareTargetElement extends HTMLStencilElement {
+    'share': WebSocialShareInput;
+  }
+  var HTMLWebSocialShareTargetElement: {
+    prototype: HTMLWebSocialShareTargetElement;
+    new (): HTMLWebSocialShareTargetElement;
+  };
+  interface HTMLElementTagNameMap {
+    'web-social-share-target': HTMLWebSocialShareTargetElement;
+  }
+  interface ElementTagNameMap {
+    'web-social-share-target': HTMLWebSocialShareTargetElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      'web-social-share-target': JSXElements.WebSocialShareTargetAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface WebSocialShareTargetAttributes extends HTMLAttributes {
+      'share'?: WebSocialShareInput;
+    }
+  }
+}
+
+
+declare global {
   interface HTMLWebSocialShareElement extends HTMLStencilElement {
     'display': boolean;
     'share': WebSocialShareInput[];

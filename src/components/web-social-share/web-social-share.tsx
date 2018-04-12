@@ -19,6 +19,10 @@ export class WebSocialShare {
     return (
       <div class={this.display ? 'web-social-share web-social-share-open' : 'web-social-share web-social-share-close'}>
         Hello, World! I'm {this.display}
+
+        {this.share.map((shareInput: WebSocialShareInput) =>
+          <web-social-share-target share={shareInput}></web-social-share-target>
+        )}
       </div>
     );
   }

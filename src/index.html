@@ -31,16 +31,11 @@
 
     // Share options
 
-    const share = [
-      {
-        type: 'facebook',
-        url: 'http://mysite.com'
-      },
-      {
-        type: 'twitter',
-        url: 'http://mysite.com'
+    const share = [{
+      facebook: {
+        socialShareUrl: 'http://peterparker.tech'
       }
-    ];
+    }];
 
     document.addEventListener("DOMContentLoaded", function(event) {
       const elem = document.getElementsByTagName('web-social-share');

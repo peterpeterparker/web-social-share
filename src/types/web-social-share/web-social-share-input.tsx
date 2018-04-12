@@ -1,4 +1,5 @@
+import {WebSocialShareFacebookAttributes} from './web-social-share-attributes';
+
 export interface WebSocialShareInput {
-  type: string;
-  url: string
+  facebook?: WebSocialShareFacebookAttributes;
 }

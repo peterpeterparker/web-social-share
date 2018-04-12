@@ -1,4 +1,9 @@
-export interface WebSocialShareFacebookAttributes {
+export interface WebSocialShareAttributes {
+  socialSharePopupWidth?: number;
+  socialSharePopupHeight?: number;
+}
+
+export interface WebSocialShareFacebookAttributes extends WebSocialShareAttributes {
   socialShareType?: string;
   socialShareVia?: string;
   socialShareRedirectUri?: string;
@@ -11,7 +16,11 @@ export interface WebSocialShareFacebookAttributes {
   socialShareQuote?: string;
   socialShareMobileiframe?: string;
   socialShareHashtags?: string;
+}
 
-  socialSharePopupWidth?: number;
-  socialSharePopupHeight?: number;
+export interface WebSocialShareTwiterAttributes extends WebSocialShareAttributes {
+  socialShareText?: string;
+  socialShareVia?: string;
+  socialShareHashtags?: string;
+  socialShareUrl?: string;
 }

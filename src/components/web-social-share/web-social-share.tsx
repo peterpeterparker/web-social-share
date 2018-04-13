@@ -17,7 +17,9 @@ export class WebSocialShare {
 
   render() {
     return (
-      <div class={this.display ? 'web-social-share web-social-share-open' : 'web-social-share web-social-share-close'} onClick={() => this.hide()}>
+      <div class={this.display ? 'web-social-share web-social-share-open' : 'web-social-share web-social-share-close'}>
+        <div class='web-social-share-backdrop' onClick={() => this.hide()}></div>
+
         <div class='web-social-share-action-sheet'>
           <div class='web-social-share-action-sheet-container'>
             <div class='web-social-share-action-sheet-group'>

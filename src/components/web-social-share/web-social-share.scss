@@ -25,6 +25,21 @@ div.web-social-share {
         }
       }
     }
+
+    // Animate close
+    &.web-social-share-transition-close {
+      div.web-social-share-backdrop {
+        opacity: 0;
+      }
+
+      div.web-social-share-action-sheet {
+        div.web-social-share-action-sheet-container {
+          div.web-social-share-action-sheet-group {
+            height: 0;
+          }
+        }
+      }
+    }
   }
 
   // Backdrop

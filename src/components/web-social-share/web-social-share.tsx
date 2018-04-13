@@ -1,4 +1,4 @@
-import {Component, Prop} from '@stencil/core';
+import {Component, Listen, Prop} from '@stencil/core';
 import {WebSocialShareInput} from '../../types/web-social-share/web-social-share-input';
 
 @Component({
@@ -11,6 +11,7 @@ export class WebSocialShare {
   @Prop({ mutable: true }) display: boolean;
   @Prop() share: WebSocialShareInput[];
 
+  @Listen('selected')
   hide() {
     this.display = false;
   }

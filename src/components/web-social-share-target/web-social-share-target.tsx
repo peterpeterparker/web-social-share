@@ -1,4 +1,4 @@
-import {Component, Prop} from '@stencil/core';
+import {Component, Event, EventEmitter, Prop} from '@stencil/core';
 
 import {WebSocialShareFacebook} from '../../utils/web-social-share/web-social-share-facebook';
 import {WebSocialShareInput} from '../../types/web-social-share/web-social-share-input';
@@ -17,28 +17,36 @@ export class WebSocialShareTarget {
 
   @Prop() share: WebSocialShareInput;
 
+  @Event() selected: EventEmitter;
+
   private handleFacebookShare() {
     WebSocialShareFacebook.share(this.share.facebook);
+    this.selected.emit();
   }
 
   private handleTwitterShare() {
     WebSocialShareTwitter.share(this.share.twitter);
+    this.selected.emit();
   }
 
   private handleEmailShare() {
     WebSocialShareEmail.share(this.share.email);
+    this.selected.emit();
   }
 
   private handleLinkedinShare() {
     WebSocialShareLinkedin.share(this.share.linkedin);
+    this.selected.emit();
   }
 
   private handlePinterestShare() {
     WebSocialSharePinterest.share(this.share.pinterest);
+    this.selected.emit();
   }
 
   private handleRedditShare() {
     WebSocialShareReddit.share(this.share.reddit);
+    this.selected.emit();
   }
 
   render() {

@@ -1,21 +1,22 @@
-import {Component, Element, Listen, Prop} from '@stencil/core';
+import {Component, Element, Event, EventEmitter, Listen, Prop} from '@stencil/core';
 import {WebSocialShareInput} from '../../types/web-social-share/web-social-share-input';
 
 @Component({
   tag: 'web-social-share',
-  styleUrl: 'web-social-share.scss',
-  shadow: true
+  styleUrl: 'web-social-share.scss'
 })
 export class WebSocialShare {
 
   @Element() el: HTMLElement;
+
+  @Event() closed: EventEmitter;
 
   @Prop({ mutable: true }) show: boolean;
   @Prop() share: WebSocialShareInput[];
 
   @Listen('selected')
   hide() {
-    let element: HTMLElement = this.el.shadowRoot.querySelector('div:first-of-type');
+    let element: HTMLElement = this.el.querySelector('div.web-social-share');
     if (element) {
      element.classList.add('web-social-share-transition-close');
 
@@ -23,10 +24,13 @@ export class WebSocialShare {
         // Reflect css animation speed 400ms, see css
         this.show = false;
         element.classList.remove('web-social-share-transition-close');
+
+        this.closed.emit(true);
       }, 400);
     } else {
       // Well we don't find the action sheet, we could mark it as not displayed
       this.show = false;
+      this.closed.emit(true);
     }
   }
 

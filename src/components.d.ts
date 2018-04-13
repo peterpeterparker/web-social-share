@@ -77,6 +77,7 @@ declare global {
   }
   namespace JSXElements {
     export interface WebSocialShareAttributes extends HTMLAttributes {
+      'onClosed'?: (event: CustomEvent) => void;
       'share'?: WebSocialShareInput[];
       'show'?: boolean;
     }

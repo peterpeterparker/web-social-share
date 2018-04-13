@@ -10,8 +10,7 @@ import {WebSocialShareReddit} from '../../utils/web-social-share/web-social-shar
 
 @Component({
   tag: 'web-social-share-target',
-  styleUrl: 'web-social-share-target.scss',
-  shadow: true
+  styleUrl: 'web-social-share-target.scss'
 })
 export class WebSocialShareTarget {
 

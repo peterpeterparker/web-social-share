@@ -19,9 +19,13 @@ export class WebSocialShare {
     return (
       <div class={this.display ? 'web-social-share web-social-share-open' : 'web-social-share web-social-share-close'} onClick={() => this.hide()}>
         <div class='web-social-share-action-sheet'>
-          {this.share.map((shareInput: WebSocialShareInput) =>
-            <web-social-share-target share={shareInput}></web-social-share-target>
-          )}
+          <div class='web-social-share-action-sheet-container'>
+            <div class='web-social-share-action-sheet-group'>
+              {this.share.map((shareInput: WebSocialShareInput) =>
+                <web-social-share-target share={shareInput}></web-social-share-target>
+              )}
+            </div>
+          </div>
         </div>
       </div>
     );

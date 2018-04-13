@@ -8,21 +8,21 @@ import {WebSocialShareInput} from '../../types/web-social-share/web-social-share
 })
 export class WebSocialShare {
 
-  @Prop() display: boolean;
+  @Prop({ mutable: true }) display: boolean;
   @Prop() share: WebSocialShareInput[];
 
-  componentWillUpdate() {
-    console.log(this.share);
+  hide() {
+    this.display = false;
   }
 
   render() {
     return (
-      <div class={this.display ? 'web-social-share web-social-share-open' : 'web-social-share web-social-share-close'}>
-        Hello, World! I'm {this.display}
-
-        {this.share.map((shareInput: WebSocialShareInput) =>
-          <web-social-share-target share={shareInput}></web-social-share-target>
-        )}
+      <div class={this.display ? 'web-social-share web-social-share-open' : 'web-social-share web-social-share-close'} onClick={() => this.hide()}>
+        <div class='web-social-share-action-sheet'>
+          {this.share.map((shareInput: WebSocialShareInput) =>
+            <web-social-share-target share={shareInput}></web-social-share-target>
+          )}
+        </div>
       </div>
     );
   }

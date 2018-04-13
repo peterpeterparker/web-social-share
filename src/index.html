@@ -12,20 +12,20 @@
 </head>
 <body>
 
-  <web-social-share open="false"></web-social-share>
+  <web-social-share show="false"></web-social-share>
 
-  <input id="openWebSocialShare" value="Open" onclick="open(true);"/>
+  <input id="showWebSocialShare" value="Open" onclick="show(true);"/>
 
-  <input id="hideWebSocialShare" value="Hide" onclick="open(false);"/>
+  <input id="hideWebSocialShare" value="Hide" onclick="show(false);"/>
 
   <script type="text/javascript">
 
     // Show / hide
 
-    function open(openValue) {
+    function show(showValue) {
       const elem = document.getElementsByTagName('web-social-share');
       if (elem && elem.length > 0) {
-        elem[0].open = openValue;
+        elem[0].show = showValue;
       }
     }
 

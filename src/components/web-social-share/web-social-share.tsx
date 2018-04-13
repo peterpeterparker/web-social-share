@@ -10,7 +10,7 @@ export class WebSocialShare {
 
   @Element() el: HTMLElement;
 
-  @Prop({ mutable: true }) open: boolean;
+  @Prop({ mutable: true }) show: boolean;
   @Prop() share: WebSocialShareInput[];
 
   @Listen('selected')
@@ -21,18 +21,18 @@ export class WebSocialShare {
 
       setTimeout(() => {
         // Reflect css animation speed 400ms, see css
-        this.open = false;
+        this.show = false;
         element.classList.remove('web-social-share-transition-close');
       }, 400);
     } else {
       // Well we don't find the action sheet, we could mark it as not displayed
-      this.open = false;
+      this.show = false;
     }
   }
 
   render() {
     return (
-      <div class={this.open ? 'web-social-share web-social-share-open' : 'web-social-share web-social-share-close'}>
+      <div class={this.show ? 'web-social-share web-social-share-open' : 'web-social-share web-social-share-close'}>
         <div class='web-social-share-backdrop' onClick={() => this.hide()}></div>
 
         <div class='web-social-share-action-sheet'>

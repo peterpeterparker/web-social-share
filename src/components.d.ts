@@ -57,8 +57,8 @@ declare global {
 
 declare global {
   interface HTMLWebSocialShareElement extends HTMLStencilElement {
-    'display': boolean;
     'share': WebSocialShareInput[];
+    'show': boolean;
   }
   var HTMLWebSocialShareElement: {
     prototype: HTMLWebSocialShareElement;
@@ -77,8 +77,8 @@ declare global {
   }
   namespace JSXElements {
     export interface WebSocialShareAttributes extends HTMLAttributes {
-      'display'?: boolean;
       'share'?: WebSocialShareInput[];
+      'show'?: boolean;
     }
   }
 }

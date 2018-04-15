@@ -7,18 +7,59 @@
   <meta name="description" content="A Web Component to share urls, content and images on social networks">
   <meta name="author" content="David Dal Busco">
 
-  <script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js" integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+" crossorigin="anonymous"></script>
-
   <script src="/build/websocialshare.js"></script>
+
+  <link rel="stylesheet" href="assets/css/theme.css">
 
 </head>
 <body>
 
+<header>
+  <div class="collapse bg-dark" id="navbarHeader">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-8 col-md-7 py-4">
+          <h4 class="text-white">About</h4>
+          <p class="text-muted">The purpose of this project is to let users of <a href="https://fluster.io" class="text-white">Fluster</a>, using the PWA version of the app, share their rooms rental on social networks. This web component is published on <a href="https://github.com/peterpeterparker/web-social-share" class="text-white">Github</a> under license MIT © <a href="mailto:david.dalbusco@outlook.com" class="text-white">David Dal Busco</a></p>
+        </div>
+        <div class="col-sm-4 offset-md-1 py-4">
+          <h4 class="text-white">Contact</h4>
+          <ul class="list-unstyled">
+            <li><a href="http://twitter.com/daviddalbusco" class="text-white">Twitter</a></li>
+            <li><a href="https://github.com/peterpeterparker/web-photo-filter" class="text-white">Github</a></li>
+            <li><a href="mailto:david.dalbusco@outlook.com" class="text-white">Email me</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="navbar navbar-dark bg-dark box-shadow">
+    <div class="container d-flex justify-content-between">
+      <a href="#" class="navbar-brand d-flex align-items-center">
+        <strong>Web Social Share</strong>
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main role="main">
+
+  <section class="jumbotron text-center">
+    <div class="container">
+      <h1 class="jumbotron-heading">Web Social Share</h1>
+      <p class="lead text-muted">Web Social Share is a web component to share urls, content and images on social networks. The component could be integrated in the most popular frontend frameworks</p>
+      <p>
+        <button id="showWebSocialShare" type="button" class="btn btn-primary" onclick="show(true);"><i class="fas fa-share-alt"></i> GIVE A TRY</button>
+      </p>
+    </div>
+  </section>
+
+</main>
+
   <web-social-share show="false"></web-social-share>
-
-  <input id="showWebSocialShare" value="Open" onclick="show(true);"/>
-
-  <input id="hideWebSocialShare" value="Hide" onclick="show(false);"/>
 
   <script type="text/javascript">
 
@@ -73,6 +114,12 @@
       }
     });
   </script>
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+  <script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js" integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+" crossorigin="anonymous"></script>
 
 </body>
 </html>

@@ -51,9 +51,9 @@ web-social-share {
 
       background-color: black;
 
-      z-index: 1;
-      -webkit-transform: translate3d(0, 0, 1px);
-      transform: translate3d(0, 0, 1px);
+      z-index: 2;
+      -webkit-transform: translate3d(0, 0, 2px);
+      transform: translate3d(0, 0, 2px);
 
       left: 0;
       top: 0;
@@ -72,9 +72,9 @@ web-social-share {
       margin: auto;
       position: absolute;
 
-      z-index: 2;
-      -webkit-transform: translate3d(0, 0, 2px);
-      transform: translate3d(0, 0, 2px);
+      z-index: 10;
+      -webkit-transform: translate3d(0, 0, 10px);
+      transform: translate3d(0, 0, 10px);
 
       width: 100%;
       max-width: 500px;

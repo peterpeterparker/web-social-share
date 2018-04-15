@@ -1,4 +1,8 @@
-export interface WebSocialShareAttributes {
+export interface WebSocialShareDisplayAttributes {
+  iconStyleclass?: string;
+}
+
+export interface WebSocialShareAttributes extends WebSocialShareDisplayAttributes {
   socialSharePopupWidth?: number;
   socialSharePopupHeight?: number;
 
@@ -41,7 +45,7 @@ export interface WebSocialShareRedditAttributes extends WebSocialShareWithTextAt
   socialShareSubreddit?: string;
 }
 
-export interface WebSocialShareEmailAttributes {
+export interface WebSocialShareEmailAttributes extends WebSocialShareDisplayAttributes {
   socialShareTo?: string;
   socialShareBody?: string;
   socialShareSubject?: string;

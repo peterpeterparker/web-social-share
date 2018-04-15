@@ -22,7 +22,7 @@ web-social-share {
 
         div.web-social-share-action-sheet-container {
           div.web-social-share-action-sheet-group {
-            height: 100px;
+            height: 70px;
           }
         }
       }
@@ -88,8 +88,9 @@ web-social-share {
 
         div.web-social-share-action-sheet-group {
           background-color: #fafafa;
+
           display: flex;
-          flex-flow: column;
+          justify-content: center;
 
           height: 0;
 

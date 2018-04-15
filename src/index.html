@@ -7,6 +7,8 @@
   <meta name="description" content="A Web Component to share urls, content and images on social networks">
   <meta name="author" content="David Dal Busco">
 
+  <script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js" integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+" crossorigin="anonymous"></script>
+
   <script src="/build/websocialshare.js"></script>
 
 </head>
@@ -33,18 +35,32 @@
 
     const share = [{
       facebook: {
+        iconStyleclass: 'fab fa-facebook',
         socialShareUrl: 'https://fluster.io'
       }
     },{
       twitter: {
+        iconStyleclass: 'fab fa-twitter',
         socialShareUrl: 'https://fluster.io'
       }
     },{
       reddit: {
+        iconStyleclass: 'fab fa-reddit',
+        socialShareUrl: 'https://fluster.io'
+      }
+    },{
+      linkedin: {
+        iconStyleclass: 'fab fa-linkedin',
+        socialShareUrl: 'https://fluster.io'
+      }
+    },{
+      pinterest: {
+        iconStyleclass: 'fab fa-pinterest',
         socialShareUrl: 'https://fluster.io'
       }
     },{
       email: {
+        iconStyleclass: 'fas fa-envelope',
         socialShareTo: 'david.dalbusco@outlook.com',
         socialShareBody: 'https://fluster.io'
       }

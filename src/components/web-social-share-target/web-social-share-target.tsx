@@ -7,6 +7,7 @@ import {WebSocialShareEmail} from '../../utils/web-social-share/web-social-share
 import {WebSocialShareLinkedin} from '../../utils/web-social-share/web-social-share-linkedin';
 import {WebSocialSharePinterest} from '../../utils/web-social-share/web-social-share-pinterest';
 import {WebSocialShareReddit} from '../../utils/web-social-share/web-social-share-reddit';
+import {WebSocialShareDisplayAttributes} from '../../types/web-social-share/web-social-share-attributes';
 
 @Component({
   tag: 'web-social-share-target',
@@ -51,27 +52,45 @@ export class WebSocialShareTarget {
   render() {
     if (this.share.facebook) {
       return (
-        <button onClick={() => this.handleFacebookShare()}>Share with Facebook</button>
+        <button onClick={() => this.handleFacebookShare()}>
+          {this.renderIcon(this.share.facebook)}
+          <p>Facebook</p>
+        </button>
       );
     } else if (this.share.twitter) {
       return (
-        <button onClick={() => this.handleTwitterShare()}>Share with Twitter</button>
+        <button onClick={() => this.handleTwitterShare()}>
+          {this.renderIcon(this.share.twitter)}
+          <p>Twitter</p>
+        </button>
       );
     } else if (this.share.email) {
       return (
-        <button onClick={() => this.handleEmailShare()}>Share with Email</button>
+        <button onClick={() => this.handleEmailShare()}>
+          {this.renderIcon(this.share.email)}
+          <p>Email</p>
+        </button>
       );
     } else if (this.share.linkedin) {
       return (
-        <button onClick={() => this.handleLinkedinShare()}>Share with Linkedin</button>
+        <button onClick={() => this.handleLinkedinShare()}>
+          {this.renderIcon(this.share.linkedin)}
+          <p>LinkedIn</p>
+        </button>
       );
     } else if (this.share.pinterest) {
       return (
-        <button onClick={() => this.handlePinterestShare()}>Share with Pinterest</button>
+        <button onClick={() => this.handlePinterestShare()}>
+          {this.renderIcon(this.share.pinterest)}
+          <p>Pinterest</p>
+        </button>
       );
     } else if (this.share.reddit) {
       return (
-        <button onClick={() => this.handleRedditShare()}>Share with Reddit</button>
+        <button onClick={() => this.handleRedditShare()}>
+          {this.renderIcon(this.share.reddit)}
+          <p>Reddit</p>
+        </button>
       );
     } else {
       return (
@@ -81,4 +100,16 @@ export class WebSocialShareTarget {
 
   }
 
-}
+  private renderIcon(displayAttributes: WebSocialShareDisplayAttributes) {
+    if (displayAttributes.iconStyleclass && displayAttributes.iconStyleclass !== '') {
+      return (
+        <i class={displayAttributes.iconStyleclass}></i>
+      );
+    } else {
+      return (
+        <span></span>
+      );
+    }
+  }
+
+  }

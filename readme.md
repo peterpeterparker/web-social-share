@@ -1,8 +1,8 @@
 # Web Social Share
 
-Web Social Share is a web component to share urls, content and images on social networks.
+Web Social Share is a web component to share urls, content and images on social networks
 
-The component will present a dialog which will contains the different sharing options you selected.
+The component will present a dialog which will contains the different sharing options you selected
 
 ## Installation
 
@@ -51,17 +51,17 @@ The Web Social Share Component could be use like following:
 
     <web-social-share [show]="true" [share]="options" (closed)="close()"></web-social-share>
 
-Both `show` and `share` are mandatory:
+Both `show` and `share` are mandatory.
 
 ### show
 
-Trigger the display or closing of the action sheet presenting the social-share options you have selected.
+Trigger the display or closing of the action sheet presenting the social-share options you have selected
 
 `show` is a **boolean** parameter
 
 ### share
 
-These are your share options. For details about them you could have a look to the interface `WebSocialShareInput` located under folder `src/types/web-social-share/`.
+These are your share options. For details about them you could have a look to the interface `WebSocialShareInput` located under folder `src/types/web-social-share/`
 
 `share` is a parameter of type **WebSocialShareInput**
 
@@ -118,7 +118,7 @@ The above showcase is the `www` folder of this project deployed in Firebase. If 
 
 ## Credits
 
-I didn't wanted to reinvent the wheel when it comes to the sharing actions themselves. Therefore I forked the features of [angular-socialshare](https://github.com/720kb/angular-socialshare). Kudos to [45kb](https://github.com/45kb)
+I didn't wanted to reinvent the wheel when it comes to the sharing actions themselves. Therefore I forked the features of [angular-socialshare](https://github.com/720kb/angular-socialshare). Kudos to [45kb](https://github.com/45kb) :+1:
 
 ## License
 

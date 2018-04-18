@@ -1,7 +1,7 @@
 import {Component, Event, EventEmitter, Prop} from '@stencil/core';
 
 import {WebSocialShareFacebook} from '../../utils/web-social-share/web-social-share-facebook';
-import {WebSocialShareInput} from '../../types/web-social-share/web-social-share-input';
+import {WebSocialShareInputConfig} from '../../types/web-social-share/web-social-share-input';
 import {WebSocialShareTwitter} from '../../utils/web-social-share/web-social-share-twitter';
 import {WebSocialShareEmail} from '../../utils/web-social-share/web-social-share-email';
 import {WebSocialShareLinkedin} from '../../utils/web-social-share/web-social-share-linkedin';
@@ -15,7 +15,8 @@ import {WebSocialShareDisplayAttributes} from '../../types/web-social-share/web-
 })
 export class WebSocialShareTarget {
 
-  @Prop() share: WebSocialShareInput;
+  @Prop() showNames: boolean = false;
+  @Prop() share: WebSocialShareInputConfig;
 
   @Event() selected: EventEmitter;
 
@@ -113,13 +114,13 @@ export class WebSocialShareTarget {
   }
 
   private renderName(brandName: string) {
-    if (this.share.hideNames) {
+    if (this.showNames) {
       return (
-        <span></span>
+        <p>{brandName}</p>
       );
     } else {
       return (
-        <p>{brandName}</p>
+        <span></span>
       );
     }
   }

@@ -7,13 +7,17 @@ import {
   WebSocialShareTwiterAttributes
 } from './web-social-share-attributes';
 
-export interface WebSocialShareInput {
-  hideNames?: boolean;
-
+export interface WebSocialShareInputConfig {
   facebook?: WebSocialShareFacebookAttributes;
   twitter?: WebSocialShareTwiterAttributes;
   email?: WebSocialShareEmailAttributes;
   linkedin?: WebSocialShareLinkedinAttributes;
   pinterest?: WebSocialSharePinterestAttributes;
   reddit?: WebSocialShareRedditAttributes;
+}
+
+export interface WebSocialShareInput {
+  showNames?: boolean;
+
+  config: WebSocialShareInputConfig[];
 }

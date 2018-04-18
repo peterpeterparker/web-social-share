@@ -25,11 +25,13 @@ declare global {
 
 import {
   WebSocialShareInput,
+  WebSocialShareInputConfig,
 } from './types/web-social-share/web-social-share-input';
 
 declare global {
   interface HTMLWebSocialShareTargetElement extends HTMLStencilElement {
-    'share': WebSocialShareInput;
+    'share': WebSocialShareInputConfig;
+    'showNames': boolean;
   }
   var HTMLWebSocialShareTargetElement: {
     prototype: HTMLWebSocialShareTargetElement;
@@ -49,7 +51,8 @@ declare global {
   namespace JSXElements {
     export interface WebSocialShareTargetAttributes extends HTMLAttributes {
       'onSelected'?: (event: CustomEvent) => void;
-      'share'?: WebSocialShareInput;
+      'share'?: WebSocialShareInputConfig;
+      'showNames'?: boolean;
     }
   }
 }
@@ -57,7 +60,7 @@ declare global {
 
 declare global {
   interface HTMLWebSocialShareElement extends HTMLStencilElement {
-    'share': WebSocialShareInput[];
+    'share': WebSocialShareInput;
     'show': boolean;
   }
   var HTMLWebSocialShareElement: {
@@ -78,7 +81,7 @@ declare global {
   namespace JSXElements {
     export interface WebSocialShareAttributes extends HTMLAttributes {
       'onClosed'?: (event: CustomEvent) => void;
-      'share'?: WebSocialShareInput[];
+      'share'?: WebSocialShareInput;
       'show'?: boolean;
     }
   }

@@ -79,38 +79,40 @@
 
     // Share options
 
-    const share = [{
-      facebook: {
-        iconStyleclass: 'fab fa-facebook',
-        socialShareUrl: 'https://fluster.io'
-      }
-    },{
-      twitter: {
-        iconStyleclass: 'fab fa-twitter',
-        socialShareUrl: 'https://fluster.io'
-      }
-    },{
-      reddit: {
-        iconStyleclass: 'fab fa-reddit',
-        socialShareUrl: 'https://fluster.io'
-      }
-    },{
-      linkedin: {
-        iconStyleclass: 'fab fa-linkedin',
-        socialShareUrl: 'https://fluster.io'
-      }
-    },{
-      pinterest: {
-        iconStyleclass: 'fab fa-pinterest',
-        socialShareUrl: 'https://fluster.io'
-      }
-    },{
-      email: {
-        iconStyleclass: 'fas fa-envelope',
-        socialShareTo: 'david.dalbusco@outlook.com',
-        socialShareBody: 'https://fluster.io'
-      }
-    }];
+    const share = {
+      config: [{
+        facebook: {
+          iconStyleclass: 'fab fa-facebook',
+          socialShareUrl: 'https://fluster.io'
+        }
+      },{
+        twitter: {
+          iconStyleclass: 'fab fa-twitter',
+          socialShareUrl: 'https://fluster.io'
+        }
+      },{
+        reddit: {
+          iconStyleclass: 'fab fa-reddit',
+          socialShareUrl: 'https://fluster.io'
+        }
+      },{
+        linkedin: {
+          iconStyleclass: 'fab fa-linkedin',
+          socialShareUrl: 'https://fluster.io'
+        }
+      },{
+        pinterest: {
+          iconStyleclass: 'fab fa-pinterest',
+          socialShareUrl: 'https://fluster.io'
+        }
+      },{
+        email: {
+          iconStyleclass: 'fas fa-envelope',
+          socialShareTo: 'david.dalbusco@outlook.com',
+          socialShareBody: 'https://fluster.io'
+        }
+      }]
+    };
 
     document.addEventListener("DOMContentLoaded", function(event) {
       const elem = document.getElementsByTagName('web-social-share');

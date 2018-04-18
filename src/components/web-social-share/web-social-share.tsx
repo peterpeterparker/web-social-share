@@ -1,5 +1,5 @@
 import {Component, Element, Event, EventEmitter, Listen, Prop} from '@stencil/core';
-import {WebSocialShareInput} from '../../types/web-social-share/web-social-share-input';
+import {WebSocialShareInput, WebSocialShareInputConfig} from '../../types/web-social-share/web-social-share-input';
 
 @Component({
   tag: 'web-social-share',
@@ -12,7 +12,7 @@ export class WebSocialShare {
   @Event() closed: EventEmitter;
 
   @Prop({ mutable: true }) show: boolean;
-  @Prop() share: WebSocialShareInput[] = new Array();
+  @Prop() share: WebSocialShareInput;
 
   @Listen('selected')
   hide() {
@@ -42,8 +42,8 @@ export class WebSocialShare {
         <div class='web-social-share-action-sheet'>
           <div class='web-social-share-action-sheet-container'>
             <div class='web-social-share-action-sheet-group'>
-              {this.share.map((shareInput: WebSocialShareInput) =>
-                <web-social-share-target share={shareInput}></web-social-share-target>
+              {this.share.config.map((config: WebSocialShareInputConfig) =>
+                <web-social-share-target showNames={this.share.showNames} share={config}></web-social-share-target>
               )}
             </div>
           </div>

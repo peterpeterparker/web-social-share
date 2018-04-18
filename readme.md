@@ -4,6 +4,12 @@ Web Social Share is a web component to share urls and content on social networks
 
 The component will present a dialog which will contains the different sharing options you selected
 
+## Goals
+
+The idea behind this web component was to add a "social share" feature to the progressive web app (pwa) version of my project [Fluster](https://fluster.io).
+
+Furthermore, I thought that using and building an action sheet to do so would be user friendly.
+
 ## Installation
 
     $ npm install web-social-share

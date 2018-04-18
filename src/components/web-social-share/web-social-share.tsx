@@ -12,7 +12,7 @@ export class WebSocialShare {
   @Event() closed: EventEmitter;
 
   @Prop({ mutable: true }) show: boolean;
-  @Prop() share: WebSocialShareInput[];
+  @Prop() share: WebSocialShareInput[] = new Array();
 
   @Listen('selected')
   hide() {

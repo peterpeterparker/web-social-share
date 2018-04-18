@@ -23,31 +23,66 @@ declare global {
   interface HTMLAttributes {}
 }
 
+import {
+  WebSocialShareInput,
+  WebSocialShareInputConfig,
+} from './types/web-social-share/web-social-share-input';
 
 declare global {
-  interface HTMLMyComponentElement extends HTMLStencilElement {
-    'first': string;
-    'last': string;
+  interface HTMLWebSocialShareTargetElement extends HTMLStencilElement {
+    'displayNames': boolean;
+    'share': WebSocialShareInputConfig;
   }
-  var HTMLMyComponentElement: {
-    prototype: HTMLMyComponentElement;
-    new (): HTMLMyComponentElement;
+  var HTMLWebSocialShareTargetElement: {
+    prototype: HTMLWebSocialShareTargetElement;
+    new (): HTMLWebSocialShareTargetElement;
   };
   interface HTMLElementTagNameMap {
-    'my-component': HTMLMyComponentElement;
+    'web-social-share-target': HTMLWebSocialShareTargetElement;
   }
   interface ElementTagNameMap {
-    'my-component': HTMLMyComponentElement;
+    'web-social-share-target': HTMLWebSocialShareTargetElement;
   }
   namespace JSX {
     interface IntrinsicElements {
-      'my-component': JSXElements.MyComponentAttributes;
+      'web-social-share-target': JSXElements.WebSocialShareTargetAttributes;
     }
   }
   namespace JSXElements {
-    export interface MyComponentAttributes extends HTMLAttributes {
-      'first'?: string;
-      'last'?: string;
+    export interface WebSocialShareTargetAttributes extends HTMLAttributes {
+      'displayNames'?: boolean;
+      'onSelected'?: (event: CustomEvent) => void;
+      'share'?: WebSocialShareInputConfig;
+    }
+  }
+}
+
+
+declare global {
+  interface HTMLWebSocialShareElement extends HTMLStencilElement {
+    'share': WebSocialShareInput;
+    'show': boolean;
+  }
+  var HTMLWebSocialShareElement: {
+    prototype: HTMLWebSocialShareElement;
+    new (): HTMLWebSocialShareElement;
+  };
+  interface HTMLElementTagNameMap {
+    'web-social-share': HTMLWebSocialShareElement;
+  }
+  interface ElementTagNameMap {
+    'web-social-share': HTMLWebSocialShareElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      'web-social-share': JSXElements.WebSocialShareAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface WebSocialShareAttributes extends HTMLAttributes {
+      'onClosed'?: (event: CustomEvent) => void;
+      'share'?: WebSocialShareInput;
+      'show'?: boolean;
     }
   }
 }

@@ -1,78 +1,149 @@
-![Built With Stencil](https://img.shields.io/badge/-Built%20With%20Stencil-16161d.svg?logo=data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE5LjIuMSwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPgo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IgoJIHZpZXdCb3g9IjAgMCA1MTIgNTEyIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA1MTIgNTEyOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI%2BCjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI%2BCgkuc3Qwe2ZpbGw6I0ZGRkZGRjt9Cjwvc3R5bGU%2BCjxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik00MjQuNywzNzMuOWMwLDM3LjYtNTUuMSw2OC42LTkyLjcsNjguNkgxODAuNGMtMzcuOSwwLTkyLjctMzAuNy05Mi43LTY4LjZ2LTMuNmgzMzYuOVYzNzMuOXoiLz4KPHBhdGggY2xhc3M9InN0MCIgZD0iTTQyNC43LDI5Mi4xSDE4MC40Yy0zNy42LDAtOTIuNy0zMS05Mi43LTY4LjZ2LTMuNkgzMzJjMzcuNiwwLDkyLjcsMzEsOTIuNyw2OC42VjI5Mi4xeiIvPgo8cGF0aCBjbGFzcz0ic3QwIiBkPSJNNDI0LjcsMTQxLjdIODcuN3YtMy42YzAtMzcuNiw1NC44LTY4LjYsOTIuNy02OC42SDMzMmMzNy45LDAsOTIuNywzMC43LDkyLjcsNjguNlYxNDEuN3oiLz4KPC9zdmc%2BCg%3D%3D&colorA=16161d&style=flat-square)
+# Web Social Share
 
-# Stencil Component Starter
+Web Social Share is a web component to share urls and content on social networks
 
-This is a starter project for building a standalone Web Component using Stencil.
+The component will present a dialog which will contains the different sharing options you selected
 
-Stencil is also great for building entire apps. For that, use the [stencil-app-starter](https://github.com/ionic-team/stencil-app-starter) instead.
+## Goals
 
-# Stencil
+The idea behind this web component was to add a "social share" feature to the progressive web app (pwa) version of my project [Fluster](https://fluster.io).
 
-Stencil is a compiler for building fast web apps using Web Components.
+Furthermore, I thought that using and building an action sheet to do so would be user friendly.
 
-Stencil combines the best concepts of the most popular frontend frameworks into a compile-time rather than run-time tool.  Stencil takes TypeScript, JSX, a tiny virtual DOM layer, efficient one-way data binding, an asynchronous rendering pipeline (similar to React Fiber), and lazy-loading out of the box, and generates 100% standards-based Web Components that run in any browser supporting the Custom Elements v1 spec.
+## Installation
 
-Stencil components are just Web Components, so they work in any major framework or with no framework at all.
+    $ npm install web-social-share
+
+### Installation in a Ionic project
+
+After having installed the library, proceed with following steps:
+
+1. In the module where you would like to use the component, import and add `CUSTOM_ELEMENTS_SCHEMA` to your list of schemas
+
+        @NgModule({
+            declarations: [
+                MyPage
+            ],
+            imports: [
+                IonicPageModule.forChild(MyPage)
+            ],
+            schemas: [CUSTOM_ELEMENTS_SCHEMA]
+        })
+        export class MyPageModule {
+        }
+        
+2. In `app.modules` (the main module of your app), import the component. As far as I understood, web component built with Stencil inherit Lazy Loading, therefore, no worries about effect on your boot time
+
+         import 'web-social-share';
+         
+3. The web component installed under node_modules not gonna be automatically included in the vendor.js bundle. Therefore it need a tricks to be copied. To do so, create a local custom `copy.config.js` (which gonna be processed as another config of [ionic-app-scripts](https://github.com/ionic-team/ionic-app-scripts/blob/master/config/copy.config.js)) and add the following block
+
+       module.exports = {
+         copyWebSocialShare: {
+           src: ['{{ROOT}}/node_modules/web-social-share/dist/websocialshare**/*'],
+           dest: '{{BUILD}}'
+         }
+       } 
+
+Don't forget to also update your `package.json` in order to use your local modified `copy.config.js` file
+
+        "config": {
+            "ionic_copy": "./scripts/copy.config.js"
+          }
 
 ## Getting Started
 
-To start building a new web component using Stencil, clone this repo to a new directory:
+The Web Social Share Component could be use like following:
 
-```bash
-git clone https://github.com/ionic-team/stencil-component-starter.git my-component
-cd my-component
-git remote rm origin
-```
+    <web-social-share [show]="true" [share]="options" (closed)="close()"></web-social-share>
 
-and run:
+Both `show` and `share` are mandatory.
 
-```bash
-npm install
-npm start
-```
+### show
 
-To watch for file changes during develop, run:
+Trigger the display or closing of the action sheet presenting the social-share options you have selected
 
-```bash
-npm run dev
-```
+`show` is a **boolean** parameter
 
-To build the component for production, run:
+### share
 
-```bash
-npm run build
-```
+These are your share options. For details about them you could have a look to the interface `WebSocialShareInput` located under folder `src/types/web-social-share/`
 
-To run the unit tests for the components, run:
+`share` is a parameter of type **WebSocialShareInput**
 
-```bash
-npm test
-```
+#### Example
 
-Need help? Check out our docs [here](https://stenciljs.com/docs/my-first-component).
+For example, if you would like to allow your users to share a website thru Facebook and Twitter, you could define basic options like following:
 
+    const share = {
+        config: [{
+              facebook: {
+                socialShareUrl: 'https://fluster.io'
+              }
+            },{
+              twitter: {
+                socialShareUrl: 'https://fluster.io'
+              }
+            }
+        }]
+    };
 
-## Naming Components
+If you would like to display the action default name, you could extend your configuration like the following: 
 
-When creating new component tags, we recommend _not_ using `stencil` in the component name (ex: `<stencil-datepicker>`). This is because the generated component has little to nothing to do with Stencil; it's just a web component!
+    const share = {
+        displayNames: true,
+        config: [{
+              facebook: {
+                socialShareUrl: 'https://fluster.io'
+              }
+            },{
+              twitter: {
+                socialShareUrl: 'https://fluster.io'
+              }
+            }
+        }]
+    };
+    
+#### Vanilla JS
 
-Instead, use a prefix that fits your company or any name for a group of related components. For example, all of the Ionic generated web components use the prefix `ion`.
+For an example of Vanilla JS use, you could have a look to the `index.html` demo located in this repo under folder `src`
 
+## Theming
 
-## Using this component
+This Web Component is roughly styled, it is up to you to theme it with your custom `CSS`. I thought it was better to do it like this in order to have a lightweight web component which doesn't force user to follow one style guideline.
 
-### Script tag
+However, you could provide an `icon style class` for each sharing option which gonna be displayed above the social-network name.
 
-- [Publish to NPM](https://docs.npmjs.com/getting-started/publishing-npm-packages)
-- Put a script tag similar to this `<script src='https://unpkg.com/my-component@0.0.1/dist/mycomponent.js'></script>` in the head of your index.html
-- Then you can use the element anywhere in your template, JSX, html etc
+### Example
 
-### Node Modules
-- Run `npm install my-component --save`
-- Put a script tag similar to this `<script src='node_modules/my-component/dist/mycomponent.js'></script>` in the head of your index.html
-- Then you can use the element anywhere in your template, JSX, html etc
+Let's say I'm using `Font Awesome 5` and I would like to provide an icon for the social share options I describe above. This could be achieved easily like the following:
 
-### In a stencil-starter app
-- Run `npm install my-component --save`
-- Add `{ name: 'my-component' }` to your [collections](https://github.com/ionic-team/stencil-starter/blob/master/stencil.config.js#L5)
-- Then you can use the element anywhere in your template, JSX, html etc
+    
+    const share = [{
+          facebook: {
+            iconStyleclass: 'fab fa-facebook',
+            socialShareUrl: 'https://fluster.io'
+          }
+        },{
+          twitter: {
+            iconStyleclass: 'fab fa-twitter',
+            socialShareUrl: 'https://fluster.io'
+          }
+        }
+    }];
+
+Of course, if you provide icon style class, it's up to you to load images or libraries like Font Awesome in your app.
+
+## Showcase
+
+A showcase is available at [https://web-social-share.firebaseapp.com](https://web-social-share.firebaseapp.com)  
+
+The above showcase is the `www` folder of this project deployed in Firebase. If you clone the repository you could run it locally using `npm start`
+
+## Credits
+
+I didn't wanted to reinvent the wheel when it comes to the sharing actions themselves. Therefore I forked the features of [angular-socialshare](https://github.com/720kb/angular-socialshare). Kudos to [45kb](https://github.com/45kb) :+1:
+
+## License
+
+MIT © [David Dal Busco](mailto:david.dalbusco@outlook.com)

@@ -1,14 +1,23 @@
 {
-  "name": "my-component",
-  "version": "0.0.1",
-  "description": "Stencil Component Starter",
-  "main": "dist/mycomponent.js",
+  "name": "web-social-share",
+  "version": "1.0.0",
+  "description": "A Web Component to share urls and content on social networks",
+  "keywords": [
+    "social",
+    "share",
+    "facebook",
+    "instagram",
+    "twitter"
+  ],
+  "main": "dist/websocialshare.js",
   "types": "dist/types/index.d.ts",
   "collection": "dist/collection/collection-manifest.json",
   "files": [
-    "dist/"
+    "dist/",
+    "readme.md",
+    "LICENSE"
   ],
-  "browser": "dist/mycomponent.js",
+  "browser": "dist/websocialshare.js",
   "scripts": {
     "build": "stencil build",
     "dev": "sd concurrent \"stencil build --dev --watch\" \"stencil-dev-server\" ",
@@ -19,22 +28,23 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "@stencil/core": "0.7.7",
+    "@stencil/core": "^0.7.20",
     "@stencil/dev-server": "latest",
+    "@stencil/sass": "0.0.3",
     "@stencil/utils": "latest",
-    "@types/jest": "^21.1.1",
+    "@types/jest": "^21.1.10",
     "jest": "^21.2.1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ionic-team/stencil-component-starter.git"
+    "url": "git+https://github.com/peterpeterparker/web-social-share.git"
   },
-  "author": "Ionic Team",
+  "author": "David Dal Busco",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ionic-team/stencil"
+    "url": "https://github.com/peterpeterparker/web-social-share"
   },
-  "homepage": "https://github.com/ionic-team/stencil",
+  "homepage": "https://github.com/peterpeterparker/web-social-share",
   "jest": {
     "transform": {
       "^.+\\.(ts|tsx)$": "<rootDir>/node_modules/@stencil/core/testing/jest.preprocessor.js"

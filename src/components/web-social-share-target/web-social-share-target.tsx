@@ -54,42 +54,42 @@ export class WebSocialShareTarget {
       return (
         <button onClick={() => this.handleFacebookShare()}>
           {this.renderIcon(this.share.facebook)}
-          <p>Facebook</p>
+          {this.renderName('Facebook')}
         </button>
       );
     } else if (this.share.twitter) {
       return (
         <button onClick={() => this.handleTwitterShare()}>
           {this.renderIcon(this.share.twitter)}
-          <p>Twitter</p>
+          {this.renderName('Twitter')}
         </button>
       );
     } else if (this.share.email) {
       return (
         <button onClick={() => this.handleEmailShare()}>
           {this.renderIcon(this.share.email)}
-          <p>Email</p>
+          {this.renderName('Email')}
         </button>
       );
     } else if (this.share.linkedin) {
       return (
         <button onClick={() => this.handleLinkedinShare()}>
           {this.renderIcon(this.share.linkedin)}
-          <p>LinkedIn</p>
+          {this.renderName('Linkedin')}
         </button>
       );
     } else if (this.share.pinterest) {
       return (
         <button onClick={() => this.handlePinterestShare()}>
           {this.renderIcon(this.share.pinterest)}
-          <p>Pinterest</p>
+          {this.renderName('Pinterest')}
         </button>
       );
     } else if (this.share.reddit) {
       return (
         <button onClick={() => this.handleRedditShare()}>
           {this.renderIcon(this.share.reddit)}
-          <p>Reddit</p>
+          {this.renderName('Reddit')}
         </button>
       );
     } else {
@@ -112,4 +112,17 @@ export class WebSocialShareTarget {
     }
   }
 
+  private renderName(brandName: string) {
+    if (this.share.hideNames) {
+      return (
+        <span></span>
+      );
+    } else {
+      return (
+        <p>{brandName}</p>
+      );
+    }
   }
+
+
+}

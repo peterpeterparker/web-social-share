@@ -8,6 +8,8 @@ import {
 } from './web-social-share-attributes';
 
 export interface WebSocialShareInput {
+  hideNames?: boolean;
+
   facebook?: WebSocialShareFacebookAttributes;
   twitter?: WebSocialShareTwiterAttributes;
   email?: WebSocialShareEmailAttributes;

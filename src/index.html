@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
   <title>Web Social Share</title>
-  <meta name="description" content="A Web Component to share urls, content and images on social networks">
+  <meta name="description" content="A Web Component to share urls and content on social networks">
   <meta name="author" content="David Dal Busco">
 
   <script src="/build/websocialshare.js"></script>
@@ -84,7 +84,7 @@
   <section class="jumbotron text-center">
     <div class="container">
       <h1 class="jumbotron-heading">Web Social Share</h1>
-      <p class="lead text-muted">Web Social Share is a web component to share urls, content and images on social networks. The component could be integrated in the most popular frontend frameworks</p>
+      <p class="lead text-muted">Web Social Share is a web component to share urls and content on social networks. The component could be integrated in the most popular frontend frameworks</p>
       <p>
         <button id="showWebSocialShare" type="button" class="btn btn-primary" onclick="show(true);"><i class="fas fa-share-alt"></i> GIVE A TRY</button>
       </p>
@@ -113,17 +113,23 @@
       config: [{
         facebook: {
           iconStyleclass: 'fab fa-facebook',
-          socialShareUrl: 'https://fluster.io'
+          socialShareUrl: 'https://fluster.io',
+          socialSharePopupWidth: '300px',
+          socialSharePopupHeight: '300px'
         }
       },{
         twitter: {
           iconStyleclass: 'fab fa-twitter',
-          socialShareUrl: 'https://fluster.io'
+          socialShareUrl: 'https://fluster.io',
+          socialSharePopupWidth: '300px',
+          socialSharePopupHeight: '400px'
         }
       },{
         reddit: {
           iconStyleclass: 'fab fa-reddit',
-          socialShareUrl: 'https://fluster.io'
+          socialShareUrl: 'https://fluster.io',
+          socialSharePopupWidth: '300px',
+          socialSharePopupHeight: '500px'
         }
       },{
         linkedin: {

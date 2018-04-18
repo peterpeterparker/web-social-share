@@ -42,13 +42,25 @@ export class WebSocialShare {
         <div class='web-social-share-action-sheet'>
           <div class='web-social-share-action-sheet-container'>
             <div class='web-social-share-action-sheet-group'>
-              {this.share.config.map((config: WebSocialShareInputConfig) =>
-                <web-social-share-target displayNames={this.share.displayNames} share={config}></web-social-share-target>
-              )}
+              {this.renderTagerts()}
             </div>
           </div>
         </div>
       </div>
     );
+  }
+
+  private renderTagerts() {
+    if (!this.share || !this.share.config) {
+      return (
+        <span></span>
+      );
+    } else {
+      return (
+        this.share.config.map((config: WebSocialShareInputConfig) =>
+          <web-social-share-target displayNames={this.share.displayNames} share={config}></web-social-share-target>
+        )
+      );
+    }
   }
 }

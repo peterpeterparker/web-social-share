@@ -26,7 +26,7 @@ export class WebSocialShare {
         element.classList.remove('web-social-share-transition-close');
 
         this.closed.emit(true);
-      }, 400);
+      }, 200);
     } else {
       // Well we don't find the action sheet, we could mark it as not displayed
       this.show = false;

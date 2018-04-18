@@ -22,7 +22,7 @@ web-social-share {
 
         div.web-social-share-action-sheet-container {
           div.web-social-share-action-sheet-group {
-            height: 70px;
+            height: 80px;
           }
         }
       }
@@ -96,7 +96,7 @@ web-social-share {
           height: 0;
 
           transition-timing-function: cubic-bezier(.36, .66, .04, 1);
-          transition: height 0.4s;
+          transition: height 0.2s;
         }
       }
     }

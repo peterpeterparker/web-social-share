@@ -69,16 +69,34 @@ These are your share options. For details about them you could have a look to th
 
 For example, if you would like to allow your users to share a website thru Facebook and Twitter, you could define basic options like following:
 
-    const share = [{
-          facebook: {
-            socialShareUrl: 'https://fluster.io'
-          }
-        },{
-          twitter: {
-            socialShareUrl: 'https://fluster.io'
-          }
-        }
-    }];
+    const share = {
+        config: [{
+              facebook: {
+                socialShareUrl: 'https://fluster.io'
+              }
+            },{
+              twitter: {
+                socialShareUrl: 'https://fluster.io'
+              }
+            }
+        }]
+    };
+
+If you would like to display the action default name, you could extend your configuration like the following: 
+
+    const share = {
+        displayNames: true,
+        config: [{
+              facebook: {
+                socialShareUrl: 'https://fluster.io'
+              }
+            },{
+              twitter: {
+                socialShareUrl: 'https://fluster.io'
+              }
+            }
+        }]
+    };
     
 #### Vanilla JS
 

@@ -43,7 +43,7 @@ export class WebSocialShare {
           <div class='web-social-share-action-sheet-container'>
             <div class='web-social-share-action-sheet-group'>
               {this.share.config.map((config: WebSocialShareInputConfig) =>
-                <web-social-share-target showNames={this.share.showNames} share={config}></web-social-share-target>
+                <web-social-share-target displayNames={this.share.displayNames} share={config}></web-social-share-target>
               )}
             </div>
           </div>

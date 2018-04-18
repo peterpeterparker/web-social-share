@@ -30,8 +30,8 @@ import {
 
 declare global {
   interface HTMLWebSocialShareTargetElement extends HTMLStencilElement {
+    'displayNames': boolean;
     'share': WebSocialShareInputConfig;
-    'showNames': boolean;
   }
   var HTMLWebSocialShareTargetElement: {
     prototype: HTMLWebSocialShareTargetElement;
@@ -50,9 +50,9 @@ declare global {
   }
   namespace JSXElements {
     export interface WebSocialShareTargetAttributes extends HTMLAttributes {
+      'displayNames'?: boolean;
       'onSelected'?: (event: CustomEvent) => void;
       'share'?: WebSocialShareInputConfig;
-      'showNames'?: boolean;
     }
   }
 }

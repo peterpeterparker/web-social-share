@@ -17,7 +17,7 @@ export interface WebSocialShareInputConfig {
 }
 
 export interface WebSocialShareInput {
-  showNames?: boolean;
+  displayNames?: boolean;
 
   config: WebSocialShareInputConfig[];
 }

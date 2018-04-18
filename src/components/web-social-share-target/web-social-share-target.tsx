@@ -15,7 +15,7 @@ import {WebSocialShareDisplayAttributes} from '../../types/web-social-share/web-
 })
 export class WebSocialShareTarget {
 
-  @Prop() showNames: boolean = false;
+  @Prop() displayNames: boolean = false;
   @Prop() share: WebSocialShareInputConfig;
 
   @Event() selected: EventEmitter;
@@ -114,7 +114,7 @@ export class WebSocialShareTarget {
   }
 
   private renderName(brandName: string) {
-    if (this.showNames) {
+    if (this.displayNames) {
       return (
         <p>{brandName}</p>
       );

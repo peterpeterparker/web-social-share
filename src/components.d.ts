@@ -29,10 +29,16 @@ import {
 } from './types/web-social-share/web-social-share-input';
 
 declare global {
-  interface HTMLWebSocialShareTargetElement extends HTMLStencilElement {
-    'displayNames': boolean;
-    'share': WebSocialShareInputConfig;
+
+  namespace StencilComponents {
+    interface WebSocialShareTarget {
+      'displayNames': boolean;
+      'share': WebSocialShareInputConfig;
+    }
   }
+
+  interface HTMLWebSocialShareTargetElement extends StencilComponents.WebSocialShareTarget, HTMLStencilElement {}
+
   var HTMLWebSocialShareTargetElement: {
     prototype: HTMLWebSocialShareTargetElement;
     new (): HTMLWebSocialShareTargetElement;
@@ -59,10 +65,16 @@ declare global {
 
 
 declare global {
-  interface HTMLWebSocialShareElement extends HTMLStencilElement {
-    'share': WebSocialShareInput;
-    'show': boolean;
+
+  namespace StencilComponents {
+    interface WebSocialShare {
+      'share': WebSocialShareInput;
+      'show': boolean;
+    }
   }
+
+  interface HTMLWebSocialShareElement extends StencilComponents.WebSocialShare, HTMLStencilElement {}
+
   var HTMLWebSocialShareElement: {
     prototype: HTMLWebSocialShareElement;
     new (): HTMLWebSocialShareElement;

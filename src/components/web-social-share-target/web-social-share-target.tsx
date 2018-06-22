@@ -53,42 +53,42 @@ export class WebSocialShareTarget {
   render() {
     if (this.share.facebook) {
       return (
-        <button onClick={() => this.handleFacebookShare()}>
+        <button onClick={() => this.handleFacebookShare()} class='web-social-share-button web-social-share-button-facebook'>
           {this.renderIcon(this.share.facebook)}
           {this.renderName('Facebook')}
         </button>
       );
     } else if (this.share.twitter) {
       return (
-        <button onClick={() => this.handleTwitterShare()}>
+        <button onClick={() => this.handleTwitterShare()} class='web-social-share-button web-social-share-button-twitter'>
           {this.renderIcon(this.share.twitter)}
           {this.renderName('Twitter')}
         </button>
       );
     } else if (this.share.email) {
       return (
-        <button onClick={() => this.handleEmailShare()}>
+        <button onClick={() => this.handleEmailShare()} class='web-social-share-button web-social-share-button-email'>
           {this.renderIcon(this.share.email)}
           {this.renderName('Email')}
         </button>
       );
     } else if (this.share.linkedin) {
       return (
-        <button onClick={() => this.handleLinkedinShare()}>
+        <button onClick={() => this.handleLinkedinShare()} class='web-social-share-button web-social-share-button-linkedin'>
           {this.renderIcon(this.share.linkedin)}
           {this.renderName('Linkedin')}
         </button>
       );
     } else if (this.share.pinterest) {
       return (
-        <button onClick={() => this.handlePinterestShare()}>
+        <button onClick={() => this.handlePinterestShare()} class='web-social-share-button web-social-share-button-pinterest'>
           {this.renderIcon(this.share.pinterest)}
           {this.renderName('Pinterest')}
         </button>
       );
     } else if (this.share.reddit) {
       return (
-        <button onClick={() => this.handleRedditShare()}>
+        <button onClick={() => this.handleRedditShare()} class='web-social-share-button web-social-share-button-reddit'>
           {this.renderIcon(this.share.reddit)}
           {this.renderName('Reddit')}
         </button>

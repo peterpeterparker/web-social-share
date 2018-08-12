@@ -9,7 +9,7 @@
     "instagram",
     "twitter"
   ],
-  "main": "dist/websocialshare.js",
+  "main": "dist/index.js",
   "types": "dist/types/index.d.ts",
   "collection": "dist/collection/collection-manifest.json",
   "files": [
@@ -17,7 +17,7 @@
     "readme.md",
     "LICENSE"
   ],
-  "browser": "dist/websocialshare.js",
+  "module": "dist/esm/index.js",
   "scripts": {
     "build": "stencil build",
     "dev": "sd concurrent \"stencil build --dev --watch\" \"stencil-dev-server\" ",
@@ -28,12 +28,14 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "@stencil/core": "^0.8.2",
+    "@stencil/core": "^0.11.4",
     "@stencil/dev-server": "latest",
-    "@stencil/sass": "0.0.5",
+    "@stencil/postcss": "^0.1.0",
+    "@stencil/sass": "0.1.0",
     "@stencil/utils": "latest",
-    "@types/jest": "^23.1.0",
-    "jest": "^23.1.0"
+    "@types/jest": "^23.3.1",
+    "autoprefixer": "^9.1.0",
+    "jest": "^23.5.0"
   },
   "repository": {
     "type": "git",

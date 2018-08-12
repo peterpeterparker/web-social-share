@@ -14,9 +14,13 @@ Furthermore, I thought that using and building an action sheet to do so would be
 
     $ npm install web-social-share
 
-### Installation in a Ionic project
+### Installation in a Ionic v4 project
 
-After having installed the library, proceed with following steps:
+First of all notice that I wasn't able to integrate the library as described in the [Stencil documentation](https://stenciljs.com/docs/framework-integration)
+
+But, I was able to integrate the library in an Ionic v4 app as described below
+
+After having installed the library, proceed then with following steps:
 
 1. In the module where you would like to use the component, import and add `CUSTOM_ELEMENTS_SCHEMA` to your list of schemas
 
@@ -25,31 +29,34 @@ After having installed the library, proceed with following steps:
                 MyPage
             ],
             imports: [
-                IonicPageModule.forChild(MyPage)
+                CommonModule,
+                FormsModule,
+                IonicModule,
+                RouterModule.forChild(routes)
             ],
             schemas: [CUSTOM_ELEMENTS_SCHEMA]
         })
         export class MyPageModule {
         }
         
-2. In `app.modules` (the main module of your app), import the component. As far as I understood, web component built with Stencil inherit Lazy Loading, therefore, no worries about effect on your boot time
+2. In `index.html` import the component. As far as I understood, web component built with Stencil inherit Lazy Loading, therefore, no worries about effect on your boot time
 
-         import 'web-social-share';
+         <script async src="websocialshare.js"></script>
          
-3. The web component installed under node_modules not gonna be automatically included in the vendor.js bundle. Therefore it need a tricks to be copied. To do so, create a local custom `copy.config.js` (which gonna be processed as another config of [ionic-app-scripts](https://github.com/ionic-team/ionic-app-scripts/blob/master/config/copy.config.js)) and add the following block
+3. Finally add the following to your `assets` configuration in your `angular.json` files in oder to include the component in your bundle
 
-       module.exports = {
-         copyWebSocialShare: {
-           src: ['{{ROOT}}/node_modules/web-social-share/dist/websocialshare**/*'],
-           dest: '{{BUILD}}'
-         }
-       } 
-
-Don't forget to also update your `package.json` in order to use your local modified `copy.config.js` file
-
-        "config": {
-            "ionic_copy": "./scripts/copy.config.js"
-          }
+       "assets": [
+           {
+             "glob": "websocialshare.js",
+             "input": "node_modules/web-social-share/dist",
+             "output": "./"
+           },
+           {
+             "glob": "websocialshare/*",
+             "input": "node_modules/web-social-share/dist",
+             "output": "./"
+           }
+       ]
 
 ## Getting Started
 

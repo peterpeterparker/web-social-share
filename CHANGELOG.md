@@ -3,7 +3,8 @@
 
 ### Libs
 
-* update Stencil
+* update Stencil ([#2](https://github.com/fluster/web-social-share/issues/2))
+* target ES2017 ([#3](https://github.com/fluster/web-social-share/issues/3))
 
 <a name="2.0.0"></a>
 # [2.0.0](https://github.com/fluster/web-social-share/compare/v1.1.0...v2.0.0) (2018-08-12)

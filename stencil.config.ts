@@ -2,13 +2,18 @@ import { Config } from '@stencil/core';
 
 import { sass } from '@stencil/sass';
 import { postcss } from '@stencil/postcss';
-import * as autoprefixer from 'autoprefixer';
+import autoprefixer from 'autoprefixer';
 
 export const config: Config = {
   namespace: 'websocialshare',
-  outputTargets: [
-    {type: 'dist'},
-    {type: 'www'}
+  outputTargets:[
+    {
+      type: 'dist'
+    },
+    {
+      type: 'www',
+      serviceWorker: null
+    }
   ],
   plugins: [
     sass(),
@@ -16,9 +21,4 @@ export const config: Config = {
       plugins: [autoprefixer()]
     })
   ]
-};
-
-exports.devServer = {
-  root: 'www',
-  watchGlob: '**/**'
 };

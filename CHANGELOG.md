@@ -1,3 +1,10 @@
+<a name="2.1.0"></a>
+# [2.1.0](https://github.com/fluster/web-social-share/compare/v2.0.0...v2.1.0) (2018-08-19)
+
+### Libs
+
+* update Stencil
+
 <a name="2.0.0"></a>
 # [2.0.0](https://github.com/fluster/web-social-share/compare/v1.1.0...v2.0.0) (2018-08-12)
 

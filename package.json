@@ -1,6 +1,6 @@
 {
   "name": "web-social-share",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "A Web Component to share urls and content on social networks",
   "keywords": [
     "social",
@@ -28,13 +28,13 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "@stencil/core": "^0.11.4",
+    "@stencil/core": "^0.14.0",
     "@stencil/dev-server": "latest",
     "@stencil/postcss": "^0.1.0",
-    "@stencil/sass": "0.1.0",
+    "@stencil/sass": "0.1.1",
     "@stencil/utils": "latest",
-    "@types/jest": "^23.3.1",
-    "autoprefixer": "^9.1.0",
+    "@types/jest": "^23.3.5",
+    "autoprefixer": "^9.2.1",
     "jest": "^23.5.0"
   },
   "repository": {
@@ -46,7 +46,7 @@
   "bugs": {
     "url": "https://github.com/peterpeterparker/web-social-share"
   },
-  "homepage": "https://github.com/peterpeterparker/web-social-share",
+  "homepage": "https://websocialshare.com",
   "jest": {
     "transform": {
       "^.+\\.(ts|tsx)$": "<rootDir>/node_modules/@stencil/core/testing/jest.preprocessor.js"

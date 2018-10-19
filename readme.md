@@ -143,7 +143,7 @@ Of course, if you provide icon style class, it's up to you to load images or lib
 
 ## Showcase
 
-A showcase is available at [https://web-social-share.firebaseapp.com](https://web-social-share.firebaseapp.com)  
+A showcase is available at [https://websocialshare.com](https://websocialshare.com)  
 
 The above showcase is the `www` folder of this project deployed in Firebase. If you clone the repository you could run it locally using `npm start`
 

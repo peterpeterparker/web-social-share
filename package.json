@@ -39,12 +39,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/peterpeterparker/web-social-share.git"
+    "url": "git+https://github.com/fluster/web-social-share.git"
   },
   "author": "David Dal Busco",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/peterpeterparker/web-social-share"
+    "url": "https://github.com/fluster/web-social-share"
   },
   "homepage": "https://websocialshare.com",
   "jest": {

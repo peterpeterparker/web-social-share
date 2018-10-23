@@ -1,3 +1,10 @@
+<a name="2.1.3"></a>
+# [2.1.3](https://github.com/fluster/web-social-share/compare/v2.1.2...v2.1.3) (2018-08-23)
+
+### Fix
+
+* fix action sheet not closed on middle click ([#5]()https://github.com/fluster/web-social-share/issues/5)
+
 <a name="2.1.2"></a>
 # [2.1.2](https://github.com/fluster/web-social-share/compare/v2.1.1...v2.1.2) (2018-08-23)
 

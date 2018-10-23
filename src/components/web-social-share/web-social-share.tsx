@@ -42,7 +42,7 @@ export class WebSocialShare {
         <div class='web-social-share-action-sheet'>
           <div class='web-social-share-action-sheet-container'>
             <div class='web-social-share-action-sheet-group'>
-              {this.renderTagerts()}
+              {this.renderTargets()}
             </div>
           </div>
         </div>
@@ -50,7 +50,7 @@ export class WebSocialShare {
     );
   }
 
-  private renderTagerts() {
+  private renderTargets() {
     if (!this.share || !this.share.config) {
       return (
         <span></span>

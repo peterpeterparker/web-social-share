@@ -1,3 +1,10 @@
+<a name="2.1.1"></a>
+# [2.1.1](https://github.com/fluster/web-social-share/compare/v2.1.0...v2.1.1) (2018-08-23)
+
+### Fix
+
+* resolve build warning ([99a118428c3915379e5bf38b3301e3594174fb9f](https://github.com/fluster/web-social-share/commit/99a118428c3915379e5bf38b3301e3594174fb9f)))
+
 <a name="2.1.0"></a>
 # [2.1.0](https://github.com/fluster/web-social-share/compare/v2.0.0...v2.1.0) (2018-08-19)
 

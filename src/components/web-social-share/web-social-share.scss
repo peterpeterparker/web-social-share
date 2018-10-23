@@ -57,7 +57,7 @@ web-social-share {
 
       left: 0;
       top: 0;
-      position: absolute;
+      position: fixed;
       height: 100%;
       width: 100%;
     }
@@ -70,7 +70,8 @@ web-social-share {
       top: 0;
       bottom: 0;
       margin: auto;
-      position: absolute;
+      position: fixed;
+      z-index: 3;
 
       width: 100%;
       max-width: 500px;

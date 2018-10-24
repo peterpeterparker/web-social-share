@@ -1,9 +1,16 @@
+<a name="2.1.4"></a>
+# [2.1.4](https://github.com/fluster/web-social-share/compare/v2.1.3...v2.1.4) (2018-08-24)
+
+### Fix
+
+* fix Safari z-index ([92dc154](https://github.com/fluster/web-social-share/commit/92dc154d8246bd822fd324051b68ca935645c5c9)
+
 <a name="2.1.3"></a>
 # [2.1.3](https://github.com/fluster/web-social-share/compare/v2.1.2...v2.1.3) (2018-08-23)
 
 ### Fix
 
-* fix action sheet not closed on middle click ([#5]()https://github.com/fluster/web-social-share/issues/5)
+* fix action sheet not closed on middle click ([#5](https://github.com/fluster/web-social-share/issues/5))
 
 <a name="2.1.2"></a>
 # [2.1.2](https://github.com/fluster/web-social-share/compare/v2.1.1...v2.1.2) (2018-08-23)

@@ -72,6 +72,8 @@ web-social-share {
       margin: auto;
       position: fixed;
       z-index: 3;
+      -webkit-transform: translate3d(0, 0, 3px);
+      transform: translate3d(0, 0, 3px);
 
       width: 100%;
       max-width: 500px;

@@ -16,6 +16,10 @@ Furthermore, I thought that using and building an action sheet to do so would be
 ## Installation
 
     $ npm install web-social-share
+    
+For Ionic v3 projects, you must install version 1.1.0 instead.
+
+    $ npm install web-social-share@1.1.0
 
 ### Installation in a Ionic v4 project
 
@@ -61,6 +65,43 @@ After having installed the library, proceed then with following steps:
            }
        ]
 
+### Installation in a Ionic v3 project
+
+After having installed the library, proceed with following steps:
+
+1. In the module where you would like to use the component, import and add `CUSTOM_ELEMENTS_SCHEMA` to your list of schemas
+
+        @NgModule({
+            declarations: [
+                MyPage
+            ],
+            imports: [
+                IonicPageModule.forChild(MyPage)
+            ],
+            schemas: [CUSTOM_ELEMENTS_SCHEMA]
+        })
+        export class MyPageModule {
+        }
+
+2. In `app.modules` (the main module of your app), import the component. As far as I understood, web component built with Stencil inherit Lazy Loading, therefore, no worries about effect on your boot time
+
+         import 'web-social-share';
+         
+3. The web component installed under node_modules not gonna be automatically included in the vendor.js bundle. Therefore it need a tricks to be copied. To do so, create a local custom `copy.config.js` (which gonna be processed as another config of [ionic-app-scripts](https://github.com/ionic-team/ionic-app-scripts/blob/master/config/copy.config.js)) and add the following block
+
+       module.exports = {
+         copyWebSocialShare: {
+           src: ['{{ROOT}}/node_modules/web-social-share/dist/websocialshare**/*'],
+           dest: '{{BUILD}}'
+         }
+       } 
+
+Don't forget to also update your `package.json` in order to use your local modified `copy.config.js` file
+
+        "config": {
+            "ionic_copy": "./scripts/copy.config.js"
+          }
+
 ## Getting Started
 
 The Web Social Share Component could be use like following:
@@ -94,7 +135,6 @@ For example, if you would like to allow your users to share a website thru Faceb
               twitter: {
                 socialShareUrl: 'https://fluster.io'
               }
-            }
         }]
     };
 
@@ -110,7 +150,6 @@ If you would like to display the action default name, you could extend your conf
               twitter: {
                 socialShareUrl: 'https://fluster.io'
               }
-            }
         }]
     };
     

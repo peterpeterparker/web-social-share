@@ -17,7 +17,9 @@ Furthermore, I thought that using and building an action sheet to do so would be
 
     $ npm install web-social-share
     
-For Ionic v3 projects, you must install version 1.1.0 instead.
+### Ionic v3 support deprecated
+
+As of version 2.0.0, the component can't be bundled in Ionic v3 projects anymore, at least as far as I know. If you wish to use it such a project, stick to version 1.1.0 of the component.
 
     $ npm install web-social-share@1.1.0
 
@@ -67,7 +69,7 @@ After having installed the library, proceed then with following steps:
 
 ### Installation in a Ionic v3 project
 
-After having installed the library, proceed with following steps:
+After having installed the version 1.1.0 of the library, proceed with following steps:
 
 1. In the module where you would like to use the component, import and add `CUSTOM_ELEMENTS_SCHEMA` to your list of schemas
 

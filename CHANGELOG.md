@@ -1,3 +1,18 @@
+<a name="2.2.0"></a>
+# [2.2.0](https://github.com/fluster/web-social-share/compare/v2.1.4...v2.2.0) (2019-01-26)
+
+### Features
+
+* ability to customize / override rendered names ([#7](https://github.com/fluster/web-social-share/issues/7))
+
+### Website
+
+* a bit of styling and text editing on the `index.html` file for the website
+
+### Libs
+
+* update libs
+
 <a name="2.1.4"></a>
 # [2.1.4](https://github.com/fluster/web-social-share/compare/v2.1.3...v2.1.4) (2018-08-24)
 

@@ -7,6 +7,26 @@ The component will present a dialog which will contains the different sharing op
 [![GitHub](https://img.shields.io/badge/version-2.0.0-blue.svg)](https://github.com/fluster/web-social-share)
 [![npm](https://img.shields.io/npm/dm/web-social-share.svg)]()
 
+## Table of contents
+	- [Goals](#goals)
+	- [Installation](#installation)
+		- [Ionic v3 support deprecated](#ionic-v3-support-deprecated)
+		- [Installation in a Ionic v4 project](#installation-in-a-ionic-v4-project)
+		- [Installation in a Ionic v3 project](#installation-in-a-ionic-v3-project)
+	- [Getting Started](#getting-started)
+		- [show](#show)
+		- [share](#share)
+			- [Example](#example)
+			- [Vanilla JS](#vanilla-js)
+	- [Theming](#theming)
+		- [Icons style class](#icons-style-class)
+		- [Action sheet height](#action-sheet-height)
+		- [Slots](#slots)
+		- [Example](#example-1)
+	- [Showcase](#showcase)
+	- [Credits](#credits)
+	- [License](#license)
+
 ## Goals
 
 The idea behind this web component was to add a "social share" feature to the progressive web app (pwa) version of my project [Fluster](https://fluster.io).

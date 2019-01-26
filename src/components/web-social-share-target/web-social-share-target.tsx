@@ -137,5 +137,18 @@ export class WebSocialShareTarget {
     }
   }
 
+  hostData() {
+    return {
+      class: {
+        'web-social-share-facebook': this.share.facebook,
+        'web-social-share-twitter': this.share.twitter,
+        'web-social-share-email': this.share.email,
+        'web-social-share-linkedin': this.share.linkedin,
+        'web-social-share-pinterest': this.share.pinterest,
+        'web-social-share-reddit': this.share.reddit
+      }
+    }
+  }
+
 
 }

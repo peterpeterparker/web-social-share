@@ -14,6 +14,40 @@ export class WebSocialShare {
   @Prop({ mutable: true }) show: boolean;
   @Prop() share: WebSocialShareInput;
 
+  async componentDidLoad() {
+    await this.moveSlots();
+  }
+
+  private moveSlots(): Promise<void[]> {
+    const promises: Promise<void>[] = [];
+    promises.push(this.moveSlot('facebook'));
+    promises.push(this.moveSlot('twitter'));
+    promises.push(this.moveSlot('email'));
+    promises.push(this.moveSlot('linkedin'));
+    promises.push(this.moveSlot('pinterest'));
+    promises.push(this.moveSlot('reddit'));
+
+    return Promise.all(promises);
+  }
+
+  private moveSlot(name: string): Promise<void> {
+    return new Promise<void>((resolve) => {
+      const slot: HTMLElement = this.el.querySelector('[slot=\'' + name + '\']');
+
+      const element: HTMLWebSocialShareTargetElement = this.el.querySelector('web-social-share-target.web-social-share-'  + name);
+
+      if (element && slot) {
+        const button: HTMLButtonElement = element.querySelector('button');
+
+        if (button) {
+          button.prepend(slot);
+        }
+      }
+
+      resolve();
+    });
+  }
+
   @Listen('selected')
   hide() {
     let element: HTMLElement = this.el.querySelector('div.web-social-share');
@@ -46,6 +80,12 @@ export class WebSocialShare {
             </div>
           </div>
         </div>
+        <slot name="facebook"></slot>
+        <slot name="twitter"></slot>
+        <slot name="email"></slot>
+        <slot name="linkedin"></slot>
+        <slot name="pinterest"></slot>
+        <slot name="reddit"></slot>
       </div>
     );
   }

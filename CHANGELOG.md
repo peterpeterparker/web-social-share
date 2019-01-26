@@ -1,3 +1,10 @@
+<a name="3.0.1"></a>
+# [3.0.1](https://github.com/fluster/web-social-share/compare/v3.0.0...v3.0.1) (2019-01-26)
+
+### Fix
+
+* the move slot method might be executed before the sub-component is loaded ([#9](https://github.com/fluster/web-social-share/issues/9))
+
 <a name="3.0.0"></a>
 # [3.0.0](https://github.com/fluster/web-social-share/compare/v2.1.4...v3.0.0) (2019-01-26)
 

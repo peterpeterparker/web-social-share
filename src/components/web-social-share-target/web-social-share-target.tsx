@@ -67,42 +67,42 @@ export class WebSocialShareTarget {
       return (
         <button onClick={($event) => this.handleFacebookShare($event)} class='web-social-share-button web-social-share-button-facebook'>
           {this.renderIcon(this.share.facebook)}
-          {this.renderName('Facebook')}
+          {this.renderName(this.share.facebook, 'Facebook')}
         </button>
       );
     } else if (this.share.twitter) {
       return (
         <button onClick={($event) => this.handleTwitterShare($event)} class='web-social-share-button web-social-share-button-twitter'>
           {this.renderIcon(this.share.twitter)}
-          {this.renderName('Twitter')}
+          {this.renderName(this.share.twitter, 'Twitter')}
         </button>
       );
     } else if (this.share.email) {
       return (
         <button onClick={($event) => this.handleEmailShare($event)} class='web-social-share-button web-social-share-button-email'>
           {this.renderIcon(this.share.email)}
-          {this.renderName('Email')}
+          {this.renderName(this.share.email, 'Email')}
         </button>
       );
     } else if (this.share.linkedin) {
       return (
         <button onClick={($event) => this.handleLinkedinShare($event)} class='web-social-share-button web-social-share-button-linkedin'>
           {this.renderIcon(this.share.linkedin)}
-          {this.renderName('Linkedin')}
+          {this.renderName(this.share.linkedin, 'Linkedin')}
         </button>
       );
     } else if (this.share.pinterest) {
       return (
         <button onClick={($event) => this.handlePinterestShare($event)} class='web-social-share-button web-social-share-button-pinterest'>
           {this.renderIcon(this.share.pinterest)}
-          {this.renderName('Pinterest')}
+          {this.renderName(this.share.pinterest, 'Pinterest')}
         </button>
       );
     } else if (this.share.reddit) {
       return (
         <button onClick={($event) => this.handleRedditShare($event)} class='web-social-share-button web-social-share-button-reddit'>
           {this.renderIcon(this.share.reddit)}
-          {this.renderName('Reddit')}
+          {this.renderName(this.share.reddit, 'Reddit')}
         </button>
       );
     } else {
@@ -125,10 +125,10 @@ export class WebSocialShareTarget {
     }
   }
 
-  private renderName(brandName: string) {
+  private renderName(displayAttributes: WebSocialShareDisplayAttributes, defaultBrandName: string) {
     if (this.displayNames) {
       return (
-        <p>{brandName}</p>
+        <p>{displayAttributes && displayAttributes.brandName && displayAttributes.brandName !== '' ? displayAttributes.brandName : defaultBrandName}</p>
       );
     } else {
       return (

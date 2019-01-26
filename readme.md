@@ -176,9 +176,30 @@ For an example of Vanilla JS use, you could have a look to the `index.html` demo
 
 This Web Component is roughly styled, it is up to you to theme it with your custom `CSS`. I thought it was better to do it like this in order to have a lightweight web component which doesn't force user to follow one style guideline.
 
-However, you could provide an `icon style class` for each sharing option which gonna be displayed above the social-network name.
+### Icons style class
 
-Furthermore, per default, the displayed action sheet height is set to `80px`. Even if the component isn't for the above previous reason shadowed, if you wish, you could set your own height for the action sheet using the CSS4 variables `--web-social-share-height`. 
+You could provide an `icon style class` for each sharing option which gonna be displayed above the social-network name.
+
+### Action sheet height
+
+Per default, the displayed action sheet height is set to `80px`. Even if the component isn't for the above previous reason shadowed, if you wish, you could set your own height for the action sheet using the CSS4 variables `--web-social-share-height`.
+
+### Slots
+
+As of version `v3.0.0` of this Web Component, is it now possible to use `<slot/>` in order to inject your elements for the display of the actions's icons. Could be useful for example in case you would like to use [Ionicons](https://ionicons.com).
+
+    <web-social-share show="false">
+        <ion-icon name="logo-reddit" slot="reddit"></ion-icon>
+    </web-social-share>
+    
+    const share = [{
+          reddit: {
+            socialShareUrl: 'https://fluster.io',
+            socialSharePopupWidth: 300,
+            socialSharePopupHeight: 500
+          }
+        }
+    }];
 
 ### Example
 

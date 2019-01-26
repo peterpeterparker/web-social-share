@@ -178,6 +178,8 @@ This Web Component is roughly styled, it is up to you to theme it with your cust
 
 However, you could provide an `icon style class` for each sharing option which gonna be displayed above the social-network name.
 
+Furthermore, per default, the displayed action sheet height is set to `80px`. Even if the component isn't for the above previous reason shadowed, if you wish, you could set your own height for the action sheet using the CSS4 variables `--web-social-share-height`. 
+
 ### Example
 
 Let's say I'm using `Font Awesome 5` and I would like to provide an icon for the social share options I describe above. This could be achieved easily like the following:

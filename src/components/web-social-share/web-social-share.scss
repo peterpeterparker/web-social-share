@@ -22,7 +22,7 @@ web-social-share {
 
         div.web-social-share-action-sheet-container {
           div.web-social-share-action-sheet-group {
-            height: 80px;
+            height: var(--web-social-share-height, 80px);
           }
         }
       }

@@ -22,7 +22,8 @@ export namespace Components {
   }
   interface WebSocialShareTargetAttributes extends StencilHTMLAttributes {
     'displayNames'?: boolean;
-    'onSelected'?: (event: CustomEvent) => void;
+    'onSelected'?: (event: CustomEvent<void>) => void;
+    'onSocialShareLoaded'?: (event: CustomEvent<string>) => void;
     'share'?: WebSocialShareInputConfig;
   }
 

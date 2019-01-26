@@ -14,20 +14,13 @@ export class WebSocialShare {
   @Prop({ mutable: true }) show: boolean;
   @Prop() share: WebSocialShareInput;
 
-  async componentDidLoad() {
-    await this.moveSlots();
-  }
+  @Listen('socialShareLoaded')
+  async moveSlotOnLoad(event: CustomEvent) {
+    if (!event || !event.detail) {
+      return;
+    }
 
-  private moveSlots(): Promise<void[]> {
-    const promises: Promise<void>[] = [];
-    promises.push(this.moveSlot('facebook'));
-    promises.push(this.moveSlot('twitter'));
-    promises.push(this.moveSlot('email'));
-    promises.push(this.moveSlot('linkedin'));
-    promises.push(this.moveSlot('pinterest'));
-    promises.push(this.moveSlot('reddit'));
-
-    return Promise.all(promises);
+    await this.moveSlot(event.detail);
   }
 
   private moveSlot(name: string): Promise<void> {

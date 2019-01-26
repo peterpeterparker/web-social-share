@@ -18,7 +18,33 @@ export class WebSocialShareTarget {
   @Prop() displayNames: boolean = false;
   @Prop() share: WebSocialShareInputConfig;
 
-  @Event() selected: EventEmitter;
+  @Event() selected: EventEmitter<void>;
+
+  @Event() socialShareLoaded: EventEmitter<string>;
+
+  async componentDidLoad() {
+    await this.emitSocialShareLoaded();
+  }
+
+  private emitSocialShareLoaded(): Promise<void> {
+    return new Promise<void>((resolve) => {
+      if (this.share.facebook) {
+        this.socialShareLoaded.emit('facebook');
+      } else if (this.share.twitter) {
+        this.socialShareLoaded.emit('twitter');
+      } else if (this.share.email) {
+        this.socialShareLoaded.emit('email');
+      } else if (this.share.linkedin) {
+        this.socialShareLoaded.emit('linkedin');
+      } else if (this.share.pinterest) {
+        this.socialShareLoaded.emit('pinterest');
+      } else if (this.share.reddit) {
+        this.socialShareLoaded.emit('reddit');
+      }
+
+      resolve();
+    });
+  }
 
   private handleFacebookShare($event) {
     $event.stopPropagation();

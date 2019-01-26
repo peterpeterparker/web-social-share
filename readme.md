@@ -8,6 +8,8 @@ The component will present a dialog which will contains the different sharing op
 [![npm](https://img.shields.io/npm/dm/web-social-share.svg)]()
 
 ## Table of contents
+
+- [Web Social Share](#web-social-share)
 	- [Goals](#goals)
 	- [Installation](#installation)
 		- [Ionic v3 support deprecated](#ionic-v3-support-deprecated)

@@ -1,8 +1,8 @@
 # Web Social Share
 
-Web Social Share is a web component to share urls and content on social networks
+Web Social Share is a web component to share urls and content on social networks.
 
-The component will present a dialog which will contains the different sharing options you selected
+The component will present a dialog which will contains the different sharing options you selected.
 
 [![GitHub](https://img.shields.io/badge/version-2.0.0-blue.svg)](https://github.com/fluster/web-social-share)
 [![npm](https://img.shields.io/npm/dm/web-social-share.svg)]()
@@ -25,9 +25,9 @@ As of version 2.0.0, the component can't be bundled in Ionic v3 projects anymore
 
 ### Installation in a Ionic v4 project
 
-First of all notice that I wasn't able to integrate the library as described in the [Stencil documentation](https://stenciljs.com/docs/framework-integration)
+First of all notice that I wasn't able to integrate the library as described in the [Stencil documentation](https://stenciljs.com/docs/framework-integration).
 
-But, I was able to integrate the library in an Ionic v4 app as described below
+But, I was able to integrate the library in an Ionic v4 app as described below.
 
 After having installed the library, proceed then with following steps:
 
@@ -114,13 +114,13 @@ Both `show` and `share` are mandatory.
 
 ### show
 
-Trigger the display or closing of the action sheet presenting the social-share options you have selected
+Trigger the display or closing of the action sheet presenting the social-share options you have selected.
 
 `show` is a **boolean** parameter
 
 ### share
 
-These are your share options. For details about them you could have a look to the interface `WebSocialShareInput` located under folder `src/types/web-social-share/`
+These are your share options. For details about them you could have a look to the interface `WebSocialShareInput` located under folder `src/types/web-social-share/`.
 
 `share` is a parameter of type **WebSocialShareInput**
 
@@ -140,7 +140,7 @@ For example, if you would like to allow your users to share a website thru Faceb
         }]
     };
 
-If you would like to display the action default name, you could extend your configuration like the following: 
+If you would like to display the action default name, you could extend your configuration using the attribute `displayNames` like the following: 
 
     const share = {
         displayNames: true,
@@ -155,9 +155,22 @@ If you would like to display the action default name, you could extend your conf
         }]
     };
     
+Worth to notice, you could also provide your own custom brand name, for example in case you would translate the word `Email`, for example:
+
+    const share = {
+        displayNames: true,
+        config: [{
+              email: {
+                brandName: 'E-Mail-Adresse',
+                socialShareTo: 'me@outlook.com',
+                socialShareBody: 'https://fluster.io'
+              }
+        }]
+    };
+    
 #### Vanilla JS
 
-For an example of Vanilla JS use, you could have a look to the `index.html` demo located in this repo under folder `src`
+For an example of Vanilla JS use, you could have a look to the `index.html` demo located in this repo under folder `src`.
 
 ## Theming
 
@@ -187,9 +200,9 @@ Of course, if you provide icon style class, it's up to you to load images or lib
 
 ## Showcase
 
-A showcase is available at [https://websocialshare.com](https://websocialshare.com)  
+A showcase is available at [https://websocialshare.com](https://websocialshare.com)
 
-The above showcase is the `www` folder of this project deployed in Firebase. If you clone the repository you could run it locally using `npm start`
+The above showcase is the `www` folder of this project deployed in Firebase. If you clone the repository you could run it locally using `npm run start`.
 
 ## Credits
 

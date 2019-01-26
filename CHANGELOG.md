@@ -1,8 +1,9 @@
-<a name="2.2.0"></a>
-# [2.2.0](https://github.com/fluster/web-social-share/compare/v2.1.4...v2.2.0) (2019-01-26)
+<a name="3.0.0"></a>
+# [3.0.0](https://github.com/fluster/web-social-share/compare/v2.1.4...v3.0.0) (2019-01-26)
 
 ### Features
 
+* add pseudo slots to the social share actions ([#8](https://github.com/fluster/web-social-share/issues/8))
 * ability to customize / override rendered names ([#7](https://github.com/fluster/web-social-share/issues/7))
 
 ### Website

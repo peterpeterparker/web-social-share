@@ -8,6 +8,7 @@ import {WebSocialShareLinkedin} from '../../utils/web-social-share/web-social-sh
 import {WebSocialSharePinterest} from '../../utils/web-social-share/web-social-share-pinterest';
 import {WebSocialShareReddit} from '../../utils/web-social-share/web-social-share-reddit';
 import {WebSocialShareDisplayAttributes} from '../../types/web-social-share/web-social-share-attributes';
+import {WebSocialShareWhatsapp} from '../../utils/web-social-share/web-social-share-whatsapp';
 
 @Component({
   tag: 'web-social-share-target',
@@ -40,6 +41,8 @@ export class WebSocialShareTarget {
         this.socialShareLoaded.emit('pinterest');
       } else if (this.share.reddit) {
         this.socialShareLoaded.emit('reddit');
+      } else if (this.share.whatsapp) {
+        this.socialShareLoaded.emit('whatsapp');
       }
 
       resolve();
@@ -88,6 +91,13 @@ export class WebSocialShareTarget {
     this.selected.emit();
   }
 
+  private handleWhatsappShare($event) {
+    $event.stopPropagation();
+
+    WebSocialShareWhatsapp.share(this.share.whatsapp);
+    this.selected.emit();
+  }
+
   render() {
     if (this.share.facebook) {
       return (
@@ -131,6 +141,13 @@ export class WebSocialShareTarget {
           {this.renderName(this.share.reddit, 'Reddit')}
         </button>
       );
+    } else if (this.share.whatsapp) {
+      return (
+        <button onClick={($event) => this.handleWhatsappShare($event)} class='web-social-share-button web-social-share-button-whatsapp'>
+          {this.renderIcon(this.share.whatsapp)}
+          {this.renderName(this.share.whatsapp, 'WhatsApp')}
+        </button>
+      );
     } else {
       return (
         <div></div>
@@ -171,7 +188,8 @@ export class WebSocialShareTarget {
         'web-social-share-email': this.share.email,
         'web-social-share-linkedin': this.share.linkedin,
         'web-social-share-pinterest': this.share.pinterest,
-        'web-social-share-reddit': this.share.reddit
+        'web-social-share-reddit': this.share.reddit,
+        'web-social-share-whatsapp': this.share.whatsapp
       }
     }
   }

@@ -4,7 +4,7 @@ import {
   WebSocialShareLinkedinAttributes,
   WebSocialSharePinterestAttributes,
   WebSocialShareRedditAttributes,
-  WebSocialShareTwiterAttributes
+  WebSocialShareTwiterAttributes, WebSocialShareWhatsappAttributes
 } from './web-social-share-attributes';
 
 export interface WebSocialShareInputConfig {
@@ -14,6 +14,7 @@ export interface WebSocialShareInputConfig {
   linkedin?: WebSocialShareLinkedinAttributes;
   pinterest?: WebSocialSharePinterestAttributes;
   reddit?: WebSocialShareRedditAttributes;
+  whatsapp?: WebSocialShareWhatsappAttributes;
 }
 
 export interface WebSocialShareInput {

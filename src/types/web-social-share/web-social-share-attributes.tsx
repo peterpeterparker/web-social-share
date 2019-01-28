@@ -54,3 +54,5 @@ export interface WebSocialShareEmailAttributes extends WebSocialShareDisplayAttr
   socialShareBcc?: string;
 }
 
+export interface WebSocialShareWhatsappAttributes extends WebSocialShareWithTextAttributes {
+}

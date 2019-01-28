@@ -160,10 +160,16 @@
           socialShareTo: 'david.dalbusco@outlook.com',
           socialShareBody: 'https://fluster.io'
         }
+      }, {
+        whatsapp: {
+          iconStyleclass: 'fab fa-whatsapp',
+          socialShareText: 'Hello, how are you?',
+          socialShareUrl: 'https://fluster.io'
+        }
       }]
     };
 
-    document.addEventListener("DOMContentLoaded", function(event) {
+    document.addEventListener("DOMContentLoaded", (event) => {
       const elem = document.getElementsByTagName('web-social-share');
       if (elem && elem.length > 0) {
         elem[0].share = share;

@@ -79,6 +79,7 @@ export class WebSocialShare {
         <slot name="linkedin"></slot>
         <slot name="pinterest"></slot>
         <slot name="reddit"></slot>
+        <slot name="whatsapp"></slot>
       </div>
     );
   }

@@ -1,4 +1,5 @@
 import {WebSocialShareEmailAttributes} from '../../types/web-social-share/web-social-share-attributes';
+import {WebSocialShareUtils} from './web-social-share-utils';
 
 export class WebSocialShareEmail {
 
@@ -27,10 +28,6 @@ export class WebSocialShareEmail {
       urlString += '&bcc=' + encodeURIComponent(attrs.socialShareBcc);
     }
 
-    if (window.self !== window.top) {
-      window.open(urlString, '_blank');
-    } else {
-      window.open(urlString, '_self');
-    }
+    WebSocialShareUtils.staticOpenNewWindow(urlString);
   }
 }

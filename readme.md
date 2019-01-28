@@ -219,7 +219,7 @@ Of course, if you provide icon style class, it's up to you to load images or lib
 
 ### Action sheet height
 
-Per default, the displayed action sheet height is set to `80px`. Even if the component isn't for the above previous reason shadowed, if you wish, you could set your own height for the action sheet using the CSS4 variables `--web-social-share-height`.
+Per default, the displayed action sheet height is set to `80px`. Even if the component isn't for the above previous reason shadowed, if you wish, you could set your own height for the action sheet using the CSS4 variables `--web-social-share-height` or `--web-social-share-height-small-device` for devices < 540px wide (useful in case you would add more than four share actions).
 
 ### Slots
 

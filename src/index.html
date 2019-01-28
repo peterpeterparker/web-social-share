@@ -49,6 +49,10 @@
       color: #cee3f8;
     }
 
+    div.web-social-share div.web-social-share-action-sheet div.web-social-share-action-sheet-container div.web-social-share-action-sheet-group web-social-share-target .fa-whatsapp-square {
+      color: #25D366;
+    }
+
   </style>
 </head>
 <body>
@@ -105,7 +109,7 @@
 
 </main>
 
-  <web-social-share show="false">
+  <web-social-share show="false" style="--web-social-share-height-small-device: 180px;">
     <i class="fab fa-linkedin" slot="linkedin"></i>
   </web-social-share>
 
@@ -162,7 +166,7 @@
         }
       }, {
         whatsapp: {
-          iconStyleclass: 'fab fa-whatsapp',
+          iconStyleclass: 'fab fa-whatsapp-square',
           socialShareText: 'Hello, how are you?',
           socialShareUrl: 'https://fluster.io'
         }

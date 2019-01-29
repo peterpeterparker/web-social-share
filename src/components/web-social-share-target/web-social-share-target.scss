@@ -2,7 +2,9 @@ web-social-share-target {
   margin: auto;
 
   @media (max-width: 540px) {
-    margin: 4px;
+    button {
+      width: 100%;
+    }
   }
 
   button {

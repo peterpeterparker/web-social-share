@@ -1,6 +1,6 @@
 # Web Social Share
 
-Web Social Share is a web component to share urls and content on social networks.
+Web Social Share is a Web Component for your PWA to share urls and content on social networks.
 
 The component will present a dialog which will contains the different sharing options you selected.
 

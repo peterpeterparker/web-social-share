@@ -1,13 +1,21 @@
 {
   "name": "web-social-share",
-  "version": "3.0.1",
-  "description": "A Web Component to share urls and content on social networks",
+  "version": "4.0.0",
+  "description": "A Web Component for your PWA to share urls and content on social networks",
   "keywords": [
     "social",
     "share",
     "facebook",
     "instagram",
-    "twitter"
+    "twitter",
+    "whatsapp",
+    "reddit",
+    "pinterest",
+    "pwa",
+    "progressive-web-app",
+    "progressive-web-apps",
+    "stenciljs",
+    "stencil"
   ],
   "module": "dist/esm/index.js",
   "main": "dist/index.js",

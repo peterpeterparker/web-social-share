@@ -1,3 +1,11 @@
+<a name="4.0.0"></a>
+# [4.0.0](https://github.com/fluster/web-social-share/compare/v3.0.1...v4.0.0) (2019-01-29)
+
+### Features
+
+* add WhatsApp support ([#11](https://github.com/fluster/web-social-share/issues/11))
+* add a CSS4 variable to customize the height of the action sheet on small devices ([#12](https://github.com/fluster/web-social-share/issues/12))
+
 <a name="3.0.1"></a>
 # [3.0.1](https://github.com/fluster/web-social-share/compare/v3.0.0...v3.0.1) (2019-01-26)
 

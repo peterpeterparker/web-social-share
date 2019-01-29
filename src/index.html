@@ -53,6 +53,12 @@
       color: #25D366;
     }
 
+    @media (max-width: 320px) {
+      web-social-share {
+        --web-social-share-height-small-device: 140px;
+      }
+    }
+
   </style>
 </head>
 <body>
@@ -109,7 +115,7 @@
 
 </main>
 
-  <web-social-share show="false" style="--web-social-share-height-small-device: 180px;">
+  <web-social-share show="false">
     <i class="fab fa-linkedin" slot="linkedin"></i>
   </web-social-share>
 

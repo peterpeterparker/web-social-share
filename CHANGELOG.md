@@ -1,3 +1,10 @@
+<a name="4.0.1"></a>
+# [4.0.1](https://github.com/fluster/web-social-share/compare/v4.0.0...v4.0.1) (2019-01-29)
+
+### Fix
+
+* freaking iphone might cut action text ([a6bd031](https://github.com/fluster/web-social-share/commit/a6bd031aeb4e7b7a9f32870613eb68002d40db82) and [1856787](https://github.com/fluster/web-social-share/commit/18567873b8244e625e874ee6941043edc1acafc5))
+
 <a name="4.0.0"></a>
 # [4.0.0](https://github.com/fluster/web-social-share/compare/v3.0.1...v4.0.0) (2019-01-29)
 

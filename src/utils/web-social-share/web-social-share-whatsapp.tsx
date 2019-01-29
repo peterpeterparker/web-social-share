@@ -7,7 +7,7 @@ export class WebSocialShareWhatsapp {
   static share(attrs: WebSocialShareWhatsappAttributes) {
     const isMobile: boolean = WebSocialShareUtils.isMobile();
 
-    let urlString = 'https://api.whatsapp.com/send?';
+    let urlString = isMobile ? 'https://api.whatsapp.com/send?' : 'https://web.whatsapp.com/send?';
 
     if (attrs.socialShareText) {
       urlString += 'text=' + encodeURIComponent(attrs.socialShareText);

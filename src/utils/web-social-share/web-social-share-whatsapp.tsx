@@ -7,14 +7,14 @@ export class WebSocialShareWhatsapp {
   static share(attrs: WebSocialShareWhatsappAttributes) {
     const isMobile: boolean = WebSocialShareUtils.isMobile();
 
-    let urlString = isMobile ? 'https://api.whatsapp.com/send?' : 'https://web.whatsapp.com/send?';
+    let urlString = isMobile ? 'https://api.whatsapp.com/send?text=' : 'https://web.whatsapp.com/send?text=';
 
     if (attrs.socialShareText) {
-      urlString += 'text=' + encodeURIComponent(attrs.socialShareText);
+      urlString += encodeURIComponent(attrs.socialShareText) + '%0A';
     }
 
     //default to the current page if a URL isn't specified
-    urlString += '%0A' + encodeURIComponent(attrs.socialShareUrl || window.location.href);
+    urlString += encodeURIComponent(attrs.socialShareUrl || window.location.href);
 
     if (isMobile) {
       WebSocialShareUtils.staticOpenNewWindow(urlString);

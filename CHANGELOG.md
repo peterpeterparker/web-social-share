@@ -1,3 +1,10 @@
+<a name="4.0.2"></a>
+# [4.0.2](https://github.com/fluster/web-social-share/compare/v4.0.1...v4.0.2) (2019-02-02)
+
+### Fix
+
+* incorrect URL when WhatsApp socialShareText is empty ([#13](https://github.com/fluster/web-social-share/pull/13), thx @fmendoza for the PR 👍)
+
 <a name="4.0.1"></a>
 # [4.0.1](https://github.com/fluster/web-social-share/compare/v4.0.0...v4.0.1) (2019-01-29)
 

@@ -3,7 +3,8 @@ import {WebSocialShareInput, WebSocialShareInputConfig} from '../../types/web-so
 
 @Component({
   tag: 'web-social-share',
-  styleUrl: 'web-social-share.scss'
+  styleUrl: 'web-social-share.scss',
+  shadow: true
 })
 export class WebSocialShare {
 
@@ -27,14 +28,10 @@ export class WebSocialShare {
     return new Promise<void>((resolve) => {
       const slot: HTMLElement = this.el.querySelector('[slot=\'' + name + '\']');
 
-      const element: HTMLWebSocialShareTargetElement = this.el.querySelector('web-social-share-target.web-social-share-'  + name);
+      const element: HTMLWebSocialShareTargetElement = this.el.shadowRoot.querySelector('web-social-share-target.web-social-share-'  + name);
 
       if (element && slot) {
-        const button: HTMLButtonElement = element.querySelector('button');
-
-        if (button) {
-          button.prepend(slot);
-        }
+        element.appendChild(slot);
       }
 
       resolve();
@@ -43,7 +40,7 @@ export class WebSocialShare {
 
   @Listen('selected')
   hide() {
-    let element: HTMLElement = this.el.querySelector('div.web-social-share');
+    let element: HTMLElement = this.el.shadowRoot.querySelector('div.web-social-share');
     if (element) {
      element.classList.add('web-social-share-transition-close');
 

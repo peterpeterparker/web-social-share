@@ -1,5 +1,4 @@
 export interface WebSocialShareDisplayAttributes {
-  iconStyleclass?: string;
   brandName?: string;
 }
 

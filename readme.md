@@ -12,19 +12,16 @@ The component will present a dialog which will contains the different sharing op
 - [Web Social Share](#web-social-share)
 	- [Goals](#goals)
 	- [Installation](#installation)
-		- [Installation in a Ionic v4 project](#installation-in-a-ionic-v4-project)
-		- [Installation in a Ionic v3 project](#installation-in-a-ionic-v3-project)
+		- [Integration in a Ionic v4 project](#integration-in-a-ionic-v4-project)
 	- [Getting Started](#getting-started)
 		- [show](#show)
 		- [share](#share)
 			- [Example](#example)
 			- [Vanilla JS](#vanilla-js)
-	- [Theming](#theming)
-		- [Icons style class](#icons-style-class)
-		- [Action sheet height](#action-sheet-height)
-		- [Slots](#slots)
-		- [Example](#example-1)
+  - [Slots](#slots)
+    - [Styling your icons](#styling-your-icons)  
 	- [Showcase](#showcase)
+	- [Theming](#theming)
 	- [Credits](#credits)
 	- [License](#license)
 
@@ -38,13 +35,9 @@ Furthermore, I thought that using and building an action sheet to do so would be
 
     $ npm install web-social-share
 
-### Installation in a Ionic v4 project
+### Integration in a Ionic v4 project
 
-First of all notice that I wasn't able to integrate the library as described in the [Stencil documentation](https://stenciljs.com/docs/framework-integration).
-
-But, I was able to integrate the library in an Ionic v4 app as described below.
-
-After having installed the library, proceed then with following steps:
+Once the library installed, proceed then with following steps to integrate the component:
 
 1. In the module where you would like to use the component, import and add `CUSTOM_ELEMENTS_SCHEMA` to your list of schemas
 
@@ -81,47 +74,6 @@ After having installed the library, proceed then with following steps:
              "output": "./"
            }
        ]
-
-### Installation in a Ionic v3 project
-
-As of version 2.0.0, the component can't be bundled in Ionic v3 projects anymore, at least as far as I know. If you wish to use it such a project, stick to version 1.1.0 of the component.
-
-    $ npm install web-social-share@1.1.0
-
-After having installed the version 1.1.0 of the library, proceed with following steps:
-
-1. In the module where you would like to use the component, import and add `CUSTOM_ELEMENTS_SCHEMA` to your list of schemas
-
-        @NgModule({
-            declarations: [
-                MyPage
-            ],
-            imports: [
-                IonicPageModule.forChild(MyPage)
-            ],
-            schemas: [CUSTOM_ELEMENTS_SCHEMA]
-        })
-        export class MyPageModule {
-        }
-
-2. In `app.modules` (the main module of your app), import the component. As far as I understood, web component built with Stencil inherit Lazy Loading, therefore, no worries about effect on your boot time
-
-         import 'web-social-share';
-         
-3. The web component installed under node_modules not gonna be automatically included in the vendor.js bundle. Therefore it need a tricks to be copied. To do so, create a local custom `copy.config.js` (which gonna be processed as another config of [ionic-app-scripts](https://github.com/ionic-team/ionic-app-scripts/blob/master/config/copy.config.js)) and add the following block
-
-       module.exports = {
-         copyWebSocialShare: {
-           src: ['{{ROOT}}/node_modules/web-social-share/dist/websocialshare**/*'],
-           dest: '{{BUILD}}'
-         }
-       } 
-
-Don't forget to also update your `package.json` in order to use your local modified `copy.config.js` file
-
-        "config": {
-            "ionic_copy": "./scripts/copy.config.js"
-          }
 
 ## Getting Started
 
@@ -191,52 +143,57 @@ Worth to notice, you could also provide your own custom brand name, for example 
 
 For an example of Vanilla JS use, you could have a look to the `index.html` demo located in this repo under folder `src`.
 
-## Theming
-
-This Web Component is roughly styled, it is up to you to theme it with your custom `CSS`. I thought it was better to do it like this in order to have a lightweight web component which doesn't force user to follow one style guideline.
-
-### Icons style class
-
-You could provide an `icon style class` for each sharing option which gonna be displayed above the social-network name.
-
-Let's say I'm using `Font Awesome 5` and I would like to provide an icon for the social share options I describe above. This could be achieved easily like the following:
-
-    
-    const share = [{
-          facebook: {
-            iconStyleclass: 'fab fa-facebook',
-            socialShareUrl: 'https://fluster.io'
-          }
-        },{
-          twitter: {
-            iconStyleclass: 'fab fa-twitter',
-            socialShareUrl: 'https://fluster.io'
-          }
-        }
-    }];
-
-Of course, if you provide icon style class, it's up to you to load images or libraries like Font Awesome in your app.
-
-### Action sheet height
-
-Per default, the displayed action sheet height is set to `80px`. Even if the component isn't for the above previous reason shadowed, if you wish, you could set your own height for the action sheet using the CSS4 variables `--web-social-share-height` or `--web-social-share-height-small-device` for devices < 540px wide (useful in case you would add more than four share actions).
-
 ### Slots
 
-As of version `v3.0.0` of this Web Component, is it now possible to use `<slot/>` in order to inject your elements for the display of the actions's icons. Could be useful for example in case you would like to use [Ionicons](https://ionicons.com).
+Slots has to be used to inject the icons for your actions in the component.
 
-    <web-social-share show="false">
-        <ion-icon name="logo-reddit" slot="reddit"></ion-icon>
-    </web-social-share>
-    
-    const share = [{
-          reddit: {
-            socialShareUrl: 'https://fluster.io',
-            socialSharePopupWidth: 300,
-            socialSharePopupHeight: 500
-          }
-        }
-    }];
+The available slots are: `facebook`, `twitter`, `pinterest`, `linkedin`, `reddit`, `email` and `whatsapp`.
+
+```
+<web-social-share show="false">
+    <ion-icon name="logo-reddit" slot="reddit"></ion-icon>
+</web-social-share>
+
+const share = [{
+    reddit: {
+      socialShareUrl: 'https://fluster.io',
+      socialSharePopupWidth: 300,
+      socialSharePopupHeight: 500
+    }
+  }
+}];
+```
+
+#### Styling your icons
+
+The style of your icons is up to you and have to be applied on the icons provided as `slots`.
+
+For example:
+
+```
+<web-social-share show="false">
+    <i class="fab fa-twitter" slot="twitter" style="color: #00aced; width: 1.4rem;"></i>
+</web-social-share>    
+```
+
+## Theming
+
+The following CSS variables are exposed by the component:
+
+| CSS4 variable                      | Default | Note |
+| -------------------------- |-----------------|-----------------|
+| --web-social-share-backdrop-opacity | 0.25 | Backdrop opacity |
+| --web-social-share-backdrop-background | black | Backdrop background |
+| --web-social-share-height | 80px | Action sheet height |
+| --web-social-share-height-small-device | 140px | Action sheet height on device smaller than 540px |
+| --web-social-share-target-width | 4rem | An action container width |
+| --web-social-share-target-height | 3rem | An action container height |
+| --web-social-share-button-width | 100% | An action inner button width |
+| --web-social-share-button-height | 100% | An action inner button height |
+| --web-social-share-target-icon-container-height | 2rem | An action icon container height |
+| --web-social-share-button-font-size |  | The font-size of an action button |
+| --web-social-share-brand-font-size | 0.6rem | The font-size of an action brand name |
+| --web-social-share-brand-color | inherit | The color of an action brand name |
 
 ## Showcase
 

@@ -12,54 +12,6 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
         integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
-  <style>
-    div.web-social-share-action-sheet-group p {
-      font-size: 0.6rem;
-    }
-
-    div.web-social-share div.web-social-share-action-sheet div.web-social-share-action-sheet-container div.web-social-share-action-sheet-group web-social-share-target button {
-      font-size: 2rem;
-    }
-
-    div.web-social-share div.web-social-share-action-sheet div.web-social-share-action-sheet-container div.web-social-share-action-sheet-group web-social-share-target button:active {
-      color: inherit;
-    }
-
-    div.web-social-share div.web-social-share-action-sheet div.web-social-share-action-sheet-container div.web-social-share-action-sheet-group web-social-share-target .fa-facebook {
-      color: #3b5998;
-    }
-
-    div.web-social-share div.web-social-share-action-sheet div.web-social-share-action-sheet-container div.web-social-share-action-sheet-group web-social-share-target .fa-twitter {
-      color: #00aced;
-    }
-
-    div.web-social-share div.web-social-share-action-sheet div.web-social-share-action-sheet-container div.web-social-share-action-sheet-group web-social-share-target .fa-envelope {
-      color: #ff8ea3;
-    }
-
-    div.web-social-share div.web-social-share-action-sheet div.web-social-share-action-sheet-container div.web-social-share-action-sheet-group web-social-share-target .fa-linkedin {
-      color: #0077b5;
-    }
-
-    div.web-social-share div.web-social-share-action-sheet div.web-social-share-action-sheet-container div.web-social-share-action-sheet-group web-social-share-target .fa-pinterest {
-      color: #bd081c;
-    }
-
-    div.web-social-share div.web-social-share-action-sheet div.web-social-share-action-sheet-container div.web-social-share-action-sheet-group web-social-share-target .fa-reddit {
-      color: #cee3f8;
-    }
-
-    div.web-social-share div.web-social-share-action-sheet div.web-social-share-action-sheet-container div.web-social-share-action-sheet-group web-social-share-target .fa-whatsapp-square {
-      color: #25D366;
-    }
-
-    @media (max-width: 320px) {
-      web-social-share {
-        --web-social-share-height-small-device: 140px;
-      }
-    }
-
-  </style>
 </head>
 <body>
 
@@ -116,7 +68,13 @@
 </main>
 
   <web-social-share show="false">
-    <i class="fab fa-linkedin" slot="linkedin"></i>
+    <i class="fab fa-facebook" slot="facebook" style="color: #3b5998; width: 1.4rem;"></i>
+    <i class="fab fa-twitter" slot="twitter" style="color: #00aced; width: 1.4rem;"></i>
+    <i class="fab fa-pinterest" slot="pinterest" style="color: #bd081c; width: 1.4rem;"></i>
+    <i class="fab fa-linkedin" slot="linkedin" style="color: #0077b5; width: 1.4rem;"></i>
+    <i class="fab fa-reddit" slot="reddit" style="color: #cee3f8; width: 1.4rem;"></i>
+    <i class="fas fa-envelope" slot="email" style="color: #ff8ea3; width: 1.4rem;"></i>
+    <i class="fab fa-whatsapp-square" slot="whatsapp" style="color: #25D366; width: 1.4rem;"></i>
   </web-social-share>
 
   <script type="text/javascript">
@@ -136,21 +94,18 @@
       displayNames: true,
       config: [{
         facebook: {
-          iconStyleclass: 'fab fa-facebook',
           socialShareUrl: 'https://fluster.io',
           socialSharePopupWidth: 400,
           socialSharePopupHeight: 400
         }
       },{
         twitter: {
-          iconStyleclass: 'fab fa-twitter',
           socialShareUrl: 'https://fluster.io',
           socialSharePopupWidth: 300,
           socialSharePopupHeight: 400
         }
       },{
         reddit: {
-          iconStyleclass: 'fab fa-reddit',
           socialShareUrl: 'https://fluster.io',
           socialSharePopupWidth: 300,
           socialSharePopupHeight: 500
@@ -161,18 +116,15 @@
         }
       },{
         pinterest: {
-          iconStyleclass: 'fab fa-pinterest',
           socialShareUrl: 'https://fluster.io'
         }
       },{
         email: {
-          iconStyleclass: 'fas fa-envelope',
           socialShareTo: 'david.dalbusco@outlook.com',
           socialShareBody: 'https://fluster.io'
         }
       }, {
         whatsapp: {
-          iconStyleclass: 'fab fa-whatsapp-square',
           socialShareText: 'Hello, how are you?',
           socialShareUrl: 'https://fluster.io'
         }

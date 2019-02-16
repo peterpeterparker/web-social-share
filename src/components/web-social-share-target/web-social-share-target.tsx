@@ -12,7 +12,8 @@ import {WebSocialShareWhatsapp} from '../../utils/web-social-share/web-social-sh
 
 @Component({
   tag: 'web-social-share-target',
-  styleUrl: 'web-social-share-target.scss'
+  styleUrl: 'web-social-share-target.scss',
+  shadow: true
 })
 export class WebSocialShareTarget {
 
@@ -102,49 +103,49 @@ export class WebSocialShareTarget {
     if (this.share.facebook) {
       return (
         <button onClick={($event) => this.handleFacebookShare($event)} class='web-social-share-button web-social-share-button-facebook'>
-          {this.renderIcon(this.share.facebook)}
+          {this.renderIcon()}
           {this.renderName(this.share.facebook, 'Facebook')}
         </button>
       );
     } else if (this.share.twitter) {
       return (
         <button onClick={($event) => this.handleTwitterShare($event)} class='web-social-share-button web-social-share-button-twitter'>
-          {this.renderIcon(this.share.twitter)}
+          {this.renderIcon()}
           {this.renderName(this.share.twitter, 'Twitter')}
         </button>
       );
     } else if (this.share.email) {
       return (
         <button onClick={($event) => this.handleEmailShare($event)} class='web-social-share-button web-social-share-button-email'>
-          {this.renderIcon(this.share.email)}
+          {this.renderIcon()}
           {this.renderName(this.share.email, 'Email')}
         </button>
       );
     } else if (this.share.linkedin) {
       return (
         <button onClick={($event) => this.handleLinkedinShare($event)} class='web-social-share-button web-social-share-button-linkedin'>
-          {this.renderIcon(this.share.linkedin)}
+          {this.renderIcon()}
           {this.renderName(this.share.linkedin, 'Linkedin')}
         </button>
       );
     } else if (this.share.pinterest) {
       return (
         <button onClick={($event) => this.handlePinterestShare($event)} class='web-social-share-button web-social-share-button-pinterest'>
-          {this.renderIcon(this.share.pinterest)}
+          {this.renderIcon()}
           {this.renderName(this.share.pinterest, 'Pinterest')}
         </button>
       );
     } else if (this.share.reddit) {
       return (
         <button onClick={($event) => this.handleRedditShare($event)} class='web-social-share-button web-social-share-button-reddit'>
-          {this.renderIcon(this.share.reddit)}
+          {this.renderIcon()}
           {this.renderName(this.share.reddit, 'Reddit')}
         </button>
       );
     } else if (this.share.whatsapp) {
       return (
         <button onClick={($event) => this.handleWhatsappShare($event)} class='web-social-share-button web-social-share-button-whatsapp'>
-          {this.renderIcon(this.share.whatsapp)}
+          {this.renderIcon()}
           {this.renderName(this.share.whatsapp, 'WhatsApp')}
         </button>
       );
@@ -156,16 +157,16 @@ export class WebSocialShareTarget {
 
   }
 
-  private renderIcon(displayAttributes: WebSocialShareDisplayAttributes) {
-    if (displayAttributes.iconStyleclass && displayAttributes.iconStyleclass !== '') {
-      return (
-        <i class={displayAttributes.iconStyleclass}></i>
-      );
-    } else {
-      return (
-        <span></span>
-      );
-    }
+  private renderIcon() {
+    return <div class="web-social-share-button-icon">
+      <slot name="facebook"></slot>
+      <slot name="twitter"></slot>
+      <slot name="email"></slot>
+      <slot name="linkedin"></slot>
+      <slot name="pinterest"></slot>
+      <slot name="reddit"></slot>
+      <slot name="whatsapp"></slot>
+    </div>;
   }
 
   private renderName(displayAttributes: WebSocialShareDisplayAttributes, defaultBrandName: string) {

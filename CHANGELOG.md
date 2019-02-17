@@ -1,3 +1,16 @@
+<a name="5.0.0"></a>
+# [5.0.0](https://github.com/fluster/web-social-share/compare/v4.0.2...v5.0.0) (2019-02-17)
+
+### Breaking changes
+
+* transform component to a shadowed Web Component ([#14](https://github.com/fluster/web-social-share/issues/14))
+
+Notes:
+
+As of version v5.0.0 this Web Component will be shadowed. Therefore, you will have to use `slots` to inject the icons for the sharing actions and will have to style these in order to apply for example the proper colors. The README of the component has been updated to reflect these changes.
+
+If you would miss variables to style the component, ping me, I would be happy to add more options. 
+
 <a name="4.0.2"></a>
 # [4.0.2](https://github.com/fluster/web-social-share/compare/v4.0.1...v4.0.2) (2019-02-02)
 

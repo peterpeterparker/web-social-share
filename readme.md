@@ -13,6 +13,7 @@ The component will present a dialog which will contains the different sharing op
 	- [Goals](#goals)
 	- [Installation](#installation)
 		- [Integration in a Ionic v4 project](#integration-in-a-ionic-v4-project)
+		- [Other frameworks integration](#other-frameworks-integration)
 	- [Getting Started](#getting-started)
 		- [show](#show)
 		- [share](#share)
@@ -74,6 +75,10 @@ Once the library installed, proceed then with following steps to integrate the c
              "output": "./"
            }
        ]
+
+### Other frameworks integration
+
+The [Stencil documentation](https://stenciljs.com/docs/overview) provide examples of framework integration for [Angular](https://stenciljs.com/docs/angular), [React](https://stenciljs.com/docs/react), [Vue](https://stenciljs.com/docs/vue) and [Ember](https://stenciljs.com/docs/ember).
 
 ## Getting Started
 

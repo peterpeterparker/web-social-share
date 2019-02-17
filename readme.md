@@ -32,6 +32,8 @@ The idea behind this web component was to add a "social share" feature to the pr
 
 Furthermore, I thought that using and building an action sheet to do so would be user friendly.
 
+This Web Component is developed with [Stencil](https://stenciljs.com).
+
 ## Installation
 
     $ npm install web-social-share

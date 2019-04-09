@@ -54,13 +54,19 @@
       <p class="lead text-muted mt-5"><strong>Web Social Share</strong> is a Web Component to share urls and content on social networks. The component could be integrated in the most popular frontend frameworks.</p>
       <p class="lead text-muted mt-5">It could be particularly interesting if you are looking for a solution to add a social sharing option to your <strong>Progressive Web App</strong>.</p>
       <p class="mt-5">
-        <button id="showWebSocialShare" type="button" class="btn btn-primary" onclick="show(true);"><i class="fas fa-share-alt"></i> GIVE IT A TRY</button>
+        <button id="showWebSocialShare" type="button" class="btn btn-primary" onclick="show(true);"><i class="fas fa-share-alt"></i> SHARE THIS WEBSITE</button>
       </p>
     </div>
   </section>
 
   <section class="text-center mt-5">
     <div class="container">
+      <p class="lead text-muted">Some modern browsers support the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Navigator/share">Web Share API</a>. You could test the compatibility of your current browser using the following action:</p>
+      <p>
+        <button type="button" class="btn btn-secondary" onclick="webShare()"><i class="fas fa-share-alt"></i> TEST WEB SHARE API</button>
+      </p>
+    </div>
+    <div class="container mt-5">
       <p class="lead text-muted">This Web Component is developed with <a href="https://stenciljs.com/">StencilJS</a> and published on <a href="https://github.com/fluster/web-social-share">Github</a> under license MIT © <a href="mailto:david.dalbusco@outlook.com">David Dal Busco</a></p>
     </div>
   </section>
@@ -137,6 +143,20 @@
         elem[0].share = share;
       }
     });
+
+    function webShare() {
+      if (navigator.share) {
+        navigator.share({
+          title: 'Web Share',
+          text: 'Web Share API is supported!',
+          url: 'https://websocialshare.com/',
+        })
+          .then(() => console.log('Successful share'))
+          .catch((error) => console.log('Error sharing', error));
+      } else {
+        console.log('Your browser doesn\'t support Navigator.share()')
+      }
+    }
   </script>
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

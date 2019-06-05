@@ -12,7 +12,7 @@ export const config: Config = {
     },
     {
       type: 'www',
-      serviceWorker: null
+      baseUrl: 'http://websocialshare.com'
     }
   ],
   plugins: [

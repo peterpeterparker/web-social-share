@@ -1,4 +1,4 @@
-import {Component, Event, EventEmitter, Prop} from '@stencil/core';
+import {Component, Event, EventEmitter, Prop, h} from '@stencil/core';
 
 import {WebSocialShareFacebook} from '../../utils/web-social-share/web-social-share-facebook';
 import {WebSocialShareInputConfig} from '../../types/web-social-share/web-social-share-input';

@@ -17,7 +17,7 @@
     "stenciljs",
     "stencil"
   ],
-  "module": "dist/esm/index.js",
+  "module": "dist/index.mjs",
   "main": "dist/index.js",
   "types": "dist/types/components.d.ts",
   "collection": "dist/collection/collection-manifest.json",
@@ -36,14 +36,14 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "@stencil/core": "^0.18.0",
+    "@stencil/core": "^1.0.0",
     "@stencil/dev-server": "latest",
     "@stencil/postcss": "^0.1.0",
-    "@stencil/sass": "0.1.1",
+    "@stencil/sass": "0.2.3",
     "@stencil/utils": "latest",
-    "@types/jest": "^24.0.5",
-    "autoprefixer": "^9.4.7",
-    "jest": "^24.1.0"
+    "@types/jest": "^24.0.13",
+    "autoprefixer": "^9.6.0",
+    "jest": "^24.8.0"
   },
   "repository": {
     "type": "git",

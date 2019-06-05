@@ -43,7 +43,8 @@
     "@stencil/utils": "latest",
     "@types/jest": "^24.0.13",
     "autoprefixer": "^9.6.0",
-    "jest": "^24.8.0"
+    "jest": "^24.8.0",
+    "workbox-build": "4.3.1"
   },
   "repository": {
     "type": "git",

@@ -4,7 +4,7 @@ Web Social Share is a Web Component for your PWA to share urls and content on so
 
 The component will present a dialog which will contains the different sharing options you selected.
 
-[![GitHub](https://img.shields.io/badge/version-2.0.0-blue.svg)](https://github.com/fluster/web-social-share)
+[![version](https://img.shields.io/npm/v/web-social-share/latest.svg?color=blue)](https://github.com/fluster/web-social-share)
 [![npm](https://img.shields.io/npm/dm/web-social-share.svg)]()
 
 ## Table of contents

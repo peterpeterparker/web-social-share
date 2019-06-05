@@ -12,8 +12,7 @@ The component will present a dialog which will contains the different sharing op
 - [Web Social Share](#web-social-share)
 	- [Goals](#goals)
 	- [Installation](#installation)
-		- [Integration in a Ionic v4 project](#integration-in-a-ionic-v4-project)
-		- [Other frameworks integration](#other-frameworks-integration)
+	- [Integration](#integration)
 	- [Getting Started](#getting-started)
 		- [show](#show)
 		- [share](#share)
@@ -38,47 +37,7 @@ This Web Component is developed with [Stencil](https://stenciljs.com).
 
     $ npm install web-social-share
 
-### Integration in a Ionic v4 project
-
-Once the library installed, proceed then with following steps to integrate the component:
-
-1. In the module where you would like to use the component, import and add `CUSTOM_ELEMENTS_SCHEMA` to your list of schemas
-
-        @NgModule({
-            declarations: [
-                MyPage
-            ],
-            imports: [
-                CommonModule,
-                FormsModule,
-                IonicModule,
-                RouterModule.forChild(routes)
-            ],
-            schemas: [CUSTOM_ELEMENTS_SCHEMA]
-        })
-        export class MyPageModule {
-        }
-        
-2. In `index.html` import the component. As far as I understood, web component built with Stencil inherit Lazy Loading, therefore, no worries about effect on your boot time
-
-         <script async src="websocialshare.js"></script>
-         
-3. Finally add the following to your `assets` configuration in your `angular.json` files in oder to include the component in your bundle
-
-       "assets": [
-           {
-             "glob": "websocialshare.js",
-             "input": "node_modules/web-social-share/dist",
-             "output": "./"
-           },
-           {
-             "glob": "websocialshare/*",
-             "input": "node_modules/web-social-share/dist",
-             "output": "./"
-           }
-       ]
-
-### Other frameworks integration
+## Integration
 
 The [Stencil documentation](https://stenciljs.com/docs/overview) provide examples of framework integration for [Angular](https://stenciljs.com/docs/angular), [React](https://stenciljs.com/docs/react), [Vue](https://stenciljs.com/docs/vue) and [Ember](https://stenciljs.com/docs/ember).
 

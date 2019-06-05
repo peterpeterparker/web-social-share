@@ -1,4 +1,4 @@
-import {Component, Event, EventEmitter, Prop, h} from '@stencil/core';
+import {Component, Event, EventEmitter, Prop, h, Host} from '@stencil/core';
 
 import {WebSocialShareFacebook} from '../../utils/web-social-share/web-social-share-facebook';
 import {WebSocialShareInputConfig} from '../../types/web-social-share/web-social-share-input';
@@ -100,6 +100,20 @@ export class WebSocialShareTarget {
   }
 
   render() {
+    return <Host class={{
+      'web-social-share-facebook': this.share.facebook !== undefined,
+      'web-social-share-twitter': this.share.twitter !== undefined,
+      'web-social-share-email': this.share.email !== undefined,
+      'web-social-share-linkedin': this.share.linkedin !== undefined,
+      'web-social-share-pinterest': this.share.pinterest !== undefined,
+      'web-social-share-reddit': this.share.reddit !== undefined,
+      'web-social-share-whatsapp': this.share.whatsapp !== undefined
+    }}>
+      {this.renderButton()}
+    </Host>
+  }
+
+  private renderButton() {
     if (this.share.facebook) {
       return (
         <button onClick={($event) => this.handleFacebookShare($event)} class='web-social-share-button web-social-share-button-facebook'>
@@ -180,20 +194,5 @@ export class WebSocialShareTarget {
       );
     }
   }
-
-  hostData() {
-    return {
-      class: {
-        'web-social-share-facebook': this.share.facebook,
-        'web-social-share-twitter': this.share.twitter,
-        'web-social-share-email': this.share.email,
-        'web-social-share-linkedin': this.share.linkedin,
-        'web-social-share-pinterest': this.share.pinterest,
-        'web-social-share-reddit': this.share.reddit,
-        'web-social-share-whatsapp': this.share.whatsapp
-      }
-    }
-  }
-
 
 }

@@ -1,3 +1,10 @@
+<a name="5.1.0"></a>
+# [5.1.0](https://github.com/fluster/web-social-share/compare/v5.0.0...v5.1.0) (2019-06-05)
+
+### Libs
+
+* Stencil One
+
 <a name="5.0.0"></a>
 # [5.0.0](https://github.com/fluster/web-social-share/compare/v4.0.2...v5.0.0) (2019-02-17)
 

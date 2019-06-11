@@ -36,10 +36,10 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "@stencil/core": "^1.0.0",
+    "@stencil/core": "^1.0.2",
     "@stencil/dev-server": "latest",
-    "@stencil/postcss": "^0.1.0",
-    "@stencil/sass": "0.2.3",
+    "@stencil/postcss": "^1.0.1",
+    "@stencil/sass": "^1.0.0",
     "@stencil/utils": "latest",
     "@types/jest": "^24.0.13",
     "autoprefixer": "^9.6.0",

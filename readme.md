@@ -19,7 +19,8 @@ The component will present a dialog which will contains the different sharing op
 			- [Example](#example)
 			- [Vanilla JS](#vanilla-js)
   - [Slots](#slots)
-    - [Styling your icons](#styling-your-icons)  
+    - [Styling your icons](#styling-your-icons)
+  - [Fallback and detection](#fallback-and-detection)    
 	- [Showcase](#showcase)
 	- [Theming](#theming)
 	- [Credits](#credits)
@@ -57,7 +58,18 @@ Trigger the display or closing of the action sheet presenting the social-share o
 
 ### share
 
-These are your share options. For details about them you could have a look to the interface `WebSocialShareInput` located under folder `src/types/web-social-share/`.
+The following share options are supported:
+
+- Facebook
+- Twitter
+- Email
+- Linkedin
+- Pinterest
+- Reddit
+- WhatsApp
+- Copy (to clipboard)
+
+For details about them you could have a look to the interface `WebSocialShareInput` located under folder `src/types/web-social-share/`.
 
 `share` is a parameter of type **WebSocialShareInput**
 
@@ -113,7 +125,7 @@ For an example of Vanilla JS use, you could have a look to the `index.html` demo
 
 Slots has to be used to inject the icons for your actions in the component.
 
-The available slots are: `facebook`, `twitter`, `pinterest`, `linkedin`, `reddit`, `email` and `whatsapp`.
+The available slots are: `facebook`, `twitter`, `pinterest`, `linkedin`, `reddit`, `email`, `copy` and `whatsapp`.
 
 ```
 <web-social-share show="false">
@@ -160,6 +172,12 @@ The following CSS variables are exposed by the component:
 | --web-social-share-button-font-size |  | The font-size of an action button |
 | --web-social-share-brand-font-size | 0.6rem | The font-size of an action brand name |
 | --web-social-share-brand-color | inherit | The color of an action brand name |
+
+## Fallback and detection
+
+This component is a dumb component. It don't proceed detection or fallback to anything in case one of the share options would not be supported by the device or browser where the component is used.
+
+For example, the share options "Copy (to clipboard)" use the Web Api [Clipboard​.write​Text()](https://developer.mozilla.org/en-US/docs/Web/API/Clipboard/writeText) which might not be supported. Anyway the action will be displayed and if used by the user, nothing will happen.
 
 ## Showcase
 

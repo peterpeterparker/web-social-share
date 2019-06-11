@@ -11,7 +11,6 @@ import {
   WebSocialShareInputConfig,
 } from './types/web-social-share/web-social-share-input';
 
-
 export namespace Components {
   interface WebSocialShare {
     'share': WebSocialShareInput;

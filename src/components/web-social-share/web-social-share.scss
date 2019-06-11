@@ -119,6 +119,7 @@ div.web-social-share {
 ::slotted([slot="linkedin"]),
 ::slotted([slot="pinterest"]),
 ::slotted([slot="reddit"]),
-::slotted([slot="whatsapp"]) {
+::slotted([slot="whatsapp"]),
+::slotted([slot="copy"]) {
   display: none;
 }

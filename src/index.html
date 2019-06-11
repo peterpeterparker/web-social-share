@@ -22,7 +22,7 @@
       <div class="row">
         <div class="col-sm-8 col-md-7 py-4">
           <h4 class="text-white">About</h4>
-          <p class="text-muted">The purpose of this project is to let users of <a href="https://fluster.io" class="text-white">Fluster</a>, using the PWA version of the app, share their rooms rental on social networks. This Web Component is published on <a href="https://github.com/fluster/web-social-share" class="text-white">Github</a> under license MIT © <a href="mailto:david.dalbusco@outlook.com" class="text-white">David Dal Busco</a></p>
+          <p class="text-muted">The purpose of this project is to let users of <a href="http://websocialshare.com" class="text-white">Fluster</a>, using the PWA version of the app, share their rooms rental on social networks. This Web Component is published on <a href="https://github.com/fluster/web-social-share" class="text-white">Github</a> under license MIT © <a href="mailto:david.dalbusco@outlook.com" class="text-white">David Dal Busco</a></p>
         </div>
         <div class="col-sm-4 offset-md-1 py-4">
           <h4 class="text-white">Contact</h4>
@@ -74,7 +74,7 @@
 
 </main>
 
-  <web-social-share show="false">
+  <web-social-share show="false" style="--web-social-share-height: 140px;">
     <i class="fab fa-facebook" slot="facebook" style="color: #3b5998; width: 1.4rem;"></i>
     <i class="fab fa-twitter" slot="twitter" style="color: #00aced; width: 1.4rem;"></i>
     <i class="fab fa-pinterest" slot="pinterest" style="color: #bd081c; width: 1.4rem;"></i>
@@ -82,6 +82,7 @@
     <i class="fab fa-reddit" slot="reddit" style="color: #cee3f8; width: 1.4rem;"></i>
     <i class="fas fa-envelope" slot="email" style="color: #ff8ea3; width: 1.4rem;"></i>
     <i class="fab fa-whatsapp-square" slot="whatsapp" style="color: #25D366; width: 1.4rem;"></i>
+    <i class="far fa-copy" slot="copy" style="color: black; width: 1.4rem;"></i>
   </web-social-share>
 
   <script type="text/javascript">
@@ -101,39 +102,43 @@
       displayNames: true,
       config: [{
         facebook: {
-          socialShareUrl: 'https://fluster.io',
+          socialShareUrl: 'http://websocialshare.com',
           socialSharePopupWidth: 400,
           socialSharePopupHeight: 400
         }
       },{
         twitter: {
-          socialShareUrl: 'https://fluster.io',
+          socialShareUrl: 'http://websocialshare.com',
           socialSharePopupWidth: 300,
           socialSharePopupHeight: 400
         }
       },{
         reddit: {
-          socialShareUrl: 'https://fluster.io',
+          socialShareUrl: 'http://websocialshare.com',
           socialSharePopupWidth: 300,
           socialSharePopupHeight: 500
         }
       },{
         linkedin: {
-          socialShareUrl: 'https://fluster.io'
+          socialShareUrl: 'http://websocialshare.com'
         }
       },{
         pinterest: {
-          socialShareUrl: 'https://fluster.io'
+          socialShareUrl: 'http://websocialshare.com'
         }
       },{
         email: {
           socialShareTo: 'david.dalbusco@outlook.com',
-          socialShareBody: 'https://fluster.io'
+          socialShareBody: 'http://websocialshare.com'
         }
       }, {
         whatsapp: {
           socialShareText: 'Hello, how are you?',
-          socialShareUrl: 'https://fluster.io'
+          socialShareUrl: 'http://websocialshare.com'
+        }
+      },{
+        copy: {
+          socialShareUrl: 'http://websocialshare.com'
         }
       }]
     };

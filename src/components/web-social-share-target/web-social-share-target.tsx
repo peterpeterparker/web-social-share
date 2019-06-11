@@ -9,6 +9,7 @@ import {WebSocialSharePinterest} from '../../utils/web-social-share/web-social-s
 import {WebSocialShareReddit} from '../../utils/web-social-share/web-social-share-reddit';
 import {WebSocialShareDisplayAttributes} from '../../types/web-social-share/web-social-share-attributes';
 import {WebSocialShareWhatsapp} from '../../utils/web-social-share/web-social-share-whatsapp';
+import {WebSocialShareCopy} from '../../utils/web-social-share/web-social-share-copy';
 
 @Component({
   tag: 'web-social-share-target',
@@ -44,6 +45,8 @@ export class WebSocialShareTarget {
         this.socialShareLoaded.emit('reddit');
       } else if (this.share.whatsapp) {
         this.socialShareLoaded.emit('whatsapp');
+      } else if (this.share.copy) {
+        this.socialShareLoaded.emit('copy');
       }
 
       resolve();
@@ -99,6 +102,13 @@ export class WebSocialShareTarget {
     this.selected.emit();
   }
 
+  private async handleCopyShare($event) {
+    $event.stopPropagation();
+
+    await WebSocialShareCopy.share(this.share.copy);
+    this.selected.emit();
+  }
+
   render() {
     return <Host class={{
       'web-social-share-facebook': this.share.facebook !== undefined,
@@ -107,7 +117,8 @@ export class WebSocialShareTarget {
       'web-social-share-linkedin': this.share.linkedin !== undefined,
       'web-social-share-pinterest': this.share.pinterest !== undefined,
       'web-social-share-reddit': this.share.reddit !== undefined,
-      'web-social-share-whatsapp': this.share.whatsapp !== undefined
+      'web-social-share-whatsapp': this.share.whatsapp !== undefined,
+      'web-social-share-copy': this.share.copy !== undefined
     }}>
       {this.renderButton()}
     </Host>
@@ -163,6 +174,13 @@ export class WebSocialShareTarget {
           {this.renderName(this.share.whatsapp, 'WhatsApp')}
         </button>
       );
+    } else if (this.share.copy) {
+      return (
+        <button onClick={($event) => this.handleCopyShare($event)} class='web-social-share-button web-social-share-button-copy'>
+          {this.renderIcon()}
+          {this.renderName(this.share.copy, 'Copy')}
+        </button>
+      );
     } else {
       return (
         <div></div>
@@ -180,6 +198,7 @@ export class WebSocialShareTarget {
       <slot name="pinterest"></slot>
       <slot name="reddit"></slot>
       <slot name="whatsapp"></slot>
+      <slot name="copy"></slot>
     </div>;
   }
 

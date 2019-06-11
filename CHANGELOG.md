@@ -1,3 +1,10 @@
+<a name="6.0.0"></a>
+# [6.0.0](https://github.com/fluster/web-social-share/compare/v5.1.0...v6.0.0) (2019-06-11)
+
+### Features
+
+* add "Copy (to clipboard)" support ([#17](https://github.com/fluster/web-social-share/issues/17))
+
 <a name="5.1.0"></a>
 # [5.1.0](https://github.com/fluster/web-social-share/compare/v5.0.0...v5.1.0) (2019-06-05)
 

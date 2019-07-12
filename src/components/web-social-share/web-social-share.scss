@@ -54,7 +54,7 @@ div.web-social-share {
 
     background-color: var(--web-social-share-backdrop-background, black);
 
-    z-index: 1000;
+    z-index: var(--web-social-share-zindex, 1000);
     -webkit-transform: translate3d(0, 0, 2px);
     transform: translate3d(0, 0, 2px);
 
@@ -74,7 +74,7 @@ div.web-social-share {
     bottom: 0;
     margin: auto;
     position: fixed;
-    z-index: 1001;
+    z-index: calc(var(--web-social-share-zindex, 1000) + 1);
     -webkit-transform: translate3d(0, 0, 3px);
     transform: translate3d(0, 0, 3px);
 
@@ -90,7 +90,7 @@ div.web-social-share {
 
       div.web-social-share-action-sheet-group {
 
-        z-index: 1010;
+        z-index: calc(var(--web-social-share-zindex, 1000) + 10);
         -webkit-transform: translate3d(0, 0, 10px);
         transform: translate3d(0, 0, 10px);
 

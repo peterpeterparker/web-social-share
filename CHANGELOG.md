@@ -1,3 +1,10 @@
+<a name="6.1.0"></a>
+# [6.1.0](https://github.com/fluster/web-social-share/compare/v6.0.0...v6.1.0) (2019-07-12)
+
+### Features
+
+* CSS variable to set the base zIndex of the component
+
 <a name="6.0.0"></a>
 # [6.0.0](https://github.com/fluster/web-social-share/compare/v5.1.0...v6.0.0) (2019-06-11)
 

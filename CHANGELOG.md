@@ -1,3 +1,10 @@
+<a name="6.2.0"></a>
+# [6.2.0](https://github.com/fluster/web-social-share/compare/v6.1.0...v6.2.0) (2019-07-30)
+
+### Fix
+
+* refactor component to avoid the need to move slots in order to be compatible with Font Awesome (CSS import) ([#18](https://github.com/fluster/web-social-share/issues/18))
+
 <a name="6.1.0"></a>
 # [6.1.0](https://github.com/fluster/web-social-share/compare/v6.0.0...v6.1.0) (2019-07-12)
 

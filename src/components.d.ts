@@ -8,17 +8,12 @@
 import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
 import {
   WebSocialShareInput,
-  WebSocialShareInputConfig,
 } from './types/web-social-share/web-social-share-input';
 
 export namespace Components {
   interface WebSocialShare {
     'share': WebSocialShareInput;
     'show': boolean;
-  }
-  interface WebSocialShareTarget {
-    'displayNames': boolean;
-    'share': WebSocialShareInputConfig;
   }
 }
 
@@ -30,15 +25,8 @@ declare global {
     prototype: HTMLWebSocialShareElement;
     new (): HTMLWebSocialShareElement;
   };
-
-  interface HTMLWebSocialShareTargetElement extends Components.WebSocialShareTarget, HTMLStencilElement {}
-  var HTMLWebSocialShareTargetElement: {
-    prototype: HTMLWebSocialShareTargetElement;
-    new (): HTMLWebSocialShareTargetElement;
-  };
   interface HTMLElementTagNameMap {
     'web-social-share': HTMLWebSocialShareElement;
-    'web-social-share-target': HTMLWebSocialShareTargetElement;
   }
 }
 
@@ -48,16 +36,9 @@ declare namespace LocalJSX {
     'share'?: WebSocialShareInput;
     'show'?: boolean;
   }
-  interface WebSocialShareTarget extends JSXBase.HTMLAttributes<HTMLWebSocialShareTargetElement> {
-    'displayNames'?: boolean;
-    'onSelected'?: (event: CustomEvent<void>) => void;
-    'onSocialShareLoaded'?: (event: CustomEvent<string>) => void;
-    'share'?: WebSocialShareInputConfig;
-  }
 
   interface IntrinsicElements {
     'web-social-share': WebSocialShare;
-    'web-social-share-target': WebSocialShareTarget;
   }
 }
 

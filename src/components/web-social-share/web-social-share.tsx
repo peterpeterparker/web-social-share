@@ -1,5 +1,17 @@
-import {Component, Element, Event, EventEmitter, Listen, Prop, h} from '@stencil/core';
+import {Component, Element, Event, EventEmitter, Prop, h} from '@stencil/core';
+
 import {WebSocialShareInput, WebSocialShareInputConfig} from '../../types/web-social-share/web-social-share-input';
+import {WebSocialShareFacebook} from '../../utils/web-social-share/web-social-share-facebook';
+import {WebSocialShareTwitter} from '../../utils/web-social-share/web-social-share-twitter';
+import {WebSocialShareEmail} from '../../utils/web-social-share/web-social-share-email';
+import {WebSocialShareLinkedin} from '../../utils/web-social-share/web-social-share-linkedin';
+import {WebSocialSharePinterest} from '../../utils/web-social-share/web-social-share-pinterest';
+import {WebSocialShareReddit} from '../../utils/web-social-share/web-social-share-reddit';
+import {WebSocialShareWhatsapp} from '../../utils/web-social-share/web-social-share-whatsapp';
+import {WebSocialShareCopy} from '../../utils/web-social-share/web-social-share-copy';
+import {
+  WebSocialShareDisplayAttributes
+} from '../../types/web-social-share/web-social-share-attributes';
 
 @Component({
   tag: 'web-social-share',
@@ -12,37 +24,13 @@ export class WebSocialShare {
 
   @Event() closed: EventEmitter;
 
-  @Prop({ mutable: true }) show: boolean;
+  @Prop({mutable: true}) show: boolean;
   @Prop() share: WebSocialShareInput;
 
-  @Listen('socialShareLoaded')
-  async moveSlotOnLoad(event: CustomEvent) {
-    if (!event || !event.detail) {
-      return;
-    }
-
-    await this.moveSlot(event.detail);
-  }
-
-  private moveSlot(name: string): Promise<void> {
-    return new Promise<void>((resolve) => {
-      const slot: HTMLElement = this.el.querySelector('[slot=\'' + name + '\']');
-
-      const element: HTMLWebSocialShareTargetElement = this.el.shadowRoot.querySelector('web-social-share-target.web-social-share-'  + name);
-
-      if (element && slot) {
-        element.appendChild(slot);
-      }
-
-      resolve();
-    });
-  }
-
-  @Listen('selected')
   hide() {
     let element: HTMLElement = this.el.shadowRoot.querySelector('div.web-social-share');
     if (element) {
-     element.classList.add('web-social-share-transition-close');
+      element.classList.add('web-social-share-transition-close');
 
       setTimeout(() => {
         // Reflect css animation speed 400ms, see css
@@ -70,14 +58,6 @@ export class WebSocialShare {
             </div>
           </div>
         </div>
-        <slot name="facebook"></slot>
-        <slot name="twitter"></slot>
-        <slot name="email"></slot>
-        <slot name="linkedin"></slot>
-        <slot name="pinterest"></slot>
-        <slot name="reddit"></slot>
-        <slot name="whatsapp"></slot>
-        <slot name="copy"></slot>
       </div>
     );
   }
@@ -90,8 +70,167 @@ export class WebSocialShare {
     } else {
       return (
         this.share.config.map((config: WebSocialShareInputConfig) =>
-          <web-social-share-target displayNames={this.share.displayNames} share={config}></web-social-share-target>
+          <div class="web-social-share-target">
+            {this.renderButton(config)}
+          </div>
         )
+      );
+    }
+  }
+
+  private renderButton(share: WebSocialShareInputConfig) {
+    if (share.facebook) {
+      return (
+        <button onClick={($event) => this.handleFacebookShare($event, share)}
+                class='web-social-share-button web-social-share-button-facebook'>
+          <div class="web-social-share-button-icon">
+            <slot name="facebook"></slot>
+          </div>
+          {this.renderName(share.facebook, 'Facebook')}
+        </button>
+      );
+    } else if (share.twitter) {
+      return (
+        <button onClick={($event) => this.handleTwitterShare($event, share)}
+                class='web-social-share-button web-social-share-button-twitter'>
+          <div class="web-social-share-button-icon">
+            <slot name="twitter"></slot>
+          </div>
+          {this.renderName(share.twitter, 'Twitter')}
+        </button>
+      );
+    } else if (share.email) {
+      return (
+        <button onClick={($event) => this.handleEmailShare($event, share)}
+                class='web-social-share-button web-social-share-button-email'>
+          <div class="web-social-share-button-icon">
+            <slot name="email"></slot>
+          </div>
+          {this.renderName(share.email, 'Email')}
+        </button>
+      );
+    } else if (share.linkedin) {
+      return (
+        <button onClick={($event) => this.handleLinkedinShare($event, share)}
+                class='web-social-share-button web-social-share-button-linkedin'>
+          <div class="web-social-share-button-icon">
+            <slot name="linkedin"></slot>
+          </div>
+          {this.renderName(share.linkedin, 'Linkedin')}
+        </button>
+      );
+    } else if (share.pinterest) {
+      return (
+        <button onClick={($event) => this.handlePinterestShare($event, share)}
+                class='web-social-share-button web-social-share-button-pinterest'>
+          <div class="web-social-share-button-icon">
+            <slot name="pinterest"></slot>
+          </div>
+          {this.renderName(share.pinterest, 'Pinterest')}
+        </button>
+      );
+    } else if (share.reddit) {
+      return (
+        <button onClick={($event) => this.handleRedditShare($event, share)}
+                class='web-social-share-button web-social-share-button-reddit'>
+          <div class="web-social-share-button-icon">
+            <slot name="reddit"></slot>
+          </div>
+          {this.renderName(share.reddit, 'Reddit')}
+        </button>
+      );
+    } else if (share.whatsapp) {
+      return (
+        <button onClick={($event) => this.handleWhatsappShare($event, share)}
+                class='web-social-share-button web-social-share-button-whatsapp'>
+          <div class="web-social-share-button-icon">
+            <slot name="whatsapp"></slot>
+          </div>
+          {this.renderName(share.whatsapp, 'WhatsApp')}
+        </button>
+      );
+    } else if (share.copy) {
+      return (
+        <button onClick={($event) => this.handleCopyShare($event, share)}
+                class='web-social-share-button web-social-share-button-copy'>
+          <div class="web-social-share-button-icon">
+            <slot name="copy"></slot>
+          </div>
+          {this.renderName(share.copy, 'Copy')}
+        </button>
+      );
+    } else {
+      return (
+        <div></div>
+      )
+    }
+
+  }
+
+  private handleFacebookShare($event, share: WebSocialShareInputConfig) {
+    $event.stopPropagation();
+
+    WebSocialShareFacebook.share(share.facebook);
+    this.hide();
+  }
+
+  private handleTwitterShare($event, share: WebSocialShareInputConfig) {
+    $event.stopPropagation();
+
+    WebSocialShareTwitter.share(share.twitter);
+    this.hide();
+  }
+
+  private handleEmailShare($event, share: WebSocialShareInputConfig) {
+    $event.stopPropagation();
+
+    WebSocialShareEmail.share(share.email);
+    this.hide();
+  }
+
+  private handleLinkedinShare($event, share: WebSocialShareInputConfig) {
+    $event.stopPropagation();
+
+    WebSocialShareLinkedin.share(share.linkedin);
+    this.hide();
+  }
+
+  private handlePinterestShare($event, share: WebSocialShareInputConfig) {
+    $event.stopPropagation();
+
+    WebSocialSharePinterest.share(share.pinterest);
+    this.hide();
+  }
+
+  private handleRedditShare($event, share: WebSocialShareInputConfig) {
+    $event.stopPropagation();
+
+    WebSocialShareReddit.share(share.reddit);
+    this.hide();
+  }
+
+  private handleWhatsappShare($event, share: WebSocialShareInputConfig) {
+    $event.stopPropagation();
+
+    WebSocialShareWhatsapp.share(share.whatsapp);
+    this.hide();
+  }
+
+  private async handleCopyShare($event, share: WebSocialShareInputConfig) {
+    $event.stopPropagation();
+
+    await WebSocialShareCopy.share(share.copy);
+    this.hide();
+  }
+
+  private renderName(displayAttributes: WebSocialShareDisplayAttributes, defaultBrandName: string) {
+    if (this.share.displayNames) {
+      return (
+        <p>{displayAttributes && displayAttributes.brandName && displayAttributes.brandName !== '' ? displayAttributes.brandName : defaultBrandName}</p>
+      );
+    } else {
+      return (
+        <span></span>
       );
     }
   }

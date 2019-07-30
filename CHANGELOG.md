@@ -5,6 +5,24 @@
 
 * refactor component to avoid the need to move slots in order to be compatible with Font Awesome (CSS import) ([#18](https://github.com/fluster/web-social-share/issues/18))
 
+### Special note
+
+There isn't any "breaking changes" but according the type and how you style your icons, you might need to change some CSS variables to keep styles in terms of size the same way.
+
+For example I had to change `width` to `font-size` in the [index.html](https://github.com/fluster/web-social-share/blob/208362a6eb53e30d191f0b095223f2cd0b8a637d/src/index.html#L77) of the component.
+
+From:
+
+```
+<i class="fab fa-twitter" slot="twitter" style="color: #00aced; width: 1.4rem;"></i>
+```
+
+To:
+
+```
+<i class="fab fa-twitter" slot="twitter" style="color: #00aced; font-size: 1.6rem;"></i>
+```
+
 <a name="6.1.0"></a>
 # [6.1.0](https://github.com/fluster/web-social-share/compare/v6.0.0...v6.1.0) (2019-07-12)
 

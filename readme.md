@@ -129,7 +129,7 @@ The available slots are: `facebook`, `twitter`, `pinterest`, `linkedin`, `reddit
 
 ```
 <web-social-share show="false">
-    <ion-icon name="logo-reddit" slot="reddit"></ion-icon>
+    <ion-icon name="logo-reddit" slot="reddit" style="display: block"></ion-icon>
 </web-social-share>
 
 const share = [{
@@ -141,6 +141,8 @@ const share = [{
   }
 }];
 ```
+
+> Note that currently you may have to add the `style="display: block"` on the slotted elements for them to be shown.
 
 #### Styling your icons
 

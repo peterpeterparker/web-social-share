@@ -32,11 +32,11 @@
   ],
   "scripts": {
     "build": "stencil build",
-    "dev": "sd concurrent \"stencil build --dev --watch\" \"stencil-dev-server\" ",
-    "serve": "stencil-dev-server",
-    "start": "npm run dev",
-    "test": "jest --no-cache",
-    "test.watch": "jest --watch --no-cache"
+    "web": "stencil build --prerender",
+    "start": "stencil build --dev --watch --serve",
+    "test": "stencil test --spec --e2e",
+    "test.watch": "stencil test --spec --e2e --watchAll",
+    "generate": "stencil generate"
   },
   "dependencies": {},
   "devDependencies": {

@@ -6,6 +6,7 @@
 * add "Hacker News"
 * exposes interfaces in bundle
 * improve UI (max. width 540px instead of 500px, box-shadow and border-radius for the container)
+* refactor duplicate actions functions code
 * transfer GitHub repo to my self ([peterpeterparker](https://github.com/peterpeterparker/web-social-share)) 
 
 <a name="6.2.0"></a>

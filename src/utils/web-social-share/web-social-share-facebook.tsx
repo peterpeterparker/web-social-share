@@ -5,7 +5,7 @@ import {WebSocialShareFacebookAttributes} from '../../types/web-social-share/web
  */
 export class WebSocialShareFacebook {
 
-  static share(attrs: WebSocialShareFacebookAttributes) {
+  static async share(attrs: WebSocialShareFacebookAttributes) {
     let urlString;
 
     if (attrs.socialShareType && attrs.socialShareType === 'feed') {

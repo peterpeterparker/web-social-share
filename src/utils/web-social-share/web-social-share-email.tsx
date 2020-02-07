@@ -3,7 +3,7 @@ import {WebSocialShareUtils} from './web-social-share-utils';
 
 export class WebSocialShareEmail {
 
-  static share(attrs: WebSocialShareEmailAttributes) {
+  static async share(attrs: WebSocialShareEmailAttributes) {
     let urlString = 'mailto:';
 
     if (attrs.socialShareTo) {

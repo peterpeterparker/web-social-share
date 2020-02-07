@@ -5,7 +5,7 @@ import {WebSocialShareUtils} from './web-social-share-utils';
 
 export class WebSocialShareHackerNews {
 
-  static share(attrs: WebSocialShareWithTextAttributes) {
+  static async share(attrs: WebSocialShareWithTextAttributes) {
     let urlString = 'https://news.ycombinator.com/submitlink?u=';
 
     //default to the current page if a URL isn't specified

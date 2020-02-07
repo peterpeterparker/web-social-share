@@ -2,7 +2,7 @@ import {WebSocialShareRedditAttributes} from '../../types/web-social-share/web-s
 
 export class WebSocialShareReddit {
 
-  static share(attrs: WebSocialShareRedditAttributes) {
+  static async share(attrs: WebSocialShareRedditAttributes) {
     let urlString = 'https://www.reddit.com/';
 
     if (attrs.socialShareSubreddit) {

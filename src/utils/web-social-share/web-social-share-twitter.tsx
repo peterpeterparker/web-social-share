@@ -3,7 +3,7 @@ import {WebSocialShareUtils} from './web-social-share-utils';
 
 export class WebSocialShareTwitter {
 
-  static share(attrs: WebSocialShareTwiterAttributes) {
+  static async share(attrs: WebSocialShareTwiterAttributes) {
     let urlString = 'https://www.twitter.com/intent/tweet?';
 
     if (attrs.socialShareText) {

@@ -2,7 +2,7 @@ import {WebSocialSharePinterestAttributes} from '../../types/web-social-share/we
 
 export class WebSocialSharePinterest {
 
-  static share(attrs: WebSocialSharePinterestAttributes) {
+  static async share(attrs: WebSocialSharePinterestAttributes) {
     window.open(
       'https://www.pinterest.com/pin/create/button/?url=' + encodeURIComponent(attrs.socialShareUrl || window.location.href) + '&media=' + encodeURIComponent(attrs.socialShareMedia) + '&description=' + encodeURIComponent(attrs.socialShareText)
       , 'Pinterest', 'toolbar=0,status=0,resizable=yes,width=' + attrs.socialSharePopupWidth + ',height=' + attrs.socialSharePopupHeight

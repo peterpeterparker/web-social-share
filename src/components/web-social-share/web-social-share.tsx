@@ -81,102 +81,83 @@ export class WebSocialShare {
 
   private renderButtons(share: WebSocialShareInputConfig) {
     if (share.facebook) {
-      return this.renderButton(share.facebook, this.handleFacebookShare, 'Facebook');
+      return this.renderButton(share.facebook, 'facebook', this.handleFacebookShare, 'Facebook');
     } else if (share.twitter) {
-      return this.renderButton(share.facebook, this.handleTwitterShare, 'Twitter');
+      return this.renderButton(share.twitter, 'twitter', this.handleTwitterShare, 'Twitter');
     } else if (share.email) {
-      return this.renderButton(share.facebook, this.handleEmailShare, 'Email');
+      return this.renderButton(share.email, 'email', this.handleEmailShare, 'Email');
     } else if (share.linkedin) {
-      return this.renderButton(share.facebook, this.handleLinkedinShare, 'Linkedin');
+      return this.renderButton(share.linkedin, 'linkedin', this.handleLinkedinShare, 'Linkedin');
     } else if (share.pinterest) {
-      return this.renderButton(share.facebook, this.handlePinterestShare, 'Pinterest');
+      return this.renderButton(share.pinterest, 'pinterest', this.handlePinterestShare, 'Pinterest');
     } else if (share.reddit) {
-      return this.renderButton(share.reddit, this.handleRedditShare, 'Reddit');
+      return this.renderButton(share.reddit, 'reddit', this.handleRedditShare, 'Reddit');
     } else if (share.whatsapp) {
-      return this.renderButton(share.whatsapp, this.handleWhatsappShare, 'WhatsApp');
+      return this.renderButton(share.whatsapp, 'whatsapp', this.handleWhatsappShare, 'WhatsApp');
     } else if (share.copy) {
-      return this.renderButton(share.copy, this.handleCopyShare, 'Copy');
+      return this.renderButton(share.copy, 'copy', this.handleCopyShare, 'Copy');
     } else if (share.hackernews) {
-      return this.renderButton(share.hackernews, this.handleHackerNewsShare, 'Hacker News');
+      return this.renderButton(share.hackernews, 'hackernews', this.handleHackerNewsShare, 'Hacker News');
     } else {
       return undefined;
     }
 
   }
 
-  private renderButton(attributes: WebSocialShareDisplayAttributes, action: ($event, attributes: WebSocialShareDisplayAttributes) => void, defaultBrandName: string) {
+  private renderButton(attributes: WebSocialShareDisplayAttributes, slotName: string, action: (attributes: WebSocialShareDisplayAttributes) => void, defaultBrandName: string) {
     return (
-      <button onClick={($event) => action($event, attributes)}
+      <button onClick={($event) => this.handleShare($event, attributes, action)}
               class='web-social-share-button'>
         <div class="web-social-share-button-icon">
-          <slot name="facebook"></slot>
+          <slot name={slotName}></slot>
         </div>
         {this.renderName(attributes, defaultBrandName)}
       </button>
     );
   }
 
-  private handleFacebookShare = ($event, attributes: WebSocialShareDisplayAttributes) => {
+  private async handleShare($event, attributes: WebSocialShareDisplayAttributes, action: (attributes: WebSocialShareDisplayAttributes) => void) {
     $event.stopPropagation();
 
-    WebSocialShareFacebook.share(attributes);
+    await action(attributes);
+
     this.hide();
+  }
+
+  private handleFacebookShare = async (attributes: WebSocialShareDisplayAttributes) => {
+    await WebSocialShareFacebook.share(attributes);
   };
 
-  private handleTwitterShare = ($event, attributes: WebSocialShareDisplayAttributes) => {
-    $event.stopPropagation();
-
-    WebSocialShareTwitter.share(attributes);
-    this.hide();
+  private handleTwitterShare = async (attributes: WebSocialShareDisplayAttributes) => {
+    await WebSocialShareTwitter.share(attributes);
   };
 
-  private handleEmailShare = ($event, attributes: WebSocialShareDisplayAttributes) => {
-    $event.stopPropagation();
-
-    WebSocialShareEmail.share(attributes);
-    this.hide();
+  private handleEmailShare = async (attributes: WebSocialShareDisplayAttributes) => {
+    await WebSocialShareEmail.share(attributes);
   };
 
-  private handleLinkedinShare = ($event, attributes: WebSocialShareDisplayAttributes) => {
-    $event.stopPropagation();
-
-    WebSocialShareLinkedin.share(attributes);
-    this.hide();
+  private handleLinkedinShare = async (attributes: WebSocialShareDisplayAttributes) => {
+    await WebSocialShareLinkedin.share(attributes);
   };
 
-  private handlePinterestShare = ($event, attributes: WebSocialShareDisplayAttributes) => {
-    $event.stopPropagation();
-
-    WebSocialSharePinterest.share(attributes);
-    this.hide();
+  private handlePinterestShare = async (attributes: WebSocialShareDisplayAttributes) => {
+    await WebSocialSharePinterest.share(attributes);
   };
 
-  private handleRedditShare = ($event, attributes: WebSocialShareDisplayAttributes) => {
-    $event.stopPropagation();
-
-    WebSocialShareReddit.share(attributes);
-    this.hide();
+  private handleRedditShare = async (attributes: WebSocialShareDisplayAttributes) => {
+    await WebSocialShareReddit.share(attributes);
   };
 
-  private handleWhatsappShare = ($event, attributes: WebSocialShareDisplayAttributes) => {
-    $event.stopPropagation();
-
-    WebSocialShareWhatsapp.share(attributes);
-    this.hide();
+  private handleWhatsappShare = async (attributes: WebSocialShareDisplayAttributes) => {
+    await WebSocialShareWhatsapp.share(attributes);
   };
 
-  private handleCopyShare = async ($event, attributes: WebSocialShareDisplayAttributes) => {
-    $event.stopPropagation();
-
+  private handleCopyShare = async (attributes: WebSocialShareDisplayAttributes) => {
     await WebSocialShareCopy.share(attributes);
-    this.hide();
   };
 
-  private handleHackerNewsShare = async ($event, attributes: WebSocialShareDisplayAttributes) => {
-    $event.stopPropagation();
-
-    WebSocialShareHackerNews.share(attributes);
-    this.hide();
+  private handleHackerNewsShare = async (attributes: WebSocialShareDisplayAttributes) => {
+    await WebSocialShareHackerNews.share(attributes);
   };
 
   private renderName(displayAttributes: WebSocialShareDisplayAttributes, defaultBrandName: string) {

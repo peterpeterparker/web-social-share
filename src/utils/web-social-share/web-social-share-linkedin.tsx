@@ -2,7 +2,7 @@ import {WebSocialShareLinkedinAttributes} from '../../types/web-social-share/web
 
 export class WebSocialShareLinkedin {
 
-  static share(attrs: WebSocialShareLinkedinAttributes) {
+  static async share(attrs: WebSocialShareLinkedinAttributes) {
     let urlString = 'https://www.linkedin.com/shareArticle?mini=true';
 
     urlString += '&url=' + encodeURIComponent(attrs.socialShareUrl || window.location.href);

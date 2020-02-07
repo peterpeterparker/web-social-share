@@ -15,7 +15,9 @@
     "progressive-web-app",
     "progressive-web-apps",
     "stenciljs",
-    "stencil"
+    "stencil",
+    "hacker-news",
+    "copy-paste"
   ],
   "main": "dist/index.js",
   "module": "dist/index.mjs",

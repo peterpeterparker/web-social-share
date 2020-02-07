@@ -79,7 +79,15 @@ div.web-social-share {
     transform: translate3d(0, 0, 3px);
 
     width: 100%;
-    max-width: 500px;
+    max-width: 540px;
+
+    @media (min-width: 540px) {
+      div.web-social-share-action-sheet-container {
+        div.web-social-share-action-sheet-group {
+          border-radius: var(--web-social-share-action-sheet-group-border-radius, 8px 8px 0 0);
+        }
+      }
+    }
 
     div.web-social-share-action-sheet-container {
       display: flex;
@@ -89,6 +97,8 @@ div.web-social-share {
       max-height: 100%;
 
       div.web-social-share-action-sheet-group {
+
+        box-shadow: var(--web-social-share-action-sheet-group-box-shadow, 0 0 8px 4px rgba(0,0,0,0.1));
 
         z-index: calc(var(--web-social-share-zindex, 1000) + 10);
         -webkit-transform: translate3d(0, 0, 10px);
@@ -103,7 +113,7 @@ div.web-social-share {
         height: 0;
 
         transition-timing-function: cubic-bezier(.36, .66, .04, 1);
-        transition: height 0.2s;
+        transition: height 0.2s ease-in;
 
         @media (max-width: 540px) {
           justify-content: flex-start;
@@ -139,29 +149,19 @@ div.web-social-share {
     }
 
     p {
-      position: absolute;
-      bottom: 0;
-      left: 50%;
-      transform: translate(-50%, 0);
-      margin: 0;
+      margin: var(--web-social-share-brand-margin, 2px 0);
 
       color: var(--web-social-share-brand-color, inherit);
       font-size: var(--web-social-share-brand-font-size, 0.6rem);
     }
 
     div.web-social-share-button-icon {
-      position: absolute;
-      top: 0;
-      left: 50%;
-      transform: translate(-50%, 0);
       margin: 0;
 
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-
-      height: var(--web-social-share-target-icon-container-height, 2rem);
     }
 
   }

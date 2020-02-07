@@ -149,7 +149,7 @@ div.web-social-share {
     }
 
     p {
-      margin: 0;
+      margin: var(--web-social-share-brand-margin, 2px 0);
 
       color: var(--web-social-share-brand-color, inherit);
       font-size: var(--web-social-share-brand-font-size, 0.6rem);
@@ -162,8 +162,6 @@ div.web-social-share {
       flex-direction: column;
       justify-content: center;
       align-items: center;
-
-      height: var(--web-social-share-target-icon-container-height, 2rem);
     }
 
   }

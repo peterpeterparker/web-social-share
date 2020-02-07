@@ -55,3 +55,6 @@ export interface WebSocialShareEmailAttributes extends WebSocialShareDisplayAttr
 
 export interface WebSocialShareWhatsappAttributes extends WebSocialShareWithTextAttributes {
 }
+
+export interface WebSocialShareHackerNewsAttributes extends WebSocialShareWithTextAttributes {
+}

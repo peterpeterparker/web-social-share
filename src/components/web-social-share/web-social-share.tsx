@@ -12,6 +12,7 @@ import {WebSocialShareCopy} from '../../utils/web-social-share/web-social-share-
 import {
   WebSocialShareDisplayAttributes
 } from '../../types/web-social-share/web-social-share-attributes';
+import {WebSocialShareHackerNews} from '../../utils/web-social-share/web-social-share-hackernews';
 
 @Component({
   tag: 'web-social-share',
@@ -159,6 +160,16 @@ export class WebSocialShare {
           {this.renderName(share.copy, 'Copy')}
         </button>
       );
+    } else if (share.hackernews) {
+      return (
+        <button onClick={($event) => this.handleHackerNewsShare($event, share)}
+                class='web-social-share-button web-social-share-button-hackernews'>
+          <div class="web-social-share-button-icon">
+            <slot name="hackernews"></slot>
+          </div>
+          {this.renderName(share.hackernews, 'Hacker News')}
+        </button>
+      );
     } else {
       return (
         <div></div>
@@ -220,6 +231,13 @@ export class WebSocialShare {
     $event.stopPropagation();
 
     await WebSocialShareCopy.share(share.copy);
+    this.hide();
+  }
+
+  private async handleHackerNewsShare($event, share: WebSocialShareInputConfig) {
+    $event.stopPropagation();
+
+    await WebSocialShareHackerNews.share(share.hackernews);
     this.hide();
   }
 

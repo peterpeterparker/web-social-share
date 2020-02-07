@@ -79,7 +79,15 @@ div.web-social-share {
     transform: translate3d(0, 0, 3px);
 
     width: 100%;
-    max-width: 500px;
+    max-width: 540px;
+
+    @media (min-width: 540px) {
+      div.web-social-share-action-sheet-container {
+        div.web-social-share-action-sheet-group {
+          border-radius: var(--web-social-share-action-sheet-group-border-radius, 8px 8px 0 0);
+        }
+      }
+    }
 
     div.web-social-share-action-sheet-container {
       display: flex;
@@ -89,6 +97,8 @@ div.web-social-share {
       max-height: 100%;
 
       div.web-social-share-action-sheet-group {
+
+        box-shadow: var(--web-social-share-action-sheet-group-box-shadow, 0 0 8px 4px rgba(0,0,0,0.1));
 
         z-index: calc(var(--web-social-share-zindex, 1000) + 10);
         -webkit-transform: translate3d(0, 0, 10px);

@@ -175,6 +175,9 @@ The following CSS variables are exposed by the component:
 | --web-social-share-brand-font-size | 0.6rem | The font-size of an action brand name |
 | --web-social-share-brand-color | inherit | The color of an action brand name |
 | --web-social-share-zindex | 1000 | The base zIndex of the component |
+| --web-social-share-action-sheet-group-box-shadow | 0 0 8px 4px rgba(0,0,0,0.1) | A shadow around the action container |
+| --web-social-share-action-sheet-group-background | #fafafa | The background of the action container |
+| --web-social-share-action-sheet-group-border-radius | 8px 8px 0 0 | A border radius around the action container. Applied only if the windows is more than 540px |
 
 ## Fallback and detection
 

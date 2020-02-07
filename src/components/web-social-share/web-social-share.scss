@@ -139,10 +139,6 @@ div.web-social-share {
     }
 
     p {
-      position: absolute;
-      bottom: 0;
-      left: 50%;
-      transform: translate(-50%, 0);
       margin: 0;
 
       color: var(--web-social-share-brand-color, inherit);
@@ -150,10 +146,6 @@ div.web-social-share {
     }
 
     div.web-social-share-button-icon {
-      position: absolute;
-      top: 0;
-      left: 50%;
-      transform: translate(-50%, 0);
       margin: 0;
 
       display: flex;

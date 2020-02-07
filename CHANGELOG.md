@@ -4,6 +4,7 @@
 ### Features
 
 * add "Hacker News"
+* exposes interfaces in bundle
 * transfer GitHub repo to my self ([peterpeterparker](https://github.com/peterpeterparker/web-social-share)) 
 
 <a name="6.2.0"></a>

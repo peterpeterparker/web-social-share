@@ -1,7 +1,7 @@
 {
   "name": "web-social-share",
   "version": "6.3.0",
-  "description": "A Web Component for your PWA to share urls and content on social networks",
+  "description": "A Web Component to share urls and content on social networks",
   "keywords": [
     "social",
     "share",
@@ -48,12 +48,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/fluster/web-social-share.git"
+    "url": "git+https://github.com/peterpeterparker/web-social-share.git"
   },
   "author": "David Dal Busco",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/fluster/web-social-share"
+    "url": "https://github.com/peterpeterparker/web-social-share"
   },
   "homepage": "https://websocialshare.com",
   "jest": {

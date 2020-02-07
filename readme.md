@@ -4,7 +4,7 @@ Web Social Share is a Web Component for your PWA to share urls and content on so
 
 The component will present a dialog which will contains the different sharing options you selected.
 
-[![version](https://img.shields.io/npm/v/web-social-share/latest.svg?color=blue)](https://github.com/fluster/web-social-share)
+[![version](https://img.shields.io/npm/v/web-social-share/latest.svg?color=blue)](https://github.com/peterpeterparker/web-social-share)
 [![npm](https://img.shields.io/npm/dm/web-social-share.svg)]()
 
 ## Table of contents
@@ -28,7 +28,7 @@ The component will present a dialog which will contains the different sharing op
 
 ## Goals
 
-The idea behind this web component was to add a "social share" feature to the progressive web app (pwa) version of my project [Fluster](https://fluster.io).
+The idea behind this web component was to add a "social share" feature to the progressive web app (pwa) version of my project [Fluster](https://peterpeterparker.io).
 
 Furthermore, I thought that using and building an action sheet to do so would be user friendly.
 
@@ -80,11 +80,11 @@ For example, if you would like to allow your users to share a website thru Faceb
     const share = {
         config: [{
               facebook: {
-                socialShareUrl: 'https://fluster.io'
+                socialShareUrl: 'https://peterpeterparker.io'
               }
             },{
               twitter: {
-                socialShareUrl: 'https://fluster.io'
+                socialShareUrl: 'https://peterpeterparker.io'
               }
         }]
     };
@@ -95,11 +95,11 @@ If you would like to display the action default name, you could extend your conf
         displayNames: true,
         config: [{
               facebook: {
-                socialShareUrl: 'https://fluster.io'
+                socialShareUrl: 'https://peterpeterparker.io'
               }
             },{
               twitter: {
-                socialShareUrl: 'https://fluster.io'
+                socialShareUrl: 'https://peterpeterparker.io'
               }
         }]
     };
@@ -112,7 +112,7 @@ Worth to notice, you could also provide your own custom brand name, for example 
               email: {
                 brandName: 'E-Mail-Adresse',
                 socialShareTo: 'me@outlook.com',
-                socialShareBody: 'https://fluster.io'
+                socialShareBody: 'https://peterpeterparker.io'
               }
         }]
     };
@@ -134,7 +134,7 @@ The available slots are: `facebook`, `twitter`, `pinterest`, `linkedin`, `reddit
 
 const share = [{
     reddit: {
-      socialShareUrl: 'https://fluster.io',
+      socialShareUrl: 'https://peterpeterparker.io',
       socialSharePopupWidth: 300,
       socialSharePopupHeight: 500
     }

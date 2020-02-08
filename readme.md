@@ -67,6 +67,7 @@ The following share options are supported:
 - Pinterest
 - Reddit
 - WhatsApp
+- Hacker News
 - Copy (to clipboard)
 
 For details about them you could have a look to the interface `WebSocialShareInput` located under folder `src/types/web-social-share/`.

@@ -1,6 +1,6 @@
 # Web Social Share
 
-Web Social Share is a Web Component for your PWA to share urls and content on social networks.
+Web Social Share is a Web Component  to share urls and content on social networks.
 
 The component will present a dialog which will contains the different sharing options you selected.
 
@@ -20,25 +20,26 @@ The component will present a dialog which will contains the different sharing op
 			- [Vanilla JS](#vanilla-js)
   - [Slots](#slots)
     - [Styling your icons](#styling-your-icons)
+  - [Web Share API](#web-share-api)  
   - [Fallback and detection](#fallback-and-detection)    
-	- [Showcase](#showcase)
-	- [Theming](#theming)
-	- [Credits](#credits)
-	- [License](#license)
+  - [Showcase](#showcase)
+  - [Theming](#theming)
+  - [Credits](#credits)
+  - [License](#license)
 
 ## Goals
 
-The idea behind this web component was to add a "social share" feature to the progressive web app (pwa) version of my project [Fluster](https://peterpeterparker.io).
+The idea behind this web component was to add a "social share" feature to Progressive Web Apps (pwa).
 
-Furthermore, I thought that using and building an action sheet to do so would be user friendly.
-
-This Web Component is developed with [Stencil](https://stenciljs.com).
+Nowadays, the [Web Share API](https://developer.mozilla.org/fr/docs/Web/API/Navigator/share) is supported by most recent mobile OS. Even though, it may remain interesting to use such a component for the desktop version of web apps.
 
 ## Installation
 
     $ npm install web-social-share
 
 ## Integration
+
+This Web Component is developed with [Stencil](https://stenciljs.com).
 
 The [Stencil documentation](https://stenciljs.com/docs/overview) provide examples of Javascript and framework integration for [Angular](https://stenciljs.com/docs/angular), [React](https://stenciljs.com/docs/react), [Vue](https://stenciljs.com/docs/vue) and [Ember](https://stenciljs.com/docs/ember).
 
@@ -186,6 +187,12 @@ The following CSS variables are exposed by the component:
 This component is a dumb component. It don't proceed detection or fallback to anything in case one of the share options would not be supported by the device or browser where the component is used.
 
 For example, the share options "Copy (to clipboard)" use the Web Api [Clipboard​.write​Text()](https://developer.mozilla.org/en-US/docs/Web/API/Clipboard/writeText) which might not be supported. Anyway the action will be displayed and if used by the user, nothing will happen.
+
+## Web Share API
+
+When I develop web apps I generally develop a mixed solution between Web Share API and this component. If the Web Share API is supported, and maybe sometimes in combination to detecting desktop or mobile, I use the browser API. But if not supported, I fallback on this component.  
+
+If interested to implement such a solution, check out the [blog post](https://dev.to/daviddalbusco/how-to-implement-the-web-share-api-with-a-fallback-b3) I published about it 
 
 ## Showcase
 

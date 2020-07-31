@@ -20,8 +20,10 @@ The component will present a dialog which will contains the different sharing op
 			- [Vanilla JS](#vanilla-js)
   - [Slots](#slots)
     - [Styling your icons](#styling-your-icons)
-  - [Web Share API](#web-share-api)  
+  - [Theming](#theming)
+  - [Events](#events)  
   - [Fallback and detection](#fallback-and-detection)    
+  - [Web Share API](#web-share-api)  
   - [Showcase](#showcase)
   - [Theming](#theming)
   - [Credits](#credits)
@@ -45,9 +47,17 @@ The [Stencil documentation](https://stenciljs.com/docs/overview) provide example
 
 ## Getting Started
 
-The Web Social Share Component could be use like following:
+The Web Social Share Component can be use like following:
 
-    <web-social-share [show]="true" [share]="options" (closed)="close()"></web-social-share>
+```
+<web-social-share show="true" share="options"></web-social-share>
+```
+
+or in an Angular application:
+
+```
+<web-social-share [show]="true" [share]="options" (closed)="close()"></web-social-share>
+```
 
 Both `show` and `share` are mandatory.
 
@@ -182,6 +192,28 @@ The following CSS variables are exposed by the component:
 | --web-social-share-action-sheet-group-background | #fafafa | The background of the action container |
 | --web-social-share-action-sheet-group-border-radius | 8px 8px 0 0 | A border radius around the action container. Applied only if the windows is more than 540px |
 
+## Events
+
+The component trigger an event `closed` when the modal is close. It is emitted regardless if the user shared or not aka "just" closed it.
+
+```
+@Event() closed(void);
+```
+
+Typically, this use case can be used to post process the data you pass to the component. For example, I use a store to handle these and listen to the event to clean it afterwards.
+
+In an Angular application, the event can be bind as following:
+
+```
+<web-social-share [show]="true" [share]="options" (closed)="close()"></web-social-share>
+```
+
+In Vanilla you need to add a `listener`:
+
+```
+document.querySelector('web-social-share').addListener('onClosed', () => console.log('Something)');
+```
+
 ## Fallback and detection
 
 This component is a dumb component. It don't proceed detection or fallback to anything in case one of the share options would not be supported by the device or browser where the component is used.
@@ -202,7 +234,7 @@ The above showcase is the `www` folder of this project deployed in Firebase. If 
 
 ## Credits
 
-I didn't wanted to reinvent the wheel when it comes to the sharing actions themselves. Therefore I forked the features of [angular-socialshare](https://github.com/720kb/angular-socialshare). Kudos to [45kb](https://github.com/45kb) :+1:
+I didn't want to reinvent the wheel when it comes to the sharing actions themselves. Therefore I forked the features of [angular-socialshare](https://github.com/720kb/angular-socialshare). Kudos to [45kb](https://github.com/45kb) :+1:
 
 ## License
 

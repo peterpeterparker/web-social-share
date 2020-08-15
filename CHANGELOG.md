@@ -1,3 +1,10 @@
+<a name="6.4.1"></a>
+# [6.4.1](https://github.com/peterpeterparker/web-social-share/compare/v6.4.0...v6.4.1) (2020-08-15)
+
+### Chore
+
+- update Stencil v1.17.x
+
 <a name="6.4.0"></a>
 # [6.4.0](https://github.com/peterpeterparker/web-social-share/compare/v6.3.0...v6.4.0) (2020-03-20)
 

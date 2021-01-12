@@ -139,6 +139,7 @@ Slots has to be used to inject the icons for your actions in the component.
 
 The available slots are: `facebook`, `twitter`, `pinterest`, `linkedin`, `reddit`, `email`, `copy` and `whatsapp`.
 
+NOTE: Slot names MUST be lower case.
 ```
 <web-social-share show="false">
     <i class="fab fa-reddit" slot="reddit" style="color: #cee3f8;"></ion-icon>

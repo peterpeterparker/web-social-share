@@ -9,6 +9,8 @@
 ### Features
 
 - update dependencies (Stencil v2)
+- code refactored to hopefully make it easier to read
+- `isMobile` detection improved
 
 ### Chore
 

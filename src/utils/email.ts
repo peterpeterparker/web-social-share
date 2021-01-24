@@ -1,5 +1,5 @@
 import {WebSocialShareEmailAttributes} from '../types/web-social-share-attributes';
-import {Utils} from './utils';
+import {staticOpenNewWindow} from './utils';
 
 export const email = async (attrs: WebSocialShareEmailAttributes) => {
   let urlString = 'mailto:';
@@ -26,5 +26,5 @@ export const email = async (attrs: WebSocialShareEmailAttributes) => {
     urlString += '&bcc=' + encodeURIComponent(attrs.socialShareBcc);
   }
 
-  Utils.staticOpenNewWindow(urlString);
+  staticOpenNewWindow(urlString);
 };

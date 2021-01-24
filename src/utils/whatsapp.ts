@@ -1,11 +1,11 @@
 import {WebSocialShareWhatsappAttributes} from '../types/web-social-share-attributes';
 
-import {Utils} from './utils';
+import {staticOpenNewWindow, isMobile} from './utils';
 
 export const whatsapp = async (attrs: WebSocialShareWhatsappAttributes) => {
-  const isMobile: boolean = Utils.isMobile();
+  const mobile: boolean = isMobile();
 
-  let urlString = isMobile ? 'https://api.whatsapp.com/send?text=' : 'https://web.whatsapp.com/send?text=';
+  let urlString = mobile ? 'https://api.whatsapp.com/send?text=' : 'https://web.whatsapp.com/send?text=';
 
   if (attrs.socialShareText) {
     urlString += encodeURIComponent(attrs.socialShareText) + '%0A';
@@ -14,8 +14,8 @@ export const whatsapp = async (attrs: WebSocialShareWhatsappAttributes) => {
   //default to the current page if a URL isn't specified
   urlString += encodeURIComponent(attrs.socialShareUrl || window.location.href);
 
-  if (isMobile) {
-    Utils.staticOpenNewWindow(urlString);
+  if (mobile) {
+    staticOpenNewWindow(urlString);
   } else {
     window.open(
       urlString,

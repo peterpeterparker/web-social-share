@@ -1,5 +1,4 @@
 div.web-social-share {
-
   visibility: hidden;
   opacity: 0;
 
@@ -13,6 +12,10 @@ div.web-social-share {
     opacity: 1;
 
     div.web-social-share-backdrop {
+      /**
+        * @prop -web-social-share-backdrop-opacity: Backdrop opacity
+        * @default 0.25
+      */
       opacity: var(--web-social-share-backdrop-opacity, 0.25);
     }
 
@@ -21,9 +24,17 @@ div.web-social-share {
 
       div.web-social-share-action-sheet-container {
         div.web-social-share-action-sheet-group {
+          /**
+            * @prop --web-social-share-height: Action sheet height
+            * @default 80px
+          */
           height: var(--web-social-share-height, 80px);
 
           @media (max-width: 540px) {
+            /**
+              * @prop --web-social-share-height-small-device: Action sheet height on smaller device (max-width 540px)
+              * @default 140px
+            */
             height: var(--web-social-share-height-small-device, 140px);
           }
         }
@@ -52,8 +63,16 @@ div.web-social-share {
     opacity: 0;
     transition: opacity 0.1s linear;
 
+    /**
+            * @prop --web-social-share-backdrop-background: Backdrop background color
+            * @default black
+          */
     background-color: var(--web-social-share-backdrop-background, black);
 
+    /**
+            * @prop --web-social-share-zindex: Action sheet z-index. Backdrop gets this value, container gets the value + 1 and content value + 10
+            * @default 1000
+          */
     z-index: var(--web-social-share-zindex, 1000);
     -webkit-transform: translate3d(0, 0, 2px);
     transform: translate3d(0, 0, 2px);
@@ -74,6 +93,7 @@ div.web-social-share {
     bottom: 0;
     margin: auto;
     position: fixed;
+
     z-index: calc(var(--web-social-share-zindex, 1000) + 1);
     -webkit-transform: translate3d(0, 0, 3px);
     transform: translate3d(0, 0, 3px);
@@ -84,6 +104,10 @@ div.web-social-share {
     @media (min-width: 540px) {
       div.web-social-share-action-sheet-container {
         div.web-social-share-action-sheet-group {
+          /**
+            * @prop --web-social-share-action-sheet-group-border-radius: Action sheet border radius on bigger screen  (min-width 540px)
+            * @default 8px 8px 0 0
+          */
           border-radius: var(--web-social-share-action-sheet-group-border-radius, 8px 8px 0 0);
         }
       }
@@ -97,13 +121,20 @@ div.web-social-share {
       max-height: 100%;
 
       div.web-social-share-action-sheet-group {
-
-        box-shadow: var(--web-social-share-action-sheet-group-box-shadow, 0 0 8px 4px rgba(0,0,0,0.1));
+        /**
+            * @prop --web-social-share-action-sheet-group-box-shadow: Action sheet box-shadow
+            * @default 0 0 8px 4px rgba(0,0,0,0.1)
+          */
+        box-shadow: var(--web-social-share-action-sheet-group-box-shadow, 0 0 8px 4px rgba(0, 0, 0, 0.1));
 
         z-index: calc(var(--web-social-share-zindex, 1000) + 10);
         -webkit-transform: translate3d(0, 0, 10px);
         transform: translate3d(0, 0, 10px);
 
+        /**
+            * @prop --web-social-share-action-sheet-group-box-shadow: Action sheet group background
+            * @default #fafafa
+          */
         background: var(--web-social-share-action-sheet-group-background, #fafafa);
 
         display: flex;
@@ -112,7 +143,7 @@ div.web-social-share {
 
         height: 0;
 
-        transition-timing-function: cubic-bezier(.36, .66, .04, 1);
+        transition-timing-function: cubic-bezier(0.36, 0.66, 0.04, 1);
         transition: height 0.2s ease-in;
 
         @media (max-width: 540px) {
@@ -126,7 +157,17 @@ div.web-social-share {
 
   div.web-social-share-target {
     margin: auto;
+
+    /**
+            * @prop --web-social-share-target-width: Button width
+            * @default 4rem
+          */
     width: var(--web-social-share-target-width, 4rem);
+
+    /**
+            * @prop --web-social-share-target-height: Button height
+            * @default 3rem
+          */
     height: var(--web-social-share-target-height, 3rem);
 
     display: flex;
@@ -145,13 +186,27 @@ div.web-social-share {
       width: var(--web-social-share-button-width, 100%);
       height: var(--web-social-share-button-height, 100%);
 
+      /**
+            * @prop --web-social-share-button-font-size: Button font size
+          */
       font-size: var(--web-social-share-button-font-size);
     }
 
     p {
+      /**
+            * @prop --web-social-share-brand-margin: Brand text margin
+            * default 2px 0
+          */
       margin: var(--web-social-share-brand-margin, 2px 0);
-
+      /**
+                  * @prop --web-social-share-brand-color: Brand text color
+                  * default inherit
+                */
       color: var(--web-social-share-brand-color, inherit);
+      /**
+            * @prop --web-social-share-brand-margin: Brand text font-size
+            * default 0.6rem
+          */
       font-size: var(--web-social-share-brand-font-size, 0.6rem);
     }
 
@@ -163,7 +218,6 @@ div.web-social-share {
       justify-content: center;
       align-items: center;
     }
-
   }
 }
 

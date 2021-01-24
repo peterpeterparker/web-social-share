@@ -5,10 +5,16 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
-import { WebSocialShareInput } from "./types/web-social-share/web-social-share-input";
+import { WebSocialShareInput } from "./types/web-social-share-input";
 export namespace Components {
     interface WebSocialShare {
+        /**
+          * The share options
+         */
         "share": WebSocialShareInput;
+        /**
+          * Trigger the display, or close, of the action sheet which contains the social-share options
+         */
         "show": boolean;
     }
 }
@@ -25,8 +31,17 @@ declare global {
 }
 declare namespace LocalJSX {
     interface WebSocialShare {
-        "onClosed"?: (event: CustomEvent<any>) => void;
+        /**
+          * An event triggered when the modal is `closed`
+         */
+        "onClosed"?: (event: CustomEvent<void>) => void;
+        /**
+          * The share options
+         */
         "share"?: WebSocialShareInput;
+        /**
+          * Trigger the display, or close, of the action sheet which contains the social-share options
+         */
         "show"?: boolean;
     }
     interface IntrinsicElements {

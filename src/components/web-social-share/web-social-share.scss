@@ -1,5 +1,4 @@
 div.web-social-share {
-
   visibility: hidden;
   opacity: 0;
 
@@ -122,12 +121,11 @@ div.web-social-share {
       max-height: 100%;
 
       div.web-social-share-action-sheet-group {
-
         /**
             * @prop --web-social-share-action-sheet-group-box-shadow: Action sheet box-shadow
             * @default 0 0 8px 4px rgba(0,0,0,0.1)
           */
-        box-shadow: var(--web-social-share-action-sheet-group-box-shadow, 0 0 8px 4px rgba(0,0,0,0.1));
+        box-shadow: var(--web-social-share-action-sheet-group-box-shadow, 0 0 8px 4px rgba(0, 0, 0, 0.1));
 
         z-index: calc(var(--web-social-share-zindex, 1000) + 10);
         -webkit-transform: translate3d(0, 0, 10px);
@@ -145,7 +143,7 @@ div.web-social-share {
 
         height: 0;
 
-        transition-timing-function: cubic-bezier(.36, .66, .04, 1);
+        transition-timing-function: cubic-bezier(0.36, 0.66, 0.04, 1);
         transition: height 0.2s ease-in;
 
         @media (max-width: 540px) {
@@ -220,7 +218,6 @@ div.web-social-share {
       justify-content: center;
       align-items: center;
     }
-
   }
 }
 

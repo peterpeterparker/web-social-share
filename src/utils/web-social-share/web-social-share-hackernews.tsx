@@ -1,10 +1,7 @@
-import {
-  WebSocialShareWithTextAttributes
-} from '../../types/web-social-share/web-social-share-attributes';
+import {WebSocialShareWithTextAttributes} from '../../types/web-social-share/web-social-share-attributes';
 import {WebSocialShareUtils} from './web-social-share-utils';
 
 export class WebSocialShareHackerNews {
-
   static async share(attrs: WebSocialShareWithTextAttributes) {
     let urlString = 'https://news.ycombinator.com/submitlink?u=';
 

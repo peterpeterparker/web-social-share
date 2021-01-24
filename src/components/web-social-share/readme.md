@@ -1,9 +1,6 @@
 # web-social-share
 
-
-
 <!-- Auto Generated Below -->
-
 
 ## Properties
 
@@ -12,13 +9,11 @@
 | `share`  | --        | The share options                                                                          | `WebSocialShareInput` | `undefined` |
 | `show`   | `show`    | Trigger the display, or close, of the action sheet which contains the social-share options | `boolean`             | `undefined` |
 
-
 ## Events
 
 | Event    | Description                                   | Type                |
 | -------- | --------------------------------------------- | ------------------- |
 | `closed` | An event triggered when the modal is `closed` | `CustomEvent<void>` |
-
 
 ## Slots
 
@@ -32,7 +27,6 @@
 | `"pinterest"`  | A slot to display an icon or text in the related social share button |
 | `"twitter"`    | A slot to display an icon or text in the related social share button |
 | `"whatsapp"`   | A slot to display an icon or text in the related social share button |
-
 
 ## CSS Custom Properties
 
@@ -50,7 +44,6 @@
 | `--web-social-share-target-width`                     | Button width @default 4rem                                                                                        |
 | `--web-social-share-zindex`                           | Action sheet z-index. Backdrop gets this value, container gets the value + 1 and content value + 10 @default 1000 |
 
+---
 
-----------------------------------------------
-
-*Built with [StencilJS](https://stenciljs.com/)*
+_Built with [StencilJS](https://stenciljs.com/)_

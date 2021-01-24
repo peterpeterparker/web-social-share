@@ -1,11 +1,13 @@
 import {
   WebSocialShareAttributes,
   WebSocialShareEmailAttributes,
-  WebSocialShareFacebookAttributes, WebSocialShareHackerNewsAttributes,
+  WebSocialShareFacebookAttributes,
+  WebSocialShareHackerNewsAttributes,
   WebSocialShareLinkedinAttributes,
   WebSocialSharePinterestAttributes,
   WebSocialShareRedditAttributes,
-  WebSocialShareTwiterAttributes, WebSocialShareWhatsappAttributes
+  WebSocialShareTwiterAttributes,
+  WebSocialShareWhatsappAttributes
 } from './web-social-share-attributes';
 
 export interface WebSocialShareInputConfig {

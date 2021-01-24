@@ -83,7 +83,7 @@ Trigger the display, or close, of the action sheet which contains the social-sha
 
 For details about them you could have a look to the interface `WebSocialShareInput` located under folder `src/types/web-social-share/`.
 
-`share` is a property of type **WebSocialShareInput**. 
+`share` is a property of type **WebSocialShareInput**.
 
 Note: `share` is an object. Therefore, it has to be parsed with JavaScript if you use the component in a vanilla Javascript application.
 
@@ -105,7 +105,7 @@ const share = {
 };
 ```
 
-If you would like to display the action default name, you could extend your configuration using the attribute `displayNames` like the following: 
+If you would like to display the action default name, you could extend your configuration using the attribute `displayNames` like the following:
 
 ```
 const share = {
@@ -121,7 +121,7 @@ const share = {
     }]
 };
 ```
-    
+
 Worth to notice, you could also provide your own custom brand name, for example in case you would translate the word `Email`, for example:
 
 ```
@@ -136,7 +136,7 @@ const share = {
     }]
 };
 ```
-    
+
 ### Slots
 
 Slots have to be used to display the icon or text for your actions.
@@ -169,32 +169,32 @@ For example:
 ```
 <web-social-share show="false">
     <i class="fab fa-twitter" slot="twitter" style="color: #00aced; width: 1.4rem;"></i>
-</web-social-share>    
+</web-social-share>
 ```
 
 ## Theming
 
 The following CSS variables are exposed by the component:
 
-| CSS4 variable                      | Default | Note |
-| -------------------------- |-----------------|-----------------|
-| --web-social-share-backdrop-opacity | 0.25 | Backdrop opacity |
-| --web-social-share-backdrop-background | black | Backdrop background |
-| --web-social-share-height | 80px | Action sheet height |
-| --web-social-share-height-small-device | 140px | Action sheet height on device smaller than 540px |
-| --web-social-share-target-width | 4rem | An action container width |
-| --web-social-share-target-height | 3rem | An action container height |
-| --web-social-share-button-width | 100% | An action inner button width |
-| --web-social-share-button-height | 100% | An action inner button height |
-| --web-social-share-target-icon-container-height | 2rem | An action icon container height |
-| --web-social-share-button-font-size |  | The font-size of an action button |
-| --web-social-share-brand-font-size | 0.6rem | The font-size of an action brand name |
-| --web-social-share-brand-color | inherit | The color of an action brand name |
-| --web-social-share-brand-margin | 2px 0 | A margin for the brand name |
-| --web-social-share-zindex | 1000 | The base zIndex of the component |
-| --web-social-share-action-sheet-group-box-shadow | 0 0 8px 4px rgba(0,0,0,0.1) | A shadow around the action container |
-| --web-social-share-action-sheet-group-background | #fafafa | The background of the action container |
-| --web-social-share-action-sheet-group-border-radius | 8px 8px 0 0 | A border radius around the action container. Applied only if the windows is more than 540px |
+| CSS4 variable                                       | Default                     | Note                                                                                        |
+| --------------------------------------------------- | --------------------------- | ------------------------------------------------------------------------------------------- |
+| --web-social-share-backdrop-opacity                 | 0.25                        | Backdrop opacity                                                                            |
+| --web-social-share-backdrop-background              | black                       | Backdrop background                                                                         |
+| --web-social-share-height                           | 80px                        | Action sheet height                                                                         |
+| --web-social-share-height-small-device              | 140px                       | Action sheet height on device smaller than 540px                                            |
+| --web-social-share-target-width                     | 4rem                        | An action container width                                                                   |
+| --web-social-share-target-height                    | 3rem                        | An action container height                                                                  |
+| --web-social-share-button-width                     | 100%                        | An action inner button width                                                                |
+| --web-social-share-button-height                    | 100%                        | An action inner button height                                                               |
+| --web-social-share-target-icon-container-height     | 2rem                        | An action icon container height                                                             |
+| --web-social-share-button-font-size                 |                             | The font-size of an action button                                                           |
+| --web-social-share-brand-font-size                  | 0.6rem                      | The font-size of an action brand name                                                       |
+| --web-social-share-brand-color                      | inherit                     | The color of an action brand name                                                           |
+| --web-social-share-brand-margin                     | 2px 0                       | A margin for the brand name                                                                 |
+| --web-social-share-zindex                           | 1000                        | The base zIndex of the component                                                            |
+| --web-social-share-action-sheet-group-box-shadow    | 0 0 8px 4px rgba(0,0,0,0.1) | A shadow around the action container                                                        |
+| --web-social-share-action-sheet-group-background    | #fafafa                     | The background of the action container                                                      |
+| --web-social-share-action-sheet-group-border-radius | 8px 8px 0 0                 | A border radius around the action container. Applied only if the windows is more than 540px |
 
 ## Events
 
@@ -214,9 +214,9 @@ For example, the share options "Copy (to clipboard)" use the Web Api [Clipboard.
 
 ## Web Share API
 
-When I develop web apps I generally develop a mixed solution between Web Share API and this component. If the Web Share API is supported, and maybe sometimes in combination to detecting desktop or mobile, I use the browser API. If not supported, I fallback on this component.  
+When I develop web apps I generally develop a mixed solution between Web Share API and this component. If the Web Share API is supported, and maybe sometimes in combination to detecting desktop or mobile, I use the browser API. If not supported, I fallback on this component.
 
-If interested to implement such a solution, check out the [blog post](https://dev.to/daviddalbusco/how-to-implement-the-web-share-api-with-a-fallback-b3) I published about it 
+If interested to implement such a solution, check out the [blog post](https://dev.to/daviddalbusco/how-to-implement-the-web-share-api-with-a-fallback-b3) I published about it
 
 ## Showcase
 

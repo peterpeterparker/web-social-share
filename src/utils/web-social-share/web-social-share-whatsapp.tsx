@@ -3,7 +3,6 @@ import {WebSocialShareWhatsappAttributes} from '../../types/web-social-share/web
 import {WebSocialShareUtils} from './web-social-share-utils';
 
 export class WebSocialShareWhatsapp {
-
   static async share(attrs: WebSocialShareWhatsappAttributes) {
     const isMobile: boolean = WebSocialShareUtils.isMobile();
 
@@ -21,8 +20,16 @@ export class WebSocialShareWhatsapp {
     } else {
       window.open(
         urlString,
-        'WhatsApp', 'toolbar=0,status=0,resizable=yes,width=' + attrs.socialSharePopupWidth + ',height=' + attrs.socialSharePopupHeight
-        + ',top=' + (window.innerHeight - attrs.socialSharePopupHeight) / 2 + ',left=' + (window.innerWidth - attrs.socialSharePopupWidth) / 2);
+        'WhatsApp',
+        'toolbar=0,status=0,resizable=yes,width=' +
+          attrs.socialSharePopupWidth +
+          ',height=' +
+          attrs.socialSharePopupHeight +
+          ',top=' +
+          (window.innerHeight - attrs.socialSharePopupHeight) / 2 +
+          ',left=' +
+          (window.innerWidth - attrs.socialSharePopupWidth) / 2
+      );
     }
   }
 }

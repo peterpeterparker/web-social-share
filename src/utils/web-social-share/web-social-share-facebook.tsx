@@ -4,7 +4,6 @@ import {WebSocialShareFacebookAttributes} from '../../types/web-social-share/web
  * Source: https://github.com/720kb/angular-socialshare/blob/master/dist/angular-socialshare.js
  */
 export class WebSocialShareFacebook {
-
   static async share(attrs: WebSocialShareFacebookAttributes) {
     let urlString;
 
@@ -46,9 +45,16 @@ export class WebSocialShareFacebook {
 
       window.open(
         urlString,
-        'Facebook', 'toolbar=0,status=0,resizable=yes,width=' + attrs.socialSharePopupWidth + ',height=' + attrs.socialSharePopupHeight
-        + ',top=' + (window.innerHeight - attrs.socialSharePopupHeight) / 2 + ',left=' + (window.innerWidth - attrs.socialSharePopupWidth) / 2);
-
+        'Facebook',
+        'toolbar=0,status=0,resizable=yes,width=' +
+          attrs.socialSharePopupWidth +
+          ',height=' +
+          attrs.socialSharePopupHeight +
+          ',top=' +
+          (window.innerHeight - attrs.socialSharePopupHeight) / 2 +
+          ',left=' +
+          (window.innerWidth - attrs.socialSharePopupWidth) / 2
+      );
     } else if (attrs.socialShareType && attrs.socialShareType === 'share') {
       // if user specifies that they want to use the Facebook share dialog
       //(https://developers.facebook.com/docs/sharing/reference/share-dialog)
@@ -82,12 +88,18 @@ export class WebSocialShareFacebook {
         urlString += '&hashtag=' + encodeURIComponent(attrs.socialShareHashtags);
       }
 
-
       window.open(
         urlString,
-        'Facebook', 'toolbar=0,status=0,resizable=yes,width=' + attrs.socialSharePopupWidth + ',height=' + attrs.socialSharePopupHeight
-        + ',top=' + (window.innerHeight - attrs.socialSharePopupHeight) / 2 + ',left=' + (window.innerWidth - attrs.socialSharePopupWidth) / 2);
-
+        'Facebook',
+        'toolbar=0,status=0,resizable=yes,width=' +
+          attrs.socialSharePopupWidth +
+          ',height=' +
+          attrs.socialSharePopupHeight +
+          ',top=' +
+          (window.innerHeight - attrs.socialSharePopupHeight) / 2 +
+          ',left=' +
+          (window.innerWidth - attrs.socialSharePopupWidth) / 2
+      );
     } else if (attrs.socialShareType && attrs.socialShareType === 'send') {
       // if user specifies that they want to use the Facebook send dialog
       //(https://developers.facebook.com/docs/sharing/reference/send-dialog)
@@ -115,16 +127,30 @@ export class WebSocialShareFacebook {
 
       window.open(
         urlString,
-        'Facebook', 'toolbar=0,status=0,resizable=yes,width=' + attrs.socialSharePopupWidth + ',height=' + attrs.socialSharePopupHeight
-        + ',top=' + (window.innerHeight - attrs.socialSharePopupHeight) / 2 + ',left=' + (window.innerWidth - attrs.socialSharePopupWidth) / 2);
-
+        'Facebook',
+        'toolbar=0,status=0,resizable=yes,width=' +
+          attrs.socialSharePopupWidth +
+          ',height=' +
+          attrs.socialSharePopupHeight +
+          ',top=' +
+          (window.innerHeight - attrs.socialSharePopupHeight) / 2 +
+          ',left=' +
+          (window.innerWidth - attrs.socialSharePopupWidth) / 2
+      );
     } else {
       //otherwise default to using sharer.php
       window.open(
-        'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(attrs.socialShareUrl || window.location.href)
-        , 'Facebook', 'toolbar=0,status=0,resizable=yes,width=' + attrs.socialSharePopupWidth + ',height=' + attrs.socialSharePopupHeight
-        + ',top=' + (window.innerHeight - attrs.socialSharePopupHeight) / 2 + ',left=' + (window.innerWidth - attrs.socialSharePopupWidth) / 2);
+        'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(attrs.socialShareUrl || window.location.href),
+        'Facebook',
+        'toolbar=0,status=0,resizable=yes,width=' +
+          attrs.socialSharePopupWidth +
+          ',height=' +
+          attrs.socialSharePopupHeight +
+          ',top=' +
+          (window.innerHeight - attrs.socialSharePopupHeight) / 2 +
+          ',left=' +
+          (window.innerWidth - attrs.socialSharePopupWidth) / 2
+      );
     }
   }
-
 }

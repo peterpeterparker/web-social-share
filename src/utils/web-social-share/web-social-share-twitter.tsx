@@ -2,7 +2,6 @@ import {WebSocialShareTwiterAttributes} from '../../types/web-social-share/web-s
 import {WebSocialShareUtils} from './web-social-share-utils';
 
 export class WebSocialShareTwitter {
-
   static async share(attrs: WebSocialShareTwiterAttributes) {
     let urlString = 'https://www.twitter.com/intent/tweet?';
 
@@ -26,8 +25,16 @@ export class WebSocialShareTwitter {
     } else {
       window.open(
         urlString,
-        'Twitter', 'toolbar=0,status=0,resizable=yes,width=' + attrs.socialSharePopupWidth + ',height=' + attrs.socialSharePopupHeight
-        + ',top=' + (window.innerHeight - attrs.socialSharePopupHeight) / 2 + ',left=' + (window.innerWidth - attrs.socialSharePopupWidth) / 2);
+        'Twitter',
+        'toolbar=0,status=0,resizable=yes,width=' +
+          attrs.socialSharePopupWidth +
+          ',height=' +
+          attrs.socialSharePopupHeight +
+          ',top=' +
+          (window.innerHeight - attrs.socialSharePopupHeight) / 2 +
+          ',left=' +
+          (window.innerWidth - attrs.socialSharePopupWidth) / 2
+      );
     }
   }
 }

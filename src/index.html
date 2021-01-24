@@ -1,184 +1,239 @@
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
-  <title>Web Social Share</title>
-  <meta name="description" content="A Web Component to share urls and content on social networks">
-  <meta name="author" content="David Dal Busco">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
+    <title>Web Social Share</title>
+    <meta name="description" content="A Web Component to share urls and content on social networks" />
+    <meta name="author" content="David Dal Busco" />
 
-  <script type="module" src="/build/websocialshare.esm.js"></script>
-  <script nomodule src="/build/websocialshare.js"></script>
+    <script type="module" src="/build/websocialshare.esm.js"></script>
+    <script nomodule src="/build/websocialshare.js"></script>
 
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-
-</head>
-<body>
-
-<header>
-  <div class="collapse bg-dark" id="navbarHeader">
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-8 col-md-7 py-4">
-          <h4 class="text-white">About</h4>
-          <p class="text-muted">A Web Component to share urls and content on social networks. This Web Component is published on <a href="https://github.com/peterpeterparker/web-social-share" class="text-white">Github</a> under license MIT © <a href="mailto:david.dalbusco@outlook.com" class="text-white">David Dal Busco</a></p>
-        </div>
-        <div class="col-sm-4 offset-md-1 py-4">
-          <h4 class="text-white">Contact</h4>
-          <ul class="list-unstyled">
-            <li><a href="https://github.com/peterpeterparker/web-social-share" class="text-white">Github</a></li>
-            <li><a href="http://twitter.com/daviddalbusco" class="text-white">Twitter</a></li>
-            <li><a href="mailto:david.dalbusco@outlook.com" class="text-white">Email me</a></li>
-          </ul>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="collapse bg-dark" id="navbarHeader">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-8 col-md-7 py-4">
+              <h4 class="text-white">About</h4>
+              <p class="text-muted">
+                A Web Component to share urls and content on social networks. This Web Component is published on
+                <a href="https://github.com/peterpeterparker/web-social-share" class="text-white">Github</a> under license MIT ©
+                <a href="mailto:david.dalbusco@outlook.com" class="text-white">David Dal Busco</a>
+              </p>
+            </div>
+            <div class="col-sm-4 offset-md-1 py-4">
+              <h4 class="text-white">Contact</h4>
+              <ul class="list-unstyled">
+                <li><a href="https://github.com/peterpeterparker/web-social-share" class="text-white">Github</a></li>
+                <li><a href="http://twitter.com/daviddalbusco" class="text-white">Twitter</a></li>
+                <li><a href="mailto:david.dalbusco@outlook.com" class="text-white">Email me</a></li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-  <div class="navbar navbar-dark bg-dark box-shadow">
-    <div class="container d-flex justify-content-between">
-      <a href="#" class="navbar-brand d-flex align-items-center">
-        <strong>Web Social Share</strong>
-      </a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-    </div>
-  </div>
-</header>
+      <div class="navbar navbar-dark bg-dark box-shadow">
+        <div class="container d-flex justify-content-between">
+          <a href="#" class="navbar-brand d-flex align-items-center">
+            <strong>Web Social Share</strong>
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarHeader"
+            aria-controls="navbarHeader"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+      </div>
+    </header>
 
-<main role="main" class="container mt-5">
+    <main role="main" class="container mt-5">
+      <section class="jumbotron text-center">
+        <div class="container">
+          <h1 class="jumbotron-heading">Web Social Share</h1>
+          <p class="lead text-muted mt-5">
+            <strong>Web Social Share</strong> is a Web Component to share urls and content on social networks. The component could be
+            integrated in the most popular frontend frameworks.
+          </p>
+          <p class="lead text-muted mt-5">
+            It could be particularly interesting if you are looking for a solution to add a social sharing option to your
+            <strong>Progressive Web App</strong>.
+          </p>
+          <p class="mt-5">
+            <button id="showWebSocialShare" type="button" class="btn btn-primary" onclick="show(true);">
+              <i class="fas fa-share-alt"></i> SHARE THIS WEBSITE
+            </button>
+          </p>
+        </div>
+      </section>
 
-  <section class="jumbotron text-center">
-    <div class="container">
-      <h1 class="jumbotron-heading">Web Social Share</h1>
-      <p class="lead text-muted mt-5"><strong>Web Social Share</strong> is a Web Component to share urls and content on social networks. The component could be integrated in the most popular frontend frameworks.</p>
-      <p class="lead text-muted mt-5">It could be particularly interesting if you are looking for a solution to add a social sharing option to your <strong>Progressive Web App</strong>.</p>
-      <p class="mt-5">
-        <button id="showWebSocialShare" type="button" class="btn btn-primary" onclick="show(true);"><i class="fas fa-share-alt"></i> SHARE THIS WEBSITE</button>
-      </p>
-    </div>
-  </section>
+      <section class="text-center mt-5">
+        <div class="container">
+          <p class="lead text-muted">
+            Some modern browsers support the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Navigator/share">Web Share API</a>.
+            You could test the compatibility of your current browser using the following action:
+          </p>
+          <p>
+            <button type="button" class="btn btn-secondary" onclick="webShare()">
+              <i class="fas fa-share-alt"></i> TEST WEB SHARE API
+            </button>
+          </p>
+        </div>
+        <div class="container mt-5">
+          <p class="lead text-muted">
+            This Web Component is developed with <a href="https://stenciljs.com/">StencilJS</a> and published on
+            <a href="https://github.com/peterpeterparker/web-social-share">Github</a> under license MIT ©
+            <a href="mailto:david.dalbusco@outlook.com">David Dal Busco</a>
+          </p>
+        </div>
+      </section>
+    </main>
 
-  <section class="text-center mt-5">
-    <div class="container">
-      <p class="lead text-muted">Some modern browsers support the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Navigator/share">Web Share API</a>. You could test the compatibility of your current browser using the following action:</p>
-      <p>
-        <button type="button" class="btn btn-secondary" onclick="webShare()"><i class="fas fa-share-alt"></i> TEST WEB SHARE API</button>
-      </p>
-    </div>
-    <div class="container mt-5">
-      <p class="lead text-muted">This Web Component is developed with <a href="https://stenciljs.com/">StencilJS</a> and published on <a href="https://github.com/peterpeterparker/web-social-share">Github</a> under license MIT © <a href="mailto:david.dalbusco@outlook.com">David Dal Busco</a></p>
-    </div>
-  </section>
+    <web-social-share show="false" style="--web-social-share-height: 140px; --web-social-share-target-width: 6rem">
+      <i class="fab fa-facebook" slot="facebook" style="color: #3b5998; font-size: 1.6rem"></i>
+      <i class="fab fa-twitter" slot="twitter" style="color: #00aced; font-size: 1.6rem"></i>
+      <i class="fab fa-pinterest" slot="pinterest" style="color: #bd081c; font-size: 1.6rem"></i>
+      <i class="fab fa-linkedin" slot="linkedin" style="color: #0077b5; font-size: 1.6rem"></i>
+      <i class="fab fa-reddit" slot="reddit" style="color: #cee3f8; font-size: 1.6rem"></i>
+      <i class="fas fa-envelope" slot="email" style="color: #ff8ea3; font-size: 1.6rem"></i>
+      <i class="fab fa-whatsapp-square" slot="whatsapp" style="color: #25d366; font-size: 1.6rem"></i>
+      <i class="fab fa-hacker-news-square" slot="hackernews" style="color: #ff6000; font-size: 1.6rem"></i>
+      <i class="far fa-copy" slot="copy" style="color: black; font-size: 1.6rem"></i>
+    </web-social-share>
 
-</main>
+    <script type="text/javascript">
+      // Show / hide
 
-<web-social-share show="false" style="--web-social-share-height: 140px; --web-social-share-target-width: 6rem;">
-    <i class="fab fa-facebook" slot="facebook" style="color: #3b5998; font-size: 1.6rem;"></i>
-    <i class="fab fa-twitter" slot="twitter" style="color: #00aced; font-size: 1.6rem;"></i>
-    <i class="fab fa-pinterest" slot="pinterest" style="color: #bd081c; font-size: 1.6rem;"></i>
-    <i class="fab fa-linkedin" slot="linkedin" style="color: #0077b5; font-size: 1.6rem;"></i>
-    <i class="fab fa-reddit" slot="reddit" style="color: #cee3f8; font-size: 1.6rem;"></i>
-    <i class="fas fa-envelope" slot="email" style="color: #ff8ea3; font-size: 1.6rem;"></i>
-    <i class="fab fa-whatsapp-square" slot="whatsapp" style="color: #25D366; font-size: 1.6rem;"></i>
-    <i class="fab fa-hacker-news-square" slot="hackernews" style="color: #ff6000; font-size: 1.6rem;"></i>
-    <i class="far fa-copy" slot="copy" style="color: black; font-size: 1.6rem;"></i>
-</web-social-share>
-
-  <script type="text/javascript">
-
-    // Show / hide
-
-    function show(showValue) {
-      const elem = document.getElementsByTagName('web-social-share');
-      if (elem && elem.length > 0) {
-        elem[0].show = showValue;
+      function show(showValue) {
+        const elem = document.getElementsByTagName('web-social-share');
+        if (elem && elem.length > 0) {
+          elem[0].show = showValue;
+        }
       }
-    }
 
-    // Share options
+      // Share options
 
-    const share = {
-      displayNames: true,
-      config: [{
-        facebook: {
-          socialShareUrl: 'http://websocialshare.com',
-          socialSharePopupWidth: 400,
-          socialSharePopupHeight: 400
-        }
-      },{
-        twitter: {
-          socialShareUrl: 'http://websocialshare.com',
-          socialSharePopupWidth: 300,
-          socialSharePopupHeight: 400
-        }
-      },{
-        reddit: {
-          socialShareUrl: 'http://websocialshare.com',
-          socialSharePopupWidth: 300,
-          socialSharePopupHeight: 500
-        }
-      },{
-        linkedin: {
-          socialShareUrl: 'http://websocialshare.com'
-        }
-      },{
-        pinterest: {
-          socialShareUrl: 'http://websocialshare.com'
-        }
-      },{
-        email: {
-          socialShareTo: 'david.dalbusco@outlook.com',
-          socialShareBody: 'http://websocialshare.com'
-        }
-      }, {
-        whatsapp: {
-          socialShareText: 'Hello, how are you?',
-          socialShareUrl: 'http://websocialshare.com'
-        }
-      },{
-        copy: {
-          socialShareUrl: 'http://websocialshare.com'
-        }
-      },{
-          hackernews: {
+      const share = {
+        displayNames: true,
+        config: [
+          {
+            facebook: {
+              socialShareUrl: 'http://websocialshare.com',
+              socialSharePopupWidth: 400,
+              socialSharePopupHeight: 400
+            }
+          },
+          {
+            twitter: {
+              socialShareUrl: 'http://websocialshare.com',
+              socialSharePopupWidth: 300,
+              socialSharePopupHeight: 400
+            }
+          },
+          {
+            reddit: {
+              socialShareUrl: 'http://websocialshare.com',
+              socialSharePopupWidth: 300,
+              socialSharePopupHeight: 500
+            }
+          },
+          {
+            linkedin: {
+              socialShareUrl: 'http://websocialshare.com'
+            }
+          },
+          {
+            pinterest: {
+              socialShareUrl: 'http://websocialshare.com'
+            }
+          },
+          {
+            email: {
+              socialShareTo: 'david.dalbusco@outlook.com',
+              socialShareBody: 'http://websocialshare.com'
+            }
+          },
+          {
+            whatsapp: {
+              socialShareText: 'Hello, how are you?',
+              socialShareUrl: 'http://websocialshare.com'
+            }
+          },
+          {
+            copy: {
+              socialShareUrl: 'http://websocialshare.com'
+            }
+          },
+          {
+            hackernews: {
               socialShareText: 'Web Social Share',
               socialShareUrl: 'http://websocialshare.com'
+            }
           }
-      }]
-    };
+        ]
+      };
 
-    document.addEventListener("DOMContentLoaded", (event) => {
-      const elem = document.getElementsByTagName('web-social-share');
-      if (elem && elem.length > 0) {
-        elem[0].share = share;
+      document.addEventListener('DOMContentLoaded', (event) => {
+        const elem = document.getElementsByTagName('web-social-share');
+        if (elem && elem.length > 0) {
+          elem[0].share = share;
+        }
+      });
+
+      function webShare() {
+        if (navigator.share) {
+          navigator
+            .share({
+              title: 'Web Share',
+              text: 'Web Share API is supported!',
+              url: 'https://websocialshare.com/'
+            })
+            .then(() => console.log('Successful share'))
+            .catch((error) => console.log('Error sharing', error));
+        } else {
+          console.log("Your browser doesn't support Navigator.share()");
+        }
       }
-    });
+    </script>
 
-    function webShare() {
-      if (navigator.share) {
-        navigator.share({
-          title: 'Web Share',
-          text: 'Web Share API is supported!',
-          url: 'https://websocialshare.com/',
-        })
-          .then(() => console.log('Successful share'))
-          .catch((error) => console.log('Error sharing', error));
-      } else {
-        console.log('Your browser doesn\'t support Navigator.share()')
-      }
-    }
-  </script>
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+      integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+      integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+      crossorigin="anonymous"
+    ></script>
 
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script
+      defer
+      src="https://use.fontawesome.com/releases/v5.4.1/js/all.js"
+      integrity="sha384-L469/ELG4Bg9sDQbl0hvjMq8pOcqFgkSpwhwnslzvVVGpDjYJ6wJJyYjvG3u8XW7"
+      crossorigin="anonymous"
+    ></script>
 
-<script defer src="https://use.fontawesome.com/releases/v5.4.1/js/all.js" integrity="sha384-L469/ELG4Bg9sDQbl0hvjMq8pOcqFgkSpwhwnslzvVVGpDjYJ6wJJyYjvG3u8XW7" crossorigin="anonymous"></script>
-
-<!-- To test other way to import Font Awesome -->
-<!--<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">-->
-
-</body>
+    <!-- To test other way to import Font Awesome -->
+    <!--<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">-->
+  </body>
 </html>

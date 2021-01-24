@@ -2,7 +2,6 @@ import {WebSocialShareEmailAttributes} from '../../types/web-social-share/web-so
 import {WebSocialShareUtils} from './web-social-share-utils';
 
 export class WebSocialShareEmail {
-
   static async share(attrs: WebSocialShareEmailAttributes) {
     let urlString = 'mailto:';
 

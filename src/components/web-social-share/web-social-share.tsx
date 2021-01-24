@@ -9,9 +9,7 @@ import {WebSocialSharePinterest} from '../../utils/web-social-share/web-social-s
 import {WebSocialShareReddit} from '../../utils/web-social-share/web-social-share-reddit';
 import {WebSocialShareWhatsapp} from '../../utils/web-social-share/web-social-share-whatsapp';
 import {WebSocialShareCopy} from '../../utils/web-social-share/web-social-share-copy';
-import {
-  WebSocialShareDisplayAttributes
-} from '../../types/web-social-share/web-social-share-attributes';
+import {WebSocialShareDisplayAttributes} from '../../types/web-social-share/web-social-share-attributes';
 import {WebSocialShareHackerNews} from '../../utils/web-social-share/web-social-share-hackernews';
 
 /**
@@ -30,7 +28,6 @@ import {WebSocialShareHackerNews} from '../../utils/web-social-share/web-social-
   shadow: true
 })
 export class WebSocialShare {
-
   @Element() el: HTMLElement;
 
   /**
@@ -70,13 +67,11 @@ export class WebSocialShare {
   render() {
     return (
       <div class={this.show ? 'web-social-share web-social-share-open' : 'web-social-share web-social-share-close'}>
-        <div class='web-social-share-backdrop' onClick={() => this.hide()}></div>
+        <div class="web-social-share-backdrop" onClick={() => this.hide()}></div>
 
-        <div class='web-social-share-action-sheet' onClick={() => this.hide()}>
-          <div class='web-social-share-action-sheet-container'>
-            <div class='web-social-share-action-sheet-group'>
-              {this.renderTargets()}
-            </div>
+        <div class="web-social-share-action-sheet" onClick={() => this.hide()}>
+          <div class="web-social-share-action-sheet-container">
+            <div class="web-social-share-action-sheet-group">{this.renderTargets()}</div>
           </div>
         </div>
       </div>
@@ -85,17 +80,11 @@ export class WebSocialShare {
 
   private renderTargets() {
     if (!this.share || !this.share.config) {
-      return (
-        <span></span>
-      );
+      return <span></span>;
     } else {
-      return (
-        this.share.config.map((config: WebSocialShareInputConfig) =>
-          <div class="web-social-share-target">
-            {this.renderButtons(config)}
-          </div>
-        )
-      );
+      return this.share.config.map((config: WebSocialShareInputConfig) => (
+        <div class="web-social-share-target">{this.renderButtons(config)}</div>
+      ));
     }
   }
 
@@ -121,13 +110,16 @@ export class WebSocialShare {
     } else {
       return undefined;
     }
-
   }
 
-  private renderButton(attributes: WebSocialShareDisplayAttributes, slotName: string, action: (attributes: WebSocialShareDisplayAttributes) => void, defaultBrandName: string) {
+  private renderButton(
+    attributes: WebSocialShareDisplayAttributes,
+    slotName: string,
+    action: (attributes: WebSocialShareDisplayAttributes) => void,
+    defaultBrandName: string
+  ) {
     return (
-      <button onClick={($event) => this.handleShare($event, attributes, action)}
-              class='web-social-share-button'>
+      <button onClick={($event) => this.handleShare($event, attributes, action)} class="web-social-share-button">
         <div class="web-social-share-button-icon">
           <slot name={slotName}></slot>
         </div>
@@ -136,7 +128,11 @@ export class WebSocialShare {
     );
   }
 
-  private async handleShare($event, attributes: WebSocialShareDisplayAttributes, action: (attributes: WebSocialShareDisplayAttributes) => void) {
+  private async handleShare(
+    $event,
+    attributes: WebSocialShareDisplayAttributes,
+    action: (attributes: WebSocialShareDisplayAttributes) => void
+  ) {
     $event.stopPropagation();
 
     await action(attributes);
@@ -183,12 +179,14 @@ export class WebSocialShare {
   private renderName(displayAttributes: WebSocialShareDisplayAttributes, defaultBrandName: string) {
     if (this.share.displayNames) {
       return (
-        <p>{displayAttributes && displayAttributes.brandName && displayAttributes.brandName !== '' ? displayAttributes.brandName : defaultBrandName}</p>
+        <p>
+          {displayAttributes && displayAttributes.brandName && displayAttributes.brandName !== ''
+            ? displayAttributes.brandName
+            : defaultBrandName}
+        </p>
       );
     } else {
-      return (
-        <span></span>
-      );
+      return <span></span>;
     }
   }
 }

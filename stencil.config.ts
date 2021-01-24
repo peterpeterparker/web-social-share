@@ -1,12 +1,12 @@
-import { Config } from '@stencil/core';
+import {Config} from '@stencil/core';
 
-import { sass } from '@stencil/sass';
-import { postcss } from '@stencil/postcss';
+import {sass} from '@stencil/sass';
+import {postcss} from '@stencil/postcss';
 import autoprefixer from 'autoprefixer';
 
 export const config: Config = {
   namespace: 'websocialshare',
-  outputTargets:[
+  outputTargets: [
     {
       type: 'dist'
     },

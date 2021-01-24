@@ -141,7 +141,7 @@ const share = {
 
 Slots have to be used to display the icon or text for your actions.
 
-The available slots are: `facebook`, `twitter`, `pinterest`, `linkedin`, `reddit`, `email`, `copy` and `whatsapp`.
+The available slots are: `facebook`, `twitter`, `pinterest`, `linkedin`, `reddit`, `email`, `copy`, `hackernews` and `whatsapp`.
 
 ```
 <web-social-share show="false">

@@ -45,15 +45,16 @@ export class WebSocialShare {
    */
   @Prop() share: WebSocialShareInput;
 
-  hide() {
-    let element: HTMLElement = this.el.shadowRoot.querySelector('div.web-social-share');
-    if (element) {
-      element.classList.add('web-social-share-transition-close');
+  private refContainer!: HTMLDivElement;
+
+  private hide() {
+    if (this.refContainer) {
+      this.refContainer.classList.add('web-social-share-transition-close');
 
       setTimeout(() => {
         // Reflect css animation speed 400ms, see css
         this.show = false;
-        element.classList.remove('web-social-share-transition-close');
+        this.refContainer.classList.remove('web-social-share-transition-close');
 
         this.closed.emit();
       }, 200);
@@ -66,7 +67,9 @@ export class WebSocialShare {
 
   render() {
     return (
-      <div class={this.show ? 'web-social-share web-social-share-open' : 'web-social-share web-social-share-close'}>
+      <div
+        class={this.show ? 'web-social-share web-social-share-open' : 'web-social-share web-social-share-close'}
+        ref={(el) => (this.refContainer = el as HTMLDivElement)}>
         <div class="web-social-share-backdrop" onClick={() => this.hide()}></div>
 
         <div class="web-social-share-action-sheet" onClick={() => this.hide()}>

@@ -16,47 +16,28 @@
       integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
       crossorigin="anonymous"
     />
+
+    <!-- Bootstrap -->
+    <style>
+      footer {
+        padding-top: 2rem;
+        padding-bottom: 1.6rem;
+        margin: 3rem 0 0;
+        text-align: center;
+      }
+
+      .box-shadow {
+        box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.05);
+      }
+    </style>
   </head>
   <body>
     <header>
-      <div class="collapse bg-dark" id="navbarHeader">
-        <div class="container">
-          <div class="row">
-            <div class="col-sm-8 col-md-7 py-4">
-              <h4 class="text-white">About</h4>
-              <p class="text-muted">
-                A Web Component to share urls and content on social networks. This Web Component is published on
-                <a href="https://github.com/peterpeterparker/web-social-share" class="text-white">Github</a> under license MIT ©
-                <a href="mailto:david.dalbusco@outlook.com" class="text-white">David Dal Busco</a>
-              </p>
-            </div>
-            <div class="col-sm-4 offset-md-1 py-4">
-              <h4 class="text-white">Contact</h4>
-              <ul class="list-unstyled">
-                <li><a href="https://github.com/peterpeterparker/web-social-share" class="text-white">Github</a></li>
-                <li><a href="http://twitter.com/daviddalbusco" class="text-white">Twitter</a></li>
-                <li><a href="mailto:david.dalbusco@outlook.com" class="text-white">Email me</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
       <div class="navbar navbar-dark bg-dark box-shadow">
         <div class="container d-flex justify-content-between">
           <a href="#" class="navbar-brand d-flex align-items-center">
             <strong>Web Social Share</strong>
           </a>
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-toggle="collapse"
-            data-target="#navbarHeader"
-            aria-controls="navbarHeader"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
         </div>
       </div>
     </header>
@@ -64,16 +45,8 @@
     <main role="main" class="container mt-5">
       <section class="jumbotron text-center">
         <div class="container">
-          <h1 class="jumbotron-heading">Web Social Share</h1>
-          <p class="lead text-muted mt-5">
-            <strong>Web Social Share</strong> is a Web Component to share urls and content on social networks. The component could be
-            integrated in the most popular frontend frameworks.
-          </p>
-          <p class="lead text-muted mt-5">
-            It could be particularly interesting if you are looking for a solution to add a social sharing option to your
-            <strong>Progressive Web App</strong>.
-          </p>
-          <p class="mt-5">
+          <p class="lead text-muted mt-5">Web Social Share is a Web Component to share urls and text on social networks.</p>
+          <p class="mt-5 mb-5">
             <button id="showWebSocialShare" type="button" class="btn btn-primary" onclick="show(true);">
               <i class="fas fa-share-alt"></i> SHARE THIS WEBSITE
             </button>
@@ -84,8 +57,8 @@
       <section class="text-center mt-5">
         <div class="container">
           <p class="lead text-muted">
-            Some modern browsers support the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Navigator/share">Web Share API</a>.
-            You could test the compatibility of your current browser using the following action:
+            Most modern browsers support the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Navigator/share">Web Share API</a>.
+            You can test the compatibility of your current navigator with the following action:
           </p>
           <p>
             <button type="button" class="btn btn-secondary" onclick="webShare()">
@@ -93,15 +66,24 @@
             </button>
           </p>
         </div>
-        <div class="container mt-5">
-          <p class="lead text-muted">
-            This Web Component is developed with <a href="https://stenciljs.com/">StencilJS</a> and published on
-            <a href="https://github.com/peterpeterparker/web-social-share">Github</a> under license MIT ©
-            <a href="mailto:david.dalbusco@outlook.com">David Dal Busco</a>
-          </p>
-        </div>
       </section>
     </main>
+
+    <footer class="text-muted">
+      <div class="container">
+        <p>Made by <a href="https://daviddalbusco.com">David Dal Busco</a></p>
+      </div>
+
+      <p class="my-4">
+        <a href="https://github.com/peterpeterparker/web-social-share" class="btn btn-dark my-2"><i class="fab fa-github"></i> Github</a>
+
+        <a
+          href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwebsocialshare.com&text=A%20Web%20Component%20to%20share%20urls%20and%20text%20on%20social%20networks%20by%20%40daviddalbusco"
+          class="btn btn-primary mx-2 my-2"
+          ><i class="fab fa-twitter"></i> Tweet</a
+        >
+      </p>
+    </footer>
 
     <web-social-share show="false" style="--web-social-share-height: 140px; --web-social-share-target-width: 6rem">
       <i class="fab fa-facebook" slot="facebook" style="color: #3b5998; font-size: 1.6rem"></i>

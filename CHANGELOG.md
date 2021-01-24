@@ -1,3 +1,14 @@
+<a name="7.0.0"></a>
+# [7.0.0](https://github.com/peterpeterparker/web-social-share/compare/v6.4.1...v7.0.0) (2021-01-24)
+
+### Breaking changes
+
+- drop support of IE11, Edge 16-18 and Safari 10
+
+### Features
+
+- update dependencies (Stencil v2)
+
 <a name="6.4.1"></a>
 # [6.4.1](https://github.com/peterpeterparker/web-social-share/compare/v6.4.0...v6.4.1) (2020-08-15)
 

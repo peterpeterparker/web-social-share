@@ -1,4 +1,4 @@
-import {WebSocialShareFacebookAttributes} from '../../types/web-social-share/web-social-share-attributes';
+import {WebSocialShareFacebookAttributes} from '../types/web-social-share-attributes';
 
 /**
  * Source: https://github.com/720kb/angular-socialshare/blob/master/dist/angular-socialshare.js

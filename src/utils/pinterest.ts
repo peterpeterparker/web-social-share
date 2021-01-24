@@ -1,4 +1,4 @@
-import {WebSocialSharePinterestAttributes} from '../../types/web-social-share/web-social-share-attributes';
+import {WebSocialSharePinterestAttributes} from '../types/web-social-share-attributes';
 
 export const pinterest = async (attrs: WebSocialSharePinterestAttributes) => {
   window.open(

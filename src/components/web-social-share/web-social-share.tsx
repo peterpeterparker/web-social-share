@@ -1,17 +1,17 @@
 import {Component, Element, Event, EventEmitter, Prop, h} from '@stencil/core';
 
-import {WebSocialShareDisplayAttributes} from '../../types/web-social-share/web-social-share-attributes';
-import {WebSocialShareInput, WebSocialShareInputConfig} from '../../types/web-social-share/web-social-share-input';
+import {WebSocialShareDisplayAttributes} from '../../types/web-social-share-attributes';
+import {WebSocialShareInput, WebSocialShareInputConfig} from '../../types/web-social-share-input';
 
-import {shareFacebook} from '../../utils/web-social-share/web-social-share-facebook';
-import {shareTwitter} from '../../utils/web-social-share/web-social-share-twitter';
-import {email} from '../../utils/web-social-share/web-social-share-email';
-import {linkedin} from '../../utils/web-social-share/web-social-share-linkedin';
-import {pinterest} from '../../utils/web-social-share/web-social-share-pinterest';
-import {reddit} from '../../utils/web-social-share/web-social-share-reddit';
-import {whatsapp} from '../../utils/web-social-share/web-social-share-whatsapp';
-import {copy} from '../../utils/web-social-share/web-social-share-copy';
-import {hackernews} from '../../utils/web-social-share/web-social-share-hackernews';
+import {shareFacebook} from '../../utils/facebook';
+import {shareTwitter} from '../../utils/twitter';
+import {email} from '../../utils/email';
+import {linkedin} from '../../utils/linkedin';
+import {pinterest} from '../../utils/pinterest';
+import {reddit} from '../../utils/reddit';
+import {whatsapp} from '../../utils/whatsapp';
+import {copy} from '../../utils/copy';
+import {hackernews} from '../../utils/hackernews';
 
 /**
  * @slot facebook - A slot to display an icon or text in the related social share button

@@ -1,4 +1,4 @@
-import {WebSocialShareRedditAttributes} from '../../types/web-social-share/web-social-share-attributes';
+import {WebSocialShareRedditAttributes} from '../types/web-social-share-attributes';
 
 export const reddit = async (attrs: WebSocialShareRedditAttributes) => {
   let urlString = 'https://www.reddit.com/';

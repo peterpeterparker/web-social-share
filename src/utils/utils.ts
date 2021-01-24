@@ -1,4 +1,4 @@
-export class WebSocialShareUtils {
+export class Utils {
   // Source: http://detectmobilebrowsers.com
   // Same implementation as in class DeckdeckgoUtils
   static isMobile(): boolean {

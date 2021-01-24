@@ -1,4 +1,4 @@
-import {WebSocialShareAttributes} from '../../types/web-social-share/web-social-share-attributes';
+import {WebSocialShareAttributes} from '../types/web-social-share-attributes';
 
 export const copy = async (attrs: WebSocialShareAttributes) => {
   try {

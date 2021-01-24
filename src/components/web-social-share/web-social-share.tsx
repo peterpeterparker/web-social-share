@@ -14,6 +14,16 @@ import {
 } from '../../types/web-social-share/web-social-share-attributes';
 import {WebSocialShareHackerNews} from '../../utils/web-social-share/web-social-share-hackernews';
 
+/**
+ * @slot facebook - A slot to display an icon or text in the related social share button
+ * @slot twitter - A slot to display an icon or text in the related social share button
+ * @slot email - A slot to display an icon or text in the related social share button
+ * @slot linkedin - A slot to display an icon or text in the related social share button
+ * @slot pinterest - A slot to display an icon or text in the related social share button
+ * @slot whatsapp - A slot to display an icon or text in the related social share button
+ * @slot copy - A slot to display an icon or text in the related social share button
+ * @slot hackernews - A slot to display an icon or text in the related social share button
+ */
 @Component({
   tag: 'web-social-share',
   styleUrl: 'web-social-share.scss',
@@ -23,9 +33,19 @@ export class WebSocialShare {
 
   @Element() el: HTMLElement;
 
-  @Event() closed: EventEmitter;
+  /**
+   * An event triggered when the modal is `closed`
+   */
+  @Event() closed: EventEmitter<void>;
 
+  /**
+   * Trigger the display, or close, of the action sheet which contains the social-share options
+   */
   @Prop({mutable: true}) show: boolean;
+
+  /**
+   * The share options
+   */
   @Prop() share: WebSocialShareInput;
 
   hide() {
@@ -38,12 +58,12 @@ export class WebSocialShare {
         this.show = false;
         element.classList.remove('web-social-share-transition-close');
 
-        this.closed.emit(true);
+        this.closed.emit();
       }, 200);
     } else {
       // Well we don't find the action sheet, we could mark it as not displayed
       this.show = false;
-      this.closed.emit(true);
+      this.closed.emit();
     }
   }
 

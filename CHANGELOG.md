@@ -1,3 +1,11 @@
+<a name="7.1.0"></a>
+
+# [7.1.0](https://github.com/peterpeterparker/web-social-share/compare/v7.0.0...v7.1.0) (2021-02-21)
+
+### Features
+
+- share to Telegram
+
 <a name="7.0.0"></a>
 
 # [7.0.0](https://github.com/peterpeterparker/web-social-share/compare/v6.4.1...v7.0.0) (2021-01-24)

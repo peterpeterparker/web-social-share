@@ -1,9 +1,11 @@
 import {WebSocialShareLinkedinAttributes} from '../types/web-social-share-attributes';
 
+import {shareEncodedUrl} from './utils';
+
 export const linkedin = async (attrs: WebSocialShareLinkedinAttributes) => {
   let urlString = 'https://www.linkedin.com/shareArticle?mini=true';
 
-  urlString += '&url=' + encodeURIComponent(attrs.socialShareUrl || window.location.href);
+  urlString += '&url=' + shareEncodedUrl(attrs.socialShareUrl);
 
   if (attrs.socialShareText) {
     urlString += '&title=' + encodeURIComponent(attrs.socialShareText);

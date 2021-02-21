@@ -1,6 +1,6 @@
 import {WebSocialShareTwiterAttributes} from '../types/web-social-share-attributes';
 
-import {isMobile, staticOpenNewWindow} from './utils';
+import {isMobile, shareEncodedUrl, staticOpenNewWindow} from './utils';
 
 export const shareTwitter = async (attrs: WebSocialShareTwiterAttributes) => {
   let urlString = 'https://www.twitter.com/intent/tweet?';
@@ -18,7 +18,7 @@ export const shareTwitter = async (attrs: WebSocialShareTwiterAttributes) => {
   }
 
   //default to the current page if a URL isn't specified
-  urlString += '&url=' + encodeURIComponent(attrs.socialShareUrl || window.location.href);
+  urlString += '&url=' + shareEncodedUrl(attrs.socialShareUrl);
 
   if (isMobile()) {
     staticOpenNewWindow(urlString);

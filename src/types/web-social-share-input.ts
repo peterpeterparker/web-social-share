@@ -7,7 +7,8 @@ import {
   WebSocialSharePinterestAttributes,
   WebSocialShareRedditAttributes,
   WebSocialShareTwiterAttributes,
-  WebSocialShareWhatsappAttributes
+  WebSocialShareWhatsappAttributes,
+  WebSocialShareWithTextAttributes
 } from './web-social-share-attributes';
 
 export interface WebSocialShareInputConfig {
@@ -20,6 +21,7 @@ export interface WebSocialShareInputConfig {
   whatsapp?: WebSocialShareWhatsappAttributes;
   copy?: WebSocialShareAttributes;
   hackernews?: WebSocialShareHackerNewsAttributes;
+  telegram?: WebSocialShareWithTextAttributes;
 }
 
 export interface WebSocialShareInput {

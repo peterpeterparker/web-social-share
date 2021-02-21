@@ -10,3 +10,7 @@ export const staticOpenNewWindow = (urlString: string) => {
     window.open(urlString, '_self');
   }
 };
+
+export const shareEncodedUrl = (socialShareUrl?: string): string => {
+  return encodeURIComponent(socialShareUrl || window.location.href);
+};

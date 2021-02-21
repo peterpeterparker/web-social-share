@@ -1,5 +1,7 @@
 import {WebSocialShareRedditAttributes} from '../types/web-social-share-attributes';
 
+import {shareEncodedUrl} from './utils';
+
 export const reddit = async (attrs: WebSocialShareRedditAttributes) => {
   let urlString = 'https://www.reddit.com/';
 
@@ -22,7 +24,7 @@ export const reddit = async (attrs: WebSocialShareRedditAttributes) => {
   }
 
   window.open(
-    urlString + encodeURIComponent(attrs.socialShareUrl || window.location.href) + '&title=' + encodeURIComponent(attrs.socialShareText),
+    urlString + shareEncodedUrl(attrs.socialShareUrl) + '&title=' + encodeURIComponent(attrs.socialShareText),
     'Reddit',
     'toolbar=0,status=0,resizable=yes,width=' +
       attrs.socialSharePopupWidth +

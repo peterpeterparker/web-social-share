@@ -1,5 +1,7 @@
 import {WebSocialShareFacebookAttributes} from '../types/web-social-share-attributes';
 
+import {shareEncodedUrl} from './utils';
+
 /**
  * Source: https://github.com/720kb/angular-socialshare/blob/master/dist/angular-socialshare.js
  */
@@ -19,7 +21,7 @@ export const shareFacebook = async (attrs: WebSocialShareFacebookAttributes) => 
       urlString += '&redirect_uri=' + encodeURIComponent(attrs.socialShareRedirectUri);
     }
     if (attrs.socialShareUrl) {
-      urlString += '&link=' + encodeURIComponent(attrs.socialShareUrl);
+      urlString += '&link=' + shareEncodedUrl(attrs.socialShareUrl);
     }
 
     if (attrs.socialShareTo) {
@@ -68,7 +70,7 @@ export const shareFacebook = async (attrs: WebSocialShareFacebookAttributes) => 
     }
 
     if (attrs.socialShareUrl) {
-      urlString += '&href=' + encodeURIComponent(attrs.socialShareUrl);
+      urlString += '&href=' + shareEncodedUrl(attrs.socialShareUrl);
     }
 
     if (attrs.socialShareQuote) {
@@ -113,7 +115,7 @@ export const shareFacebook = async (attrs: WebSocialShareFacebookAttributes) => 
     }
 
     if (attrs.socialShareUrl) {
-      urlString += '&link=' + encodeURIComponent(attrs.socialShareUrl);
+      urlString += '&link=' + shareEncodedUrl(attrs.socialShareUrl);
     }
 
     if (attrs.socialShareTo) {
@@ -139,7 +141,7 @@ export const shareFacebook = async (attrs: WebSocialShareFacebookAttributes) => 
   } else {
     //otherwise default to using sharer.php
     window.open(
-      'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(attrs.socialShareUrl || window.location.href),
+      'https://www.facebook.com/sharer/sharer.php?u=' + shareEncodedUrl(attrs.socialShareUrl),
       'Facebook',
       'toolbar=0,status=0,resizable=yes,width=' +
         attrs.socialSharePopupWidth +

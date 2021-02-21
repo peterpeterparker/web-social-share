@@ -12,6 +12,7 @@ import {reddit} from '../../utils/reddit';
 import {whatsapp} from '../../utils/whatsapp';
 import {copy} from '../../utils/copy';
 import {hackernews} from '../../utils/hackernews';
+import {telegram} from '../../utils/telegram';
 
 /**
  * @slot facebook - A slot to display an icon or text in the related social share button
@@ -123,6 +124,8 @@ export class WebSocialShare {
       return this.renderButton(share.copy, 'copy', copy, 'Copy');
     } else if (share.hackernews) {
       return this.renderButton(share.hackernews, 'hackernews', hackernews, 'Hacker News');
+    } else if (share.telegram) {
+      return this.renderButton(share.telegram, 'telegram', telegram, 'Telegram');
     }
 
     return undefined;
@@ -130,7 +133,7 @@ export class WebSocialShare {
 
   private renderButton(
     attributes: WebSocialShareDisplayAttributes,
-    slotName: 'facebook' | 'twitter' | 'pinterest' | 'linkedin' | 'reddit' | 'email' | 'copy' | 'whatsapp' | 'hackernews',
+    slotName: 'facebook' | 'twitter' | 'pinterest' | 'linkedin' | 'reddit' | 'email' | 'copy' | 'whatsapp' | 'hackernews' | 'telegram',
     action: (attributes: WebSocialShareDisplayAttributes) => Promise<void>,
     defaultBrandName: string
   ) {

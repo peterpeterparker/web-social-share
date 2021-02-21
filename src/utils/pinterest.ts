@@ -1,9 +1,11 @@
 import {WebSocialSharePinterestAttributes} from '../types/web-social-share-attributes';
 
+import {shareEncodedUrl} from './utils';
+
 export const pinterest = async (attrs: WebSocialSharePinterestAttributes) => {
   window.open(
     'https://www.pinterest.com/pin/create/button/?url=' +
-      encodeURIComponent(attrs.socialShareUrl || window.location.href) +
+      shareEncodedUrl(attrs.socialShareUrl) +
       '&media=' +
       encodeURIComponent(attrs.socialShareMedia) +
       '&description=' +

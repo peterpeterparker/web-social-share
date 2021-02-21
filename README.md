@@ -48,6 +48,7 @@ Following target are currently supported:
 - Pinterest
 - Reddit
 - WhatsApp
+- Telegram
 - Hacker News
 - Copy (to clipboard)
 
@@ -141,9 +142,12 @@ const share = {
 
 Slots have to be used to display the icon or text for your actions.
 
-The available slots are: `facebook`, `twitter`, `pinterest`, `linkedin`, `reddit`, `email`, `copy`, `hackernews` and `whatsapp`.
+The available slots are: `facebook`, `twitter`, `pinterest`, `linkedin`, `reddit`, `email`, `copy`, `hackernews`, `whatsapp` and `telegram`.
+
+These are sorted according the order of your configuration.
 
 NOTE: Slot names MUST be lower case.
+
 ```
 <web-social-share show="false">
     <i class="fab fa-reddit" slot="reddit" style="color: #cee3f8;"></ion-icon>

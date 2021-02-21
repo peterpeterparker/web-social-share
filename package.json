@@ -13,7 +13,7 @@
   "unpkg": "dist/websocialshare/websocialshare.esm.js",
   "files": [
     "dist/",
-    "readme.md",
+    "README.md",
     "LICENSE"
   ],
   "scripts": {

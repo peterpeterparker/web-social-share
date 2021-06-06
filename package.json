@@ -1,6 +1,6 @@
 {
   "name": "web-social-share",
-  "version": "7.1.0",
+  "version": "7.2.0",
   "description": "A Web Component to share urls and text on social networks",
   "main": "dist/index.cjs.js",
   "module": "dist/index.js",
@@ -23,12 +23,12 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "@stencil/core": "^2.4.0",
+    "@stencil/core": "^2.6.0",
     "@stencil/postcss": "^2.0.0",
     "@stencil/sass": "^1.4.1",
-    "autoprefixer": "^10.2.4",
-    "husky": "^5.0.9",
-    "prettier": "^2.2.1",
+    "autoprefixer": "^10.2.6",
+    "husky": "^6.0.0",
+    "prettier": "^2.3.1",
     "pretty-quick": "^3.1.0"
   },
   "repository": {

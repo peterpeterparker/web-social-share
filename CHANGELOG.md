@@ -1,3 +1,12 @@
+<a name="7.2.0"></a>
+
+# [7.1.0](https://github.com/peterpeterparker/web-social-share/compare/v7.1.0...v7.2.0) (2021-06-06)
+
+### Build
+
+- output custom elements as a single bundle (`dist-custom-elements-bundle`)
+- bump dependencies
+
 <a name="7.1.0"></a>
 
 # [7.1.0](https://github.com/peterpeterparker/web-social-share/compare/v7.0.0...v7.1.0) (2021-02-21)

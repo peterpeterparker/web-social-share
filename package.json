@@ -23,13 +23,13 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "@stencil/core": "^2.6.0",
-    "@stencil/postcss": "^2.0.0",
-    "@stencil/sass": "^1.4.1",
-    "autoprefixer": "^10.2.6",
-    "husky": "^6.0.0",
-    "prettier": "^2.3.1",
-    "pretty-quick": "^3.1.0"
+    "@stencil/core": "^2.11.0",
+    "@stencil/postcss": "^2.1.0",
+    "@stencil/sass": "^1.5.2",
+    "autoprefixer": "^10.4.0",
+    "husky": "^7.0.4",
+    "prettier": "^2.5.0",
+    "pretty-quick": "^3.1.2"
   },
   "repository": {
     "type": "git",

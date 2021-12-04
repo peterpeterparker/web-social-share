@@ -1,6 +1,22 @@
+<a name="7.3.0"></a>
+
+# [7.3.0](https://github.com/peterpeterparker/web-social-share/compare/v7.2.0...v7.3.0) (2021-XX-YY)
+
+### Features
+
+- improve user feedback on click with a ripple effect
+
+### Fix
+
+- `module` entry point ([#48](https://github.com/peterpeterparker/web-social-share/issues/48))
+
+### Build
+
+- bump dev dependencies
+
 <a name="7.2.0"></a>
 
-# [7.1.0](https://github.com/peterpeterparker/web-social-share/compare/v7.1.0...v7.2.0) (2021-06-06)
+# [7.2.0](https://github.com/peterpeterparker/web-social-share/compare/v7.1.0...v7.2.0) (2021-06-06)
 
 ### Build
 

@@ -36,11 +36,13 @@
 
 | Name                                                  | Description                                                                                                       |
 | ----------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- |
+| `--web-social-share-action-sheet-group-background`    | Action sheet group background @default #fafafa                                                                    |
 | `--web-social-share-action-sheet-group-border-radius` | Action sheet border radius on bigger screen (min-width 540px) @default 8px 8px 0 0                                |
 | `--web-social-share-action-sheet-group-box-shadow`    | Action sheet box-shadow @default 0 0 8px 4px rgba(0,0,0,0.1)                                                      |
 | `--web-social-share-backdrop-background`              | Backdrop background color @default black                                                                          |
 | `--web-social-share-backdrop-opacity`                 | Backdrop opacity @default 0.25                                                                                    |
 | `--web-social-share-brand-color`                      | Brand text color default inherit                                                                                  |
+| `--web-social-share-brand-font-size`                  | Brand text font-size default 0.6rem                                                                               |
 | `--web-social-share-brand-margin`                     | Brand text margin default 2px 0                                                                                   |
 | `--web-social-share-button-border-radius`             | Button border-radius @default 8px                                                                                 |
 | `--web-social-share-button-font-size`                 | Button font size                                                                                                  |

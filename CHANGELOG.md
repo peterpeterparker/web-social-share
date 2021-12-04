@@ -13,6 +13,7 @@
 ### Build
 
 - bump dev dependencies
+- `package-lock` version v2 - npm v7
 
 <a name="7.2.0"></a>
 

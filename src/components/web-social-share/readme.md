@@ -41,7 +41,11 @@
 | `--web-social-share-backdrop-background`              | Backdrop background color @default black                                                                          |
 | `--web-social-share-brand-color`                      | Brand text color default inherit                                                                                  |
 | `--web-social-share-brand-margin`                     | Brand text margin default 2px 0                                                                                   |
+| `--web-social-share-button-border-radius`             | Button border-radius @default 8px                                                                                 |
 | `--web-social-share-button-font-size`                 | Button font size                                                                                                  |
+| `--web-social-share-button-height`                    | Button height @default 100%                                                                                       |
+| `--web-social-share-button-ripple-effect-color`       | User click feedback (ripple effect) color @default #cecece                                                        |
+| `--web-social-share-button-width`                     | Button width @default 100%                                                                                        |
 | `--web-social-share-height`                           | Action sheet height @default 80px                                                                                 |
 | `--web-social-share-height-small-device`              | Action sheet height on smaller device (max-width 540px) @default 140px                                            |
 | `--web-social-share-target-height`                    | Button height @default 3rem                                                                                       |

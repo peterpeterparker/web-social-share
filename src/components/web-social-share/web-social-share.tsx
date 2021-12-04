@@ -76,7 +76,7 @@ export class WebSocialShare {
 
     await action(attributes);
 
-    this.hide();
+    setTimeout( () => this.hide(), 250);
   }
 
   render() {

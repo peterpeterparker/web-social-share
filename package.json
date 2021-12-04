@@ -6,6 +6,7 @@
   "module": "dist/custom-elements/index.js",
   "es2015": "dist/esm/index.js",
   "es2017": "dist/esm/index.js",
+  "jsnext:main": "dist/esm/index.js",
   "types": "dist/custom-elements/index.d.ts",
   "collection": "dist/collection/collection-manifest.json",
   "collection:main": "dist/collection/index.js",

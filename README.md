@@ -179,27 +179,7 @@ For example:
 
 ## Theming
 
-The following CSS variables are exposed by the component:
-
-| CSS4 variable                                       | Default                     | Note                                                                                        |
-| --------------------------------------------------- | --------------------------- | ------------------------------------------------------------------------------------------- |
-| --web-social-share-backdrop-opacity                 | 0.25                        | Backdrop opacity                                                                            |
-| --web-social-share-backdrop-background              | black                       | Backdrop background                                                                         |
-| --web-social-share-height                           | 80px                        | Action sheet height                                                                         |
-| --web-social-share-height-small-device              | 140px                       | Action sheet height on device smaller than 540px                                            |
-| --web-social-share-target-width                     | 4rem                        | An action container width                                                                   |
-| --web-social-share-target-height                    | 3rem                        | An action container height                                                                  |
-| --web-social-share-button-width                     | 100%                        | An action inner button width                                                                |
-| --web-social-share-button-height                    | 100%                        | An action inner button height                                                               |
-| --web-social-share-target-icon-container-height     | 2rem                        | An action icon container height                                                             |
-| --web-social-share-button-font-size                 |                             | The font-size of an action button                                                           |
-| --web-social-share-brand-font-size                  | 0.6rem                      | The font-size of an action brand name                                                       |
-| --web-social-share-brand-color                      | inherit                     | The color of an action brand name                                                           |
-| --web-social-share-brand-margin                     | 2px 0                       | A margin for the brand name                                                                 |
-| --web-social-share-zindex                           | 1000                        | The base zIndex of the component                                                            |
-| --web-social-share-action-sheet-group-box-shadow    | 0 0 8px 4px rgba(0,0,0,0.1) | A shadow around the action container                                                        |
-| --web-social-share-action-sheet-group-background    | #fafafa                     | The background of the action container                                                      |
-| --web-social-share-action-sheet-group-border-radius | 8px 8px 0 0                 | A border radius around the action container. Applied only if the windows is more than 540px |
+Checkout the auto-generated [readme.md](https://github.com/peterpeterparker/web-social-share/blob/main/src/components/web-social-share/readme.md) for the list of customizable CSS variables.
 
 ## Events
 
@@ -213,7 +193,7 @@ Typically, this use case can be used to post process the data you pass to the co
 
 ## Fallback and detection
 
-This component is a dumb component. It do not proceed detection or fallback to anything in case one of the share options would not be supported by the device or browser where the component is used.
+This component is a dumb component. It does not proceed detection or fallback to anything in case one of the share options would not be supported by the device or browser where the component is used.
 
 For example, the share options "Copy (to clipboard)" use the Web Api [Clipboard.writeText()](https://developer.mozilla.org/en-US/docs/Web/API/Clipboard/writeText) which might not be supported. Anyway the action will be displayed and if used by the user, nothing will happen.
 

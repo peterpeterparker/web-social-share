@@ -193,7 +193,7 @@ Typically, this use case can be used to post process the data you pass to the co
 
 ## Fallback and detection
 
-This component is a dumb component. It do not proceed detection or fallback to anything in case one of the share options would not be supported by the device or browser where the component is used.
+This component is a dumb component. It does not proceed detection or fallback to anything in case one of the share options would not be supported by the device or browser where the component is used.
 
 For example, the share options "Copy (to clipboard)" use the Web Api [Clipboard.writeText()](https://developer.mozilla.org/en-US/docs/Web/API/Clipboard/writeText) which might not be supported. Anyway the action will be displayed and if used by the user, nothing will happen.
 

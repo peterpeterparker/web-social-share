@@ -1,6 +1,6 @@
 <a name="7.3.0"></a>
 
-# [7.3.0](https://github.com/peterpeterparker/web-social-share/compare/v7.2.0...v7.3.0) (2021-XX-YY)
+# [7.3.0](https://github.com/peterpeterparker/web-social-share/compare/v7.2.0...v7.3.0) (2021-12-05)
 
 ### Features
 

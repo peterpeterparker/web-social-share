@@ -23,8 +23,14 @@ export const reddit = async (attrs: WebSocialShareRedditAttributes) => {
     attrs.socialSharePopupHeight = 650;
   }
 
+  let url: string = urlString + shareEncodedUrl(attrs.socialShareUrl);
+
+  if (attrs.socialShareText) {
+    url += `&title=${encodeURIComponent(attrs.socialShareText)}`
+  }
+
   window.open(
-    urlString + shareEncodedUrl(attrs.socialShareUrl) + '&title=' + encodeURIComponent(attrs.socialShareText),
+    url,
     'Reddit',
     'toolbar=0,status=0,resizable=yes,width=' +
       attrs.socialSharePopupWidth +

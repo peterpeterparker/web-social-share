@@ -17,7 +17,8 @@ export const config: Config = {
       serviceWorker: null
     },
     {
-      type: 'dist-custom-elements-bundle',
+      type: 'dist-custom-elements',
+      autoDefineCustomElements: true
     }
   ],
   plugins: [

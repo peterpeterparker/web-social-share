@@ -64,6 +64,15 @@ This Web Component is developed with [Stencil](https://stenciljs.com).
 
 The [Stencil documentation](https://stenciljs.com/docs/overview) provide examples of Javascript and framework integration for [Angular](https://stenciljs.com/docs/angular), [React](https://stenciljs.com/docs/react), [Vue](https://stenciljs.com/docs/vue) and [Ember](https://stenciljs.com/docs/ember).
 
+### NodeJS
+
+Due to an [open issue in Stencil regarding ESM entry points](https://github.com/ionic-team/stencil/issues/2826), ESM resolution support in NodeJS for this package has been manually fixed by overriding the `module` field in _package.json_.  As long as your dev server / bundler supports the `module` fields, you should be able to load the JS for the component like this:
+```js
+import 'web-social-share';
+```
+
+> Note: as noted in the linked issue, one caveate is that this entry file uses template literals inside dynamic imports (e.g. `import(${x})`) so make sure this feature also supported by your environemt.  For example, Rollup has [**@rollup/plugin-dynamic-import-vars**](https://github.com/rollup/plugins/tree/master/packages/dynamic-import-vars).  See [this issue](https://github.com/peterpeterparker/web-social-share/issues/48) for more info.
+
 ## Getting Started
 
 The Web Social Share Component can be use like following:

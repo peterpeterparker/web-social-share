@@ -1,3 +1,11 @@
+<a name="8.0.1"></a>
+
+# [8.0.1](https://github.com/peterpeterparker/web-social-share/compare/v8.0.0...v8.0.1) (2021-12-21)
+
+### Fix
+
+- add manual support for ESM in NodeJS ([#55](https://github.com/peterpeterparker/web-social-share/pull/55))
+
 <a name="8.0.0"></a>
 
 # [8.0.0](https://github.com/peterpeterparker/web-social-share/compare/v7.3.1...v8.0.0) (2021-12-06)

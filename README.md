@@ -71,7 +71,7 @@ Due to an [open issue in Stencil regarding ESM entry points](https://github.com/
 import 'web-social-share';
 ```
 
-> _Note: as noted in the linked issue, one caveat is that this entry file uses template literals inside dynamic imports (e.g. `import(${x})`) so make sure this syntax is also supported by your environment.  For example, Rollup has [**@rollup/plugin-dynamic-import-vars**](https://github.com/rollup/plugins/tree/master/packages/dynamic-import-vars).
+> Note: as noted in the linked issue, one caveat is that this entry file uses template literals inside dynamic imports (e.g. `import(${x})`) so make sure this syntax is also supported by your environment.  For example, Rollup has [**@rollup/plugin-dynamic-import-vars**](https://github.com/rollup/plugins/tree/master/packages/dynamic-import-vars).
 
 ## Getting Started
 

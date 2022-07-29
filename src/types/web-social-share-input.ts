@@ -22,6 +22,7 @@ export interface WebSocialShareInputConfig {
   copy?: WebSocialShareAttributes;
   hackernews?: WebSocialShareHackerNewsAttributes;
   telegram?: WebSocialShareWithTextAttributes;
+  openchat?: WebSocialShareWithTextAttributes;
 }
 
 export interface WebSocialShareInput {

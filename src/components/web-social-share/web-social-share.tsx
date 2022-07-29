@@ -13,16 +13,19 @@ import {whatsapp} from '../../providers/whatsapp';
 import {copy} from '../../providers/copy';
 import {hackernews} from '../../providers/hackernews';
 import {telegram} from '../../providers/telegram';
+import {openchat} from '../../providers/openchat';
 
 /**
- * @slot facebook - A slot to display an icon or text in the related social share button
- * @slot twitter - A slot to display an icon or text in the related social share button
- * @slot email - A slot to display an icon or text in the related social share button
- * @slot linkedin - A slot to display an icon or text in the related social share button
- * @slot pinterest - A slot to display an icon or text in the related social share button
- * @slot whatsapp - A slot to display an icon or text in the related social share button
- * @slot copy - A slot to display an icon or text in the related social share button
- * @slot hackernews - A slot to display an icon or text in the related social share button
+ * @slot facebook - A slot to display an icon or text for Facebook
+ * @slot twitter - A slot to display an icon or text for Twitter
+ * @slot email - A slot to display an icon or text for a shate to an email
+ * @slot linkedin - A slot to display an icon or text for LinkedIn
+ * @slot pinterest - A slot to display an icon or text for Pinterest
+ * @slot whatsapp - A slot to display an icon or text for Whatsapp
+ * @slot copy - A slot to display an icon or text to copy to clipboard
+ * @slot hackernews - A slot to display an icon or text for Hackernews
+ * @slot telegram - A slot to display an icon or text for Telegram
+ * @slot openchat - A slot to display an icon or text for Openchat
  */
 @Component({
   tag: 'web-social-share',
@@ -130,6 +133,8 @@ export class WebSocialShare {
       return this.renderButton(share.hackernews, 'hackernews', hackernews, 'Hacker News');
     } else if (share.telegram) {
       return this.renderButton(share.telegram, 'telegram', telegram, 'Telegram');
+    } else if (share.openchat) {
+      return this.renderButton(share.openchat, 'openchat', openchat, 'OpenChat');
     }
 
     return undefined;
@@ -147,7 +152,8 @@ export class WebSocialShare {
       | 'copy'
       | 'whatsapp'
       | 'hackernews'
-      | 'telegram',
+      | 'telegram'
+      | 'openchat',
     action: (attributes: WebSocialShareDisplayAttributes) => Promise<void>,
     defaultBrandName: string
   ) {

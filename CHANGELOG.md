@@ -4,6 +4,10 @@
 
 ### Features
 
+- share to OpenChat
+
+### Fix
+
 - improve mobile detection to share Twitter or Whatsapp accordingly
 
 ### Refactor

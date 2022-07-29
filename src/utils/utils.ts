@@ -1,6 +1,9 @@
 // Same implementation as in class @deckdeckgo/utils
 export const isMobile = (): boolean => {
-  return window?.matchMedia('(any-pointer:coarse)').matches;
+  const isTouchScreen: boolean = window.matchMedia('(any-pointer:coarse)').matches;
+  const isMouseScreen: boolean = window.matchMedia('(any-pointer:fine)').matches;
+
+  return isTouchScreen && !isMouseScreen;
 };
 
 export const staticOpenNewWindow = (urlString: string) => {

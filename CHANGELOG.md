@@ -1,3 +1,21 @@
+<a name="8.1.0"></a>
+
+# [8.1.0](https://github.com/peterpeterparker/web-social-share/compare/v8.0.1...v8.1.0) (2022-07-29)
+
+### Features
+
+- improve mobile detection to share Twitter or Whatsapp accordingly
+
+### Refactor
+
+- move `utils` to `providers`
+
+### Build
+
+- bump dev dependencies
+- remove `pretty-quick` and `husky`
+- format code (max 100 chars instead of 140)
+
 <a name="8.0.1"></a>
 
 # [8.0.1](https://github.com/peterpeterparker/web-social-share/compare/v8.0.0...v8.0.1) (2021-12-21)

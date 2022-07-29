@@ -5,7 +5,9 @@ import {staticOpenNewWindow, isMobile, shareEncodedUrl} from './utils';
 export const whatsapp = async (attrs: WebSocialShareWhatsappAttributes) => {
   const mobile: boolean = isMobile();
 
-  let urlString = mobile ? 'https://api.whatsapp.com/send?text=' : 'https://web.whatsapp.com/send?text=';
+  let urlString = mobile
+    ? 'https://api.whatsapp.com/send?text='
+    : 'https://web.whatsapp.com/send?text=';
 
   if (attrs.socialShareText) {
     urlString += encodeURIComponent(attrs.socialShareText) + '%0A';

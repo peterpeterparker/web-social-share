@@ -76,13 +76,17 @@ export class WebSocialShare {
 
     await action(attributes);
 
-    setTimeout( () => this.hide(), 250);
+    setTimeout(() => this.hide(), 250);
   }
 
   render() {
     return (
       <div
-        class={this.show ? 'web-social-share web-social-share-open' : 'web-social-share web-social-share-close'}
+        class={
+          this.show
+            ? 'web-social-share web-social-share-open'
+            : 'web-social-share web-social-share-close'
+        }
         ref={(el) => (this.refContainer = el as HTMLDivElement)}>
         <div class="web-social-share-backdrop" onClick={() => this.hide()}></div>
 
@@ -133,12 +137,24 @@ export class WebSocialShare {
 
   private renderButton(
     attributes: WebSocialShareDisplayAttributes,
-    slotName: 'facebook' | 'twitter' | 'pinterest' | 'linkedin' | 'reddit' | 'email' | 'copy' | 'whatsapp' | 'hackernews' | 'telegram',
+    slotName:
+      | 'facebook'
+      | 'twitter'
+      | 'pinterest'
+      | 'linkedin'
+      | 'reddit'
+      | 'email'
+      | 'copy'
+      | 'whatsapp'
+      | 'hackernews'
+      | 'telegram',
     action: (attributes: WebSocialShareDisplayAttributes) => Promise<void>,
     defaultBrandName: string
   ) {
     return (
-      <button onClick={($event) => this.handleShare($event, attributes, action)} class="web-social-share-button">
+      <button
+        onClick={($event) => this.handleShare($event, attributes, action)}
+        class="web-social-share-button">
         <div class="web-social-share-button-icon">
           <slot name={slotName}></slot>
         </div>

@@ -125,7 +125,10 @@ div.web-social-share {
          * @prop --web-social-share-action-sheet-group-box-shadow: Action sheet box-shadow
          * @default 0 0 8px 4px rgba(0,0,0,0.1)
         */
-        box-shadow: var(--web-social-share-action-sheet-group-box-shadow, 0 0 8px 4px rgba(0, 0, 0, 0.1));
+        box-shadow: var(
+          --web-social-share-action-sheet-group-box-shadow,
+          0 0 8px 4px rgba(0, 0, 0, 0.1)
+        );
 
         z-index: calc(var(--web-social-share-zindex, 1000) + 10);
         -webkit-transform: translate3d(0, 0, 10px);
@@ -192,7 +195,8 @@ div.web-social-share {
       border-radius: var(--web-social-share-button-border-radius, 8px);
 
       &:hover {
-        background: var(--background) radial-gradient(circle, transparent 1%, var(--background) 1%) center/15000%;
+        background: var(--background) radial-gradient(circle, transparent 1%, var(--background) 1%)
+          center/15000%;
       }
 
       &:active {

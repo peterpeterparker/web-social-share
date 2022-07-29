@@ -1,9 +1,9 @@
 {
-  "printWidth": 140,
+  "printWidth": 100,
   "singleQuote": true,
   "arrowParens": "always",
   "bracketSpacing": false,
-  "jsxBracketSameLine": true,
+  "bracketSameLine": true,
   "trailingComma": "none",
   "overrides": [
     {

@@ -19,7 +19,9 @@
   "scripts": {
     "build": "stencil build --docs",
     "start": "stencil build --dev --watch --serve",
-    "web": "stencil build"
+    "web": "stencil build",
+    "format": "prettier . --write",
+    "format:md": "prettier \"src/**/*.md\" --write"
   },
   "devDependencies": {
     "@stencil/core": "^2.17.1",

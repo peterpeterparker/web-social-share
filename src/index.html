@@ -2,9 +2,13 @@
 <html dir="ltr" lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
     <title>Web Social Share</title>
-    <meta name="description" content="A Web Component to share urls and content on social networks" />
+    <meta
+      name="description"
+      content="A Web Component to share urls and content on social networks" />
     <meta name="author" content="David Dal Busco" />
 
     <script type="module" src="/build/websocialshare.esm.js"></script>
@@ -14,8 +18,7 @@
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
       integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
-      crossorigin="anonymous"
-    />
+      crossorigin="anonymous" />
 
     <!-- Bootstrap -->
     <style>
@@ -45,25 +48,34 @@
     <main role="main" class="container mt-5">
       <section class="jumbotron text-center">
         <div class="container">
-          <p class="lead text-muted mt-5">Web Social Share is a Web Component to share urls and text on social networks.</p>
+          <p class="lead text-muted mt-5">
+            Web Social Share is a Web Component to share urls and text on social networks.
+          </p>
           <p class="mt-5 mb-5">
-            <button id="showWebSocialShare" type="button" class="btn btn-primary" onclick="show(true);">
+            <button
+              id="showWebSocialShare"
+              type="button"
+              class="btn btn-primary"
+              onclick="show(true);">
               <i class="fas fa-share-alt"></i> SHARE THIS WEBSITE
             </button>
           </p>
 
-          <p class="text-muted mt-5 mb-0 small">
-            Following target are currently supported:
+          <p class="text-muted mt-5 mb-0 small">Following target are currently supported:</p>
+          <p class="text-muted mt-2 small">
+            Twitter, Facebook, Twitter, Pinterest, Linkedin, Reddit, Email, Copy, Hackernews,
+            Whatsapp and Telegram
           </p>
-          <p class="text-muted mt-2 small">Twitter, Facebook, Twitter, Pinterest, Linkedin, Reddit, Email, Copy, Hackernews, Whatsapp and Telegram</p>
         </div>
       </section>
 
       <section class="text-center mt-5">
         <div class="container">
           <p class="lead text-muted">
-            Most modern browsers support the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Navigator/share">Web Share API</a>.
-            You can test the compatibility of your current navigator with the following action:
+            Most modern browsers support the
+            <a href="https://developer.mozilla.org/en-US/docs/Web/API/Navigator/share"
+              >Web Share API</a
+            >. You can test the compatibility of your current navigator with the following action:
           </p>
           <p>
             <button type="button" class="btn btn-secondary" onclick="webShare()">
@@ -80,7 +92,9 @@
       </div>
 
       <p class="my-4">
-        <a href="https://github.com/peterpeterparker/web-social-share" class="btn btn-dark my-2"><i class="fab fa-github"></i> Github</a>
+        <a href="https://github.com/peterpeterparker/web-social-share" class="btn btn-dark my-2"
+          ><i class="fab fa-github"></i> Github</a
+        >
 
         <a
           href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwebsocialshare.com&text=A%20Web%20Component%20to%20share%20urls%20and%20text%20on%20social%20networks%20by%20%40daviddalbusco"
@@ -90,17 +104,28 @@
       </p>
     </footer>
 
-    <web-social-share show="false" style="--web-social-share-height: 140px; --web-social-share-target-width: 6rem">
+    <web-social-share
+      show="false"
+      style="--web-social-share-height: 140px; --web-social-share-target-width: 6rem">
       <i class="fab fa-facebook" slot="facebook" style="color: #3b5998; font-size: 1.6rem"></i>
       <i class="fab fa-twitter" slot="twitter" style="color: #00aced; font-size: 1.6rem"></i>
       <i class="fab fa-pinterest" slot="pinterest" style="color: #bd081c; font-size: 1.6rem"></i>
       <i class="fab fa-linkedin" slot="linkedin" style="color: #0077b5; font-size: 1.6rem"></i>
       <i class="fab fa-reddit" slot="reddit" style="color: #cee3f8; font-size: 1.6rem"></i>
       <i class="fas fa-envelope" slot="email" style="color: #ff8ea3; font-size: 1.6rem"></i>
-      <i class="fab fa-whatsapp-square" slot="whatsapp" style="color: #25d366; font-size: 1.6rem"></i>
-      <i class="fab fa-hacker-news-square" slot="hackernews" style="color: #ff6000; font-size: 1.6rem"></i>
+      <i
+        class="fab fa-whatsapp-square"
+        slot="whatsapp"
+        style="color: #25d366; font-size: 1.6rem"></i>
+      <i
+        class="fab fa-hacker-news-square"
+        slot="hackernews"
+        style="color: #ff6000; font-size: 1.6rem"></i>
       <i class="far fa-copy" slot="copy" style="color: black; font-size: 1.6rem"></i>
-      <i class="fab fa-telegram-plane" slot="telegram" style="color: #0088cc; font-size: 1.6rem"></i>
+      <i
+        class="fab fa-telegram-plane"
+        slot="telegram"
+        style="color: #0088cc; font-size: 1.6rem"></i>
     </web-social-share>
 
     <script type="text/javascript">
@@ -207,25 +232,21 @@
     <script
       src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
       integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-      crossorigin="anonymous"
-    ></script>
+      crossorigin="anonymous"></script>
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
       integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-      crossorigin="anonymous"
-    ></script>
+      crossorigin="anonymous"></script>
     <script
       src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
       integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-      crossorigin="anonymous"
-    ></script>
+      crossorigin="anonymous"></script>
 
     <script
       defer
       src="https://use.fontawesome.com/releases/v5.4.1/js/all.js"
       integrity="sha384-L469/ELG4Bg9sDQbl0hvjMq8pOcqFgkSpwhwnslzvVVGpDjYJ6wJJyYjvG3u8XW7"
-      crossorigin="anonymous"
-    ></script>
+      crossorigin="anonymous"></script>
 
     <!-- To test other way to import Font Awesome -->
     <!--<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">-->

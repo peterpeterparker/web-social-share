@@ -26,7 +26,7 @@ export const reddit = async (attrs: WebSocialShareRedditAttributes) => {
   let url: string = urlString + shareEncodedUrl(attrs.socialShareUrl);
 
   if (attrs.socialShareText) {
-    url += `&title=${encodeURIComponent(attrs.socialShareText)}`
+    url += `&title=${encodeURIComponent(attrs.socialShareText)}`;
   }
 
   window.open(

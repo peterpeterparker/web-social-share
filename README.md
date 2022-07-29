@@ -41,15 +41,16 @@ The component present a dialog which contains the sharing options you selected.
 
 Following providers or targets are currently supported:
 
-- Facebook
 - Twitter
+- Telegram
+- OpenChat
 - Email
 - Linkedin
 - Pinterest
 - Reddit
-- WhatsApp
-- Telegram
 - Hacker News
+- Facebook
+- WhatsApp
 - Copy (to clipboard)
 
 ## Installation

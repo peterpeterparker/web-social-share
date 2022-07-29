@@ -1,6 +1,6 @@
 import {WebSocialShareTwiterAttributes} from '../types/web-social-share-attributes';
 
-import {isMobile, shareEncodedUrl, staticOpenNewWindow} from './utils';
+import {isMobile, shareEncodedUrl, staticOpenNewWindow} from '../utils/utils';
 
 export const shareTwitter = async (attrs: WebSocialShareTwiterAttributes) => {
   let urlString = 'https://www.twitter.com/intent/tweet?';

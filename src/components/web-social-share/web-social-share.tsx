@@ -3,16 +3,16 @@ import {Component, Element, Event, EventEmitter, Prop, h} from '@stencil/core';
 import {WebSocialShareDisplayAttributes} from '../../types/web-social-share-attributes';
 import {WebSocialShareInput, WebSocialShareInputConfig} from '../../types/web-social-share-input';
 
-import {shareFacebook} from '../../utils/facebook';
-import {shareTwitter} from '../../utils/twitter';
-import {email} from '../../utils/email';
-import {linkedin} from '../../utils/linkedin';
-import {pinterest} from '../../utils/pinterest';
-import {reddit} from '../../utils/reddit';
-import {whatsapp} from '../../utils/whatsapp';
-import {copy} from '../../utils/copy';
-import {hackernews} from '../../utils/hackernews';
-import {telegram} from '../../utils/telegram';
+import {shareFacebook} from '../../providers/facebook';
+import {shareTwitter} from '../../providers/twitter';
+import {email} from '../../providers/email';
+import {linkedin} from '../../providers/linkedin';
+import {pinterest} from '../../providers/pinterest';
+import {reddit} from '../../providers/reddit';
+import {whatsapp} from '../../providers/whatsapp';
+import {copy} from '../../providers/copy';
+import {hackernews} from '../../providers/hackernews';
+import {telegram} from '../../providers/telegram';
 
 /**
  * @slot facebook - A slot to display an icon or text in the related social share button

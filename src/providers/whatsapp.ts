@@ -1,6 +1,6 @@
 import {WebSocialShareWhatsappAttributes} from '../types/web-social-share-attributes';
 
-import {staticOpenNewWindow, isMobile, shareEncodedUrl} from './utils';
+import {staticOpenNewWindow, isMobile, shareEncodedUrl} from '../utils/utils';
 
 export const whatsapp = async (attrs: WebSocialShareWhatsappAttributes) => {
   const mobile: boolean = isMobile();

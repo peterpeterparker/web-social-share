@@ -39,7 +39,7 @@ Even though, it may remain interesting to use such a component for the desktop v
 
 The component present a dialog which contains the sharing options you selected.
 
-Following target are currently supported:
+Following providers or targets are currently supported:
 
 - Facebook
 - Twitter

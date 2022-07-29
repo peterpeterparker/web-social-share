@@ -1,6 +1,6 @@
 import {WebSocialShareFacebookAttributes} from '../types/web-social-share-attributes';
 
-import {shareEncodedUrl} from './utils';
+import {shareEncodedUrl} from '../utils/utils';
 
 /**
  * Source: https://github.com/720kb/angular-socialshare/blob/master/dist/angular-socialshare.js

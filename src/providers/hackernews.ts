@@ -1,6 +1,6 @@
 import {WebSocialShareWithTextAttributes} from '../types/web-social-share-attributes';
 
-import {shareEncodedUrl, staticOpenNewWindow} from './utils';
+import {shareEncodedUrl, staticOpenNewWindow} from '../utils/utils';
 
 export const hackernews = async (attrs: WebSocialShareWithTextAttributes) => {
   let urlString = 'https://news.ycombinator.com/submitlink?u=';

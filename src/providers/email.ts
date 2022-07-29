@@ -1,5 +1,5 @@
 import {WebSocialShareEmailAttributes} from '../types/web-social-share-attributes';
-import {staticOpenNewWindow} from './utils';
+import {staticOpenNewWindow} from '../utils/utils';
 
 export const email = async (attrs: WebSocialShareEmailAttributes) => {
   let urlString = 'mailto:';

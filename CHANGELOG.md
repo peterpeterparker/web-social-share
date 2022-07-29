@@ -4,7 +4,7 @@
 
 ### Features
 
-- share to OpenChat
+- share to [OpenChat](https://oc.app/)
 
 ### Fix
 

@@ -49,7 +49,7 @@
       <section class="jumbotron text-center">
         <div class="container">
           <p class="lead text-muted mt-5">
-            Web Social Share is a Web Component to share urls and text on social networks.
+            Web Social Share is a Web Component to share urls and text on social platforms.
           </p>
           <p class="mt-5 mb-5">
             <button
@@ -57,14 +57,14 @@
               type="button"
               class="btn btn-primary"
               onclick="show(true);">
-              <i class="fas fa-share-alt"></i> SHARE THIS WEBSITE
+              <i class="fas fa-share-alt" style="margin-right: 5px"></i> Share this website
             </button>
           </p>
 
-          <p class="text-muted mt-5 mb-0 small">Following target are currently supported:</p>
+          <p class="text-muted mt-5 mb-0 small">Currently supported:</p>
           <p class="text-muted mt-2 small">
             Twitter, Facebook, Twitter, Pinterest, Linkedin, Reddit, Email, Copy, Hackernews,
-            Whatsapp and Telegram
+            Whatsapp, Telegram and OpenChat
           </p>
         </div>
       </section>
@@ -72,14 +72,14 @@
       <section class="text-center mt-5">
         <div class="container">
           <p class="lead text-muted">
-            Most modern browsers support the
+            Most modern browsers implement the
             <a href="https://developer.mozilla.org/en-US/docs/Web/API/Navigator/share"
               >Web Share API</a
-            >. You can test the compatibility of your current navigator with the following action:
+            >.<br />If not supported or not well suited, then this component can help.
           </p>
           <p>
             <button type="button" class="btn btn-secondary" onclick="webShare()">
-              <i class="fas fa-share-alt"></i> TEST WEB SHARE API
+              <i class="fas fa-share-alt" style="margin-right: 5px"></i> Test Web Share API
             </button>
           </p>
         </div>
@@ -93,13 +93,13 @@
 
       <p class="my-4">
         <a href="https://github.com/peterpeterparker/web-social-share" class="btn btn-dark my-2"
-          ><i class="fab fa-github"></i> Github</a
+          ><i class="fab fa-github" style="margin-right: 5px"></i> Github</a
         >
 
         <a
           href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwebsocialshare.com&text=A%20Web%20Component%20to%20share%20urls%20and%20text%20on%20social%20networks%20by%20%40daviddalbusco"
           class="btn btn-primary mx-2 my-2"
-          ><i class="fab fa-twitter"></i> Tweet</a
+          ><i class="fab fa-twitter" style="margin-right: 5px"></i> Tweet</a
         >
       </p>
     </footer>

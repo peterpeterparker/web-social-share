@@ -20,16 +20,18 @@
 
 ## Slots
 
-| Slot           | Description                                                          |
-| -------------- | -------------------------------------------------------------------- |
-| `"copy"`       | A slot to display an icon or text in the related social share button |
-| `"email"`      | A slot to display an icon or text in the related social share button |
-| `"facebook"`   | A slot to display an icon or text in the related social share button |
-| `"hackernews"` | A slot to display an icon or text in the related social share button |
-| `"linkedin"`   | A slot to display an icon or text in the related social share button |
-| `"pinterest"`  | A slot to display an icon or text in the related social share button |
-| `"twitter"`    | A slot to display an icon or text in the related social share button |
-| `"whatsapp"`   | A slot to display an icon or text in the related social share button |
+| Slot           | Description                                               |
+| -------------- | --------------------------------------------------------- |
+| `"copy"`       | A slot to display an icon or text to copy to clipboard    |
+| `"email"`      | A slot to display an icon or text for a shate to an email |
+| `"facebook"`   | A slot to display an icon or text for Facebook            |
+| `"hackernews"` | A slot to display an icon or text for Hackernews          |
+| `"linkedin"`   | A slot to display an icon or text for LinkedIn            |
+| `"openchat"`   | A slot to display an icon or text for Openchat            |
+| `"pinterest"`  | A slot to display an icon or text for Pinterest           |
+| `"telegram"`   | A slot to display an icon or text for Telegram            |
+| `"twitter"`    | A slot to display an icon or text for Twitter             |
+| `"whatsapp"`   | A slot to display an icon or text for Whatsapp            |
 
 
 ## CSS Custom Properties

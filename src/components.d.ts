@@ -18,6 +18,10 @@ export namespace Components {
         "show": boolean;
     }
 }
+export interface WebSocialShareCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLWebSocialShareElement;
+}
 declare global {
     interface HTMLWebSocialShareElement extends Components.WebSocialShare, HTMLStencilElement {
     }
@@ -34,7 +38,7 @@ declare namespace LocalJSX {
         /**
           * An event triggered when the modal is `closed`
          */
-        "onClosed"?: (event: CustomEvent<void>) => void;
+        "onClosed"?: (event: WebSocialShareCustomEvent<void>) => void;
         /**
           * The share options
          */

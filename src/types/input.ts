@@ -5,7 +5,7 @@ import {
   WebSocialShareLinkedinAttributes,
   WebSocialSharePinterestAttributes,
   WebSocialShareRedditAttributes,
-  WebSocialShareTwiterAttributes,
+  WebSocialShareTwitterAttributes,
   WebSocialShareUrlAttributes,
   WebSocialShareWhatsappAttributes,
   WebSocialShareWithTextAttributes
@@ -13,7 +13,7 @@ import {
 
 export interface WebSocialShareInputConfig {
   facebook?: WebSocialShareFacebookAttributes;
-  twitter?: WebSocialShareTwiterAttributes;
+  twitter?: WebSocialShareTwitterAttributes;
   email?: WebSocialShareEmailAttributes;
   linkedin?: WebSocialShareLinkedinAttributes;
   pinterest?: WebSocialSharePinterestAttributes;

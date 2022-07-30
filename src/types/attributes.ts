@@ -28,7 +28,7 @@ export interface WebSocialShareFacebookAttributes extends WebSocialSharePlatform
   socialShareHashtags?: string;
 }
 
-export interface WebSocialShareTwiterAttributes extends WebSocialShareWithTextAttributes {
+export interface WebSocialShareTwitterAttributes extends WebSocialShareWithTextAttributes {
   socialShareVia?: string;
   socialShareHashtags?: string;
 }

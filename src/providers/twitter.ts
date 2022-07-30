@@ -1,4 +1,4 @@
-import {WebSocialShareTwiterAttributes} from '../types/attributes';
+import {WebSocialShareTwitterAttributes} from '../types/attributes';
 
 import {openNewWindow, shareEncodedUrl} from '../utils/utils';
 
@@ -8,7 +8,7 @@ export const shareTwitter = async ({
   socialShareHashtags,
   socialShareUrl,
   openWindowTarget: target
-}: WebSocialShareTwiterAttributes) => {
+}: WebSocialShareTwitterAttributes) => {
   let urlString = 'https://www.twitter.com/intent/tweet?';
 
   if (socialShareText) {

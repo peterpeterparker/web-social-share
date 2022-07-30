@@ -4,6 +4,7 @@
 
 ### Features
 
+- share to [DSCVR](https://dscvr.one)
 - per default, open share link in new window (*)
 - new option `openWindowTarget` to set another target to open the url than `_blank` (*)
 

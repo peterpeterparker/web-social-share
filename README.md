@@ -41,17 +41,17 @@ The component present a dialog which contains the sharing options you selected.
 
 Following providers or targets are currently supported:
 
-- Twitter
-- Telegram
-- OpenChat
+- [Twitter](https://twitter.com/)
+- [Telegram](https://telegram.org/)
+- [OpenChat](https://oc.app/)
 - Email
-- Linkedin
-- Pinterest
-- DSCVR
-- Reddit
-- Hacker News
-- Facebook
-- WhatsApp
+- [Linkedin](https://linkedin.com)
+- [Pinterest](https://www.pinterest.com)
+- [DSCVR](https://dscvr.one/)
+- [Reddit](https://reddit.com)
+- [Hacker News](https://news.ycombinator.com/)
+- [Facebook](https://facebook.com)
+- [WhatsApp](https://www.whatsapp.com/)
 - Copy (to clipboard)
 
 ## Installation

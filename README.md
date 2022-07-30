@@ -166,9 +166,7 @@ NOTE: Slot names MUST be lower case.
 
 const share = [{
     reddit: {
-      socialShareUrl: 'https://peterpeterparker.io',
-      socialSharePopupWidth: 300,
-      socialSharePopupHeight: 500
+      socialShareUrl: 'https://peterpeterparker.io'
     }
   }
 }];

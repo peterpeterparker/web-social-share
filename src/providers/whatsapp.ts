@@ -1,35 +1,24 @@
-import {WebSocialShareWhatsappAttributes} from '../types/web-social-share-attributes';
+import {WebSocialShareWhatsappAttributes} from '../types/attributes';
 
-import {staticOpenNewWindow, isMobile, shareEncodedUrl} from '../utils/utils';
+import {isMobile, openNewWindow, shareEncodedUrl} from '../utils/utils';
 
-export const whatsapp = async (attrs: WebSocialShareWhatsappAttributes) => {
+export const whatsapp = async ({
+  socialShareText,
+  socialShareUrl,
+  openWindowTarget: target
+}: WebSocialShareWhatsappAttributes) => {
   const mobile: boolean = isMobile();
 
   let urlString = mobile
     ? 'https://api.whatsapp.com/send?text='
     : 'https://web.whatsapp.com/send?text=';
 
-  if (attrs.socialShareText) {
-    urlString += encodeURIComponent(attrs.socialShareText) + '%0A';
+  if (socialShareText) {
+    urlString += encodeURIComponent(socialShareText) + '%0A';
   }
 
   //default to the current page if a URL isn't specified
-  urlString += shareEncodedUrl(attrs.socialShareUrl);
+  urlString += shareEncodedUrl(socialShareUrl);
 
-  if (mobile) {
-    staticOpenNewWindow(urlString);
-  } else {
-    window.open(
-      urlString,
-      'WhatsApp',
-      'toolbar=0,status=0,resizable=yes,width=' +
-        attrs.socialSharePopupWidth +
-        ',height=' +
-        attrs.socialSharePopupHeight +
-        ',top=' +
-        (window.innerHeight - attrs.socialSharePopupHeight) / 2 +
-        ',left=' +
-        (window.innerWidth - attrs.socialSharePopupWidth) / 2
-    );
-  }
+  openNewWindow({urlString, target});
 };

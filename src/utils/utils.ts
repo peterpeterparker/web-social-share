@@ -6,14 +6,13 @@ export const isMobile = (): boolean => {
   return isTouchScreen && !isMouseScreen;
 };
 
-export const staticOpenNewWindow = (urlString: string) => {
-  if (window.self !== window.top) {
-    window.open(urlString, '_blank');
-  } else {
-    window.open(urlString, '_self');
-  }
-};
+export const openNewWindow = ({
+  urlString,
+  target = '_blank'
+}: {
+  urlString: string;
+  target?: string;
+}) => window.open(urlString, target);
 
-export const shareEncodedUrl = (socialShareUrl?: string): string => {
-  return encodeURIComponent(socialShareUrl || window.location.href);
-};
+export const shareEncodedUrl = (socialShareUrl?: string): string =>
+  encodeURIComponent(socialShareUrl ?? window.location.href);

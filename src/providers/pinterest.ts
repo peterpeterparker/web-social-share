@@ -1,23 +1,24 @@
-import {WebSocialSharePinterestAttributes} from '../types/web-social-share-attributes';
+import {WebSocialSharePinterestAttributes} from '../types/attributes';
 
-import {shareEncodedUrl} from '../utils/utils';
+import {openNewWindow, shareEncodedUrl} from '../utils/utils';
 
-export const pinterest = async (attrs: WebSocialSharePinterestAttributes) => {
-  window.open(
-    'https://www.pinterest.com/pin/create/button/?url=' +
-      shareEncodedUrl(attrs.socialShareUrl) +
-      '&media=' +
-      encodeURIComponent(attrs.socialShareMedia) +
-      '&description=' +
-      encodeURIComponent(attrs.socialShareText),
-    'Pinterest',
-    'toolbar=0,status=0,resizable=yes,width=' +
-      attrs.socialSharePopupWidth +
-      ',height=' +
-      attrs.socialSharePopupHeight +
-      ',top=' +
-      (window.innerHeight - attrs.socialSharePopupHeight) / 2 +
-      ',left=' +
-      (window.innerWidth - attrs.socialSharePopupWidth) / 2
-  );
+export const pinterest = async ({
+  socialShareUrl,
+  socialShareMedia,
+  socialShareText,
+  openWindowTarget: target
+}: WebSocialSharePinterestAttributes) => {
+  let urlString: string = `https://www.pinterest.com/pin/create/button/?url=${shareEncodedUrl(
+    socialShareUrl
+  )}`;
+
+  if (socialShareMedia) {
+    urlString += `&media=${encodeURIComponent(socialShareMedia)}`;
+  }
+
+  if (socialShareText) {
+    urlString += `&description=${encodeURIComponent(socialShareText)}`;
+  }
+
+  openNewWindow({urlString, target});
 };

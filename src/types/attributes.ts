@@ -2,19 +2,20 @@ export interface WebSocialShareDisplayAttributes {
   brandName?: string;
 }
 
-export interface WebSocialShareAttributes extends WebSocialShareDisplayAttributes {
-  socialSharePopupWidth?: number;
-  socialSharePopupHeight?: number;
-
+export interface WebSocialShareUrlAttributes extends WebSocialShareDisplayAttributes {
   socialShareUrl?: string;
 }
 
-export interface WebSocialShareWithTextAttributes extends WebSocialShareAttributes {
+export interface WebSocialSharePlatformAttributes extends WebSocialShareUrlAttributes {
+  openWindowTarget?: string;
+}
+
+export interface WebSocialShareWithTextAttributes extends WebSocialSharePlatformAttributes {
   socialShareText?: string;
 }
 
-export interface WebSocialShareFacebookAttributes extends WebSocialShareAttributes {
-  socialShareType?: string;
+export interface WebSocialShareFacebookAttributes extends WebSocialSharePlatformAttributes {
+  socialShareType?: 'send' | 'share' | 'feed';
   socialShareVia?: string;
   socialShareRedirectUri?: string;
   socialShareTo?: string;

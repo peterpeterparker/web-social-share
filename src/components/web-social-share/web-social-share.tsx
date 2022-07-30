@@ -1,19 +1,19 @@
-import {Component, Element, Event, EventEmitter, Prop, h} from '@stencil/core';
+import {Component, Element, Event, EventEmitter, h, Prop} from '@stencil/core';
 
-import {WebSocialShareDisplayAttributes} from '../../types/web-social-share-attributes';
-import {WebSocialShareInput, WebSocialShareInputConfig} from '../../types/web-social-share-input';
+import {WebSocialShareDisplayAttributes} from '../../types/attributes';
+import {WebSocialShareInput, WebSocialShareInputConfig} from '../../types/input';
 
-import {shareFacebook} from '../../providers/facebook';
-import {shareTwitter} from '../../providers/twitter';
+import {copy} from '../../providers/copy';
 import {email} from '../../providers/email';
+import {shareFacebook} from '../../providers/facebook';
+import {hackernews} from '../../providers/hackernews';
 import {linkedin} from '../../providers/linkedin';
+import {openchat} from '../../providers/openchat';
 import {pinterest} from '../../providers/pinterest';
 import {reddit} from '../../providers/reddit';
-import {whatsapp} from '../../providers/whatsapp';
-import {copy} from '../../providers/copy';
-import {hackernews} from '../../providers/hackernews';
 import {telegram} from '../../providers/telegram';
-import {openchat} from '../../providers/openchat';
+import {shareTwitter} from '../../providers/twitter';
+import {whatsapp} from '../../providers/whatsapp';
 
 /**
  * @slot facebook - A slot to display an icon or text for Facebook

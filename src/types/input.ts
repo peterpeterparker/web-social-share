@@ -1,5 +1,4 @@
 import {
-  WebSocialShareAttributes,
   WebSocialShareEmailAttributes,
   WebSocialShareFacebookAttributes,
   WebSocialShareHackerNewsAttributes,
@@ -7,9 +6,10 @@ import {
   WebSocialSharePinterestAttributes,
   WebSocialShareRedditAttributes,
   WebSocialShareTwiterAttributes,
+  WebSocialShareUrlAttributes,
   WebSocialShareWhatsappAttributes,
   WebSocialShareWithTextAttributes
-} from './web-social-share-attributes';
+} from './attributes';
 
 export interface WebSocialShareInputConfig {
   facebook?: WebSocialShareFacebookAttributes;
@@ -19,7 +19,7 @@ export interface WebSocialShareInputConfig {
   pinterest?: WebSocialSharePinterestAttributes;
   reddit?: WebSocialShareRedditAttributes;
   whatsapp?: WebSocialShareWhatsappAttributes;
-  copy?: WebSocialShareAttributes;
+  copy?: WebSocialShareUrlAttributes;
   hackernews?: WebSocialShareHackerNewsAttributes;
   telegram?: WebSocialShareWithTextAttributes;
   openchat?: WebSocialShareWithTextAttributes;
@@ -27,6 +27,5 @@ export interface WebSocialShareInputConfig {
 
 export interface WebSocialShareInput {
   displayNames?: boolean;
-
   config: WebSocialShareInputConfig[];
 }

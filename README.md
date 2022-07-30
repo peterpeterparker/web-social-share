@@ -47,6 +47,7 @@ Following providers or targets are currently supported:
 - Email
 - Linkedin
 - Pinterest
+- DSCVR
 - Reddit
 - Hacker News
 - Facebook

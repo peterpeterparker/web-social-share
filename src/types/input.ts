@@ -1,4 +1,5 @@
 import {
+  WebSocialShareDscvrAttributes,
   WebSocialShareEmailAttributes,
   WebSocialShareFacebookAttributes,
   WebSocialShareHackerNewsAttributes,
@@ -23,6 +24,7 @@ export interface WebSocialShareInputConfig {
   hackernews?: WebSocialShareHackerNewsAttributes;
   telegram?: WebSocialShareWithTextAttributes;
   openchat?: WebSocialShareWithTextAttributes;
+  dscvr?: WebSocialShareDscvrAttributes;
 }
 
 export interface WebSocialShareInput {

@@ -4,6 +4,7 @@ import {WebSocialShareDisplayAttributes} from '../../types/attributes';
 import {WebSocialShareInput, WebSocialShareInputConfig} from '../../types/input';
 
 import {copy} from '../../providers/copy';
+import {dscvr} from '../../providers/dscvr';
 import {email} from '../../providers/email';
 import {shareFacebook} from '../../providers/facebook';
 import {hackernews} from '../../providers/hackernews';
@@ -26,6 +27,7 @@ import {whatsapp} from '../../providers/whatsapp';
  * @slot hackernews - A slot to display an icon or text for Hackernews
  * @slot telegram - A slot to display an icon or text for Telegram
  * @slot openchat - A slot to display an icon or text for Openchat
+ * @slot dscvr - A slot to display an icon or text for Dscvr
  */
 @Component({
   tag: 'web-social-share',
@@ -135,6 +137,8 @@ export class WebSocialShare {
       return this.renderButton(share.telegram, 'telegram', telegram, 'Telegram');
     } else if (share.openchat) {
       return this.renderButton(share.openchat, 'openchat', openchat, 'OpenChat');
+    } else if (share.dscvr) {
+      return this.renderButton(share.dscvr, 'dscvr', dscvr, 'DSCVR');
     }
 
     return undefined;
@@ -153,7 +157,8 @@ export class WebSocialShare {
       | 'whatsapp'
       | 'hackernews'
       | 'telegram'
-      | 'openchat',
+      | 'openchat'
+      | 'dscvr',
     action: (attributes: WebSocialShareDisplayAttributes) => Promise<void>,
     defaultBrandName: string
   ) {

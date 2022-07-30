@@ -1,3 +1,14 @@
+<a name="9.0.0"></a>
+
+# [9.0.0](https://github.com/peterpeterparker/web-social-share/compare/v8.1.0...v9.0.0) (2022-07-30)
+
+### Features
+
+- per default, open share link in new window (*)
+- new option `openWindowTarget` to set another target to open the url than `_blank` (*)
+
+(*) except "email" and "copy" targets
+
 <a name="8.1.0"></a>
 
 # [8.1.0](https://github.com/peterpeterparker/web-social-share/compare/v8.0.1...v8.1.0) (2022-07-29)

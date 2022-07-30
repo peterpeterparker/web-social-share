@@ -1,34 +1,29 @@
-import {WebSocialShareLinkedinAttributes} from '../types/web-social-share-attributes';
+import {WebSocialShareLinkedinAttributes} from '../types/attributes';
 
-import {shareEncodedUrl} from '../utils/utils';
+import {openNewWindow, shareEncodedUrl} from '../utils/utils';
 
-export const linkedin = async (attrs: WebSocialShareLinkedinAttributes) => {
+export const linkedin = async ({
+  socialShareUrl,
+  socialShareText,
+  socialShareDescription,
+  socialShareSource,
+  openWindowTarget: target
+}: WebSocialShareLinkedinAttributes) => {
   let urlString = 'https://www.linkedin.com/shareArticle?mini=true';
 
-  urlString += '&url=' + shareEncodedUrl(attrs.socialShareUrl);
+  urlString += '&url=' + shareEncodedUrl(socialShareUrl);
 
-  if (attrs.socialShareText) {
-    urlString += '&title=' + encodeURIComponent(attrs.socialShareText);
+  if (socialShareText) {
+    urlString += '&title=' + encodeURIComponent(socialShareText);
   }
 
-  if (attrs.socialShareDescription) {
-    urlString += '&summary=' + encodeURIComponent(attrs.socialShareDescription);
+  if (socialShareDescription) {
+    urlString += '&summary=' + encodeURIComponent(socialShareDescription);
   }
 
-  if (attrs.socialShareSource) {
-    urlString += '&source=' + encodeURIComponent(attrs.socialShareSource);
+  if (socialShareSource) {
+    urlString += '&source=' + encodeURIComponent(socialShareSource);
   }
 
-  window.open(
-    urlString,
-    'Linkedin',
-    'toolbar=0,status=0,resizable=yes,width=' +
-      attrs.socialSharePopupWidth +
-      ',height=' +
-      attrs.socialSharePopupHeight +
-      ',top=' +
-      (window.innerHeight - attrs.socialSharePopupHeight) / 2 +
-      ',left=' +
-      (window.innerWidth - attrs.socialSharePopupWidth) / 2
-  );
+  openNewWindow({urlString, target});
 };

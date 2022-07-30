@@ -1,10 +1,11 @@
-import {WebSocialShareWithTextAttributes} from '../types/web-social-share-attributes';
+import {WebSocialShareWithTextAttributes} from '../types/attributes';
 
-import {shareEncodedUrl, staticOpenNewWindow} from '../utils/utils';
+import {openNewWindow, shareEncodedUrl} from '../utils/utils';
 
 export const openchat = async ({
   socialShareUrl,
-  socialShareText
+  socialShareText,
+  openWindowTarget: target
 }: WebSocialShareWithTextAttributes) => {
   let urlString: string = `https://oc.app/?url=${shareEncodedUrl(socialShareUrl)}`;
 
@@ -12,8 +13,8 @@ export const openchat = async ({
     urlString += `&text=${encodeURIComponent(socialShareText)}`;
   }
 
-  // openchat requires a suffix `#/share` to understand it's share action
+  // openchat requires a suffix `#/share` to understand it is a share action
   urlString += `#/share`;
 
-  staticOpenNewWindow(urlString);
+  openNewWindow({urlString, target});
 };

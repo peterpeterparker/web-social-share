@@ -1,13 +1,17 @@
-import {WebSocialShareWithTextAttributes} from '../types/web-social-share-attributes';
+import {WebSocialShareWithTextAttributes} from '../types/attributes';
 
-import {shareEncodedUrl, staticOpenNewWindow} from '../utils/utils';
+import {openNewWindow, shareEncodedUrl} from '../utils/utils';
 
-export const telegram = async (attrs: WebSocialShareWithTextAttributes) => {
-  let urlString: string = `https://t.me/share/url?url=${shareEncodedUrl(attrs.socialShareUrl)}`;
+export const telegram = async ({
+  socialShareUrl,
+  socialShareText,
+  openWindowTarget: target
+}: WebSocialShareWithTextAttributes) => {
+  let urlString: string = `https://t.me/share/url?url=${shareEncodedUrl(socialShareUrl)}`;
 
-  if (attrs.socialShareText) {
-    urlString += `&text=${encodeURIComponent(attrs.socialShareText)}`;
+  if (socialShareText) {
+    urlString += `&text=${encodeURIComponent(socialShareText)}`;
   }
 
-  staticOpenNewWindow(urlString);
+  openNewWindow({urlString, target});
 };

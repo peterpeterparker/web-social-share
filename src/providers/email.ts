@@ -1,30 +1,39 @@
-import {WebSocialShareEmailAttributes} from '../types/web-social-share-attributes';
-import {staticOpenNewWindow} from '../utils/utils';
+import {WebSocialShareEmailAttributes} from '../types/attributes';
 
-export const email = async (attrs: WebSocialShareEmailAttributes) => {
+export const email = async ({
+  socialShareTo,
+  socialShareBody,
+  socialShareSubject,
+  socialShareCc,
+  socialShareBcc
+}: WebSocialShareEmailAttributes) => {
   let urlString = 'mailto:';
 
-  if (attrs.socialShareTo) {
-    urlString += encodeURIComponent(attrs.socialShareTo);
+  if (socialShareTo) {
+    urlString += encodeURIComponent(socialShareTo);
   }
 
   urlString += '?';
 
-  if (attrs.socialShareBody) {
-    urlString += 'body=' + encodeURIComponent(attrs.socialShareBody);
+  if (socialShareBody) {
+    urlString += 'body=' + encodeURIComponent(socialShareBody);
   }
 
-  if (attrs.socialShareSubject) {
-    urlString += '&subject=' + encodeURIComponent(attrs.socialShareSubject);
+  if (socialShareSubject) {
+    urlString += '&subject=' + encodeURIComponent(socialShareSubject);
   }
 
-  if (attrs.socialShareCc) {
-    urlString += '&cc=' + encodeURIComponent(attrs.socialShareCc);
+  if (socialShareCc) {
+    urlString += '&cc=' + encodeURIComponent(socialShareCc);
   }
 
-  if (attrs.socialShareBcc) {
-    urlString += '&bcc=' + encodeURIComponent(attrs.socialShareBcc);
+  if (socialShareBcc) {
+    urlString += '&bcc=' + encodeURIComponent(socialShareBcc);
   }
 
-  staticOpenNewWindow(urlString);
+  if (window.self !== window.top) {
+    window.open(urlString, '_blank');
+  } else {
+    window.open(urlString, '_self');
+  }
 };

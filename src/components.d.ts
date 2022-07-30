@@ -5,7 +5,7 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
-import { WebSocialShareInput } from "./types/web-social-share-input";
+import { WebSocialShareInput } from "./types/input";
 export namespace Components {
     interface WebSocialShare {
         /**

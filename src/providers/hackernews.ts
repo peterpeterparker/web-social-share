@@ -1,16 +1,20 @@
-import {WebSocialShareWithTextAttributes} from '../types/web-social-share-attributes';
+import {WebSocialShareWithTextAttributes} from '../types/attributes';
 
-import {shareEncodedUrl, staticOpenNewWindow} from '../utils/utils';
+import {openNewWindow, shareEncodedUrl} from '../utils/utils';
 
-export const hackernews = async (attrs: WebSocialShareWithTextAttributes) => {
+export const hackernews = async ({
+  socialShareUrl,
+  socialShareText,
+  openWindowTarget: target
+}: WebSocialShareWithTextAttributes) => {
   let urlString = 'https://news.ycombinator.com/submitlink?u=';
 
   //default to the current page if a URL isn't specified
-  urlString += shareEncodedUrl(attrs.socialShareUrl);
+  urlString += shareEncodedUrl(socialShareUrl);
 
-  if (attrs.socialShareText) {
-    urlString += '&t=' + encodeURIComponent(attrs.socialShareText);
+  if (socialShareText) {
+    urlString += '&t=' + encodeURIComponent(socialShareText);
   }
 
-  staticOpenNewWindow(urlString);
+  openNewWindow({urlString, target});
 };

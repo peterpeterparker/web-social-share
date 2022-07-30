@@ -23,6 +23,7 @@
 | Slot           | Description                                               |
 | -------------- | --------------------------------------------------------- |
 | `"copy"`       | A slot to display an icon or text to copy to clipboard    |
+| `"dscvr"`      | A slot to display an icon or text for Dscvr               |
 | `"email"`      | A slot to display an icon or text for a shate to an email |
 | `"facebook"`   | A slot to display an icon or text for Facebook            |
 | `"hackernews"` | A slot to display an icon or text for Hackernews          |

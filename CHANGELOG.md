@@ -1,3 +1,11 @@
+<a name="9.1.0"></a>
+
+# [9.1.0](https://github.com/peterpeterparker/web-social-share/compare/v9.0.0...v9.1.0) (2022-09-04)
+
+### Build
+
+- improve support for `vite`
+
 <a name="9.0.0"></a>
 
 # [9.0.0](https://github.com/peterpeterparker/web-social-share/compare/v8.1.0...v9.0.0) (2022-07-30)

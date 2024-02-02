@@ -1,0 +1,9 @@
+{
+  "type": "module",
+  "dependencies": {
+    "web-social-share": "file:../"
+  },
+  "scripts": {
+    "test": "node esm.test.js"
+  }
+}

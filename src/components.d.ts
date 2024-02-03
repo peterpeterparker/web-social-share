@@ -6,6 +6,7 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { WebSocialShareInput } from "./types/input";
+export { WebSocialShareInput } from "./types/input";
 export namespace Components {
     interface WebSocialShare {
         /**
@@ -23,7 +24,18 @@ export interface WebSocialShareCustomEvent<T> extends CustomEvent<T> {
     target: HTMLWebSocialShareElement;
 }
 declare global {
+    interface HTMLWebSocialShareElementEventMap {
+        "closed": void;
+    }
     interface HTMLWebSocialShareElement extends Components.WebSocialShare, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLWebSocialShareElementEventMap>(type: K, listener: (this: HTMLWebSocialShareElement, ev: WebSocialShareCustomEvent<HTMLWebSocialShareElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLWebSocialShareElementEventMap>(type: K, listener: (this: HTMLWebSocialShareElement, ev: WebSocialShareCustomEvent<HTMLWebSocialShareElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLWebSocialShareElement: {
         prototype: HTMLWebSocialShareElement;

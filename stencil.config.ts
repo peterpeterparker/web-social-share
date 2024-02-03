@@ -18,7 +18,8 @@ export const config: Config = {
     },
     {
       type: 'dist-custom-elements',
-      autoDefineCustomElements: true
+      customElementsExportBehavior: 'single-export-module',
+      externalRuntime: false
     }
   ],
   plugins: [

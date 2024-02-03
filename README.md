@@ -68,13 +68,27 @@ The [Stencil documentation](https://stenciljs.com/docs/overview) provide example
 
 ### NodeJS
 
-Due to an [open issue in Stencil regarding ESM entry points](https://github.com/ionic-team/stencil/issues/2826), ESM resolution support in NodeJS for this package has been manually fixed by overriding the `module` field in _package.json_. As long as your dev server / bundler supports the `module` field, you should be able to `import` the component like this:
+You can either import the class directly or the `defineCustomElement` helper to register the web component to the `CustomElementRegistry`:
 
 ```js
-import 'web-social-share';
+import { WebSocialShare, defineCustomElement } 'web-social-share';
 ```
 
-> Note: as noted in the linked issue, one caveat is that this entry file uses template literals inside dynamic imports (e.g. `import(${x})`) so make sure this syntax is also supported by your environment. For example, Rollup has [**@rollup/plugin-dynamic-import-vars**](https://github.com/rollup/plugins/tree/master/packages/dynamic-import-vars).
+With that you can extend the component, e.g.:
+
+```ts
+class WebSocialExtended extends WebSocialShare {
+  render () {
+    // custom render behavior
+  }
+}
+```
+
+or just register it to the `CustomElementRegistry` and use it in your application, e.g.:
+
+```ts
+defineCustomElement()
+```
 
 ## Getting Started
 

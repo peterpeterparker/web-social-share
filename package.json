@@ -3,7 +3,7 @@
   "version": "9.1.0",
   "description": "A Web Component to share urls and text on social networks",
   "main": "dist/index.cjs.js",
-  "module": "dist/index.js",
+  "exports": "./dist/components/web-social-share.js",
   "es2015": "dist/esm/index.js",
   "es2017": "dist/esm/index.js",
   "jsnext:main": "dist/esm/index.js",
@@ -11,6 +11,7 @@
   "collection": "dist/collection/collection-manifest.json",
   "collection:main": "dist/collection/index.js",
   "unpkg": "dist/websocialshare/websocialshare.esm.js",
+  "type": "module",
   "files": [
     "dist/",
     "README.md",
@@ -21,15 +22,16 @@
     "start": "stencil build --dev --watch --serve",
     "web": "stencil build",
     "format": "prettier . --write",
-    "format:md": "prettier \"src/**/*.md\" --write"
+    "format:md": "prettier \"src/**/*.md\" --write",
+    "test": "cd test && npm install && npm test"
   },
   "devDependencies": {
-    "@stencil/core": "^2.17.4",
+    "@stencil/core": "^4.12.0",
     "@stencil/postcss": "^2.1.0",
-    "@stencil/sass": "^1.5.2",
-    "autoprefixer": "^10.4.8",
-    "prettier": "^2.7.1",
-    "prettier-plugin-organize-imports": "^3.1.1"
+    "@stencil/sass": "^3.0.9",
+    "autoprefixer": "^10.4.17",
+    "prettier": "^3.2.4",
+    "prettier-plugin-organize-imports": "^3.2.4"
   },
   "repository": {
     "type": "git",

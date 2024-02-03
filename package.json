@@ -1,6 +1,6 @@
 {
   "name": "web-social-share",
-  "version": "9.2.0",
+  "version": "10.0.0",
   "description": "A Web Component to share urls and text on social networks",
   "main": "dist/index.cjs.js",
   "exports": "./dist/components/web-social-share.js",
